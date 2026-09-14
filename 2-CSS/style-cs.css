@@ -1,0 +1,39 @@
+.main-style {
+    text-align: center;
+    background-color: rgba(197, 16, 188, 0.616);
+}
+
+div {
+    border: 10px red groove;
+    /*
+            Agregar un borde rojo a todos los div y un margen de 1px que es 
+            la convención es longitud
+            */
+
+    margin: 15px;
+    padding: 10px 25px 10px 25px;
+    /*
+            Agregar un margen  y un padding a todos los div
+             Para que no se junte en los bordes
+             */
+    background-color: rgba(197, 16, 188, 0.616);
+    border-radius: 100px 30px 50px 900px;
+    box-shadow: 500px 500px 500px rgba(245, 131, 1, 0.5);
+}
+
+#user {
+    width: 10%;
+    float: left;
+    border-radius: 50%;
+}
+
+body {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, gold, green);
+}
+
+h3 {
+    font-family: 'Poppins', italic;
+    text-shadow: 2px 2px 4px rgba(14, 197, 230, 0.418);
+}
