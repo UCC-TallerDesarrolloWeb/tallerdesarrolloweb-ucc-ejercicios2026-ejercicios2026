@@ -7,41 +7,53 @@
     <style>
         table, tr, td, th{
             border: 1px solid #000000;
+            border-collapse: collapse;
+            padding: 8px;
         }
     </style>
 </head>
 
-<!--Cree una tabla para visualizar la  información de los diferentes congresos (emplee etiquetas semánticas de tablas)-->
-<!--Elimine las siglas CPAR, y 'Campus Party' debe ocupar 2 celdas-->
-<!--Como campus party y Jaiio comparten el mismo lugar, unifique las celdas que contienen 'Buenos Aires'-->
 <body>
-
-Siglas
-Congreso o Evento
-Carrera
-Web
-Lugar
-Fecha
-
-CPAR
-Campus Party
-Computación/Sistemas
-http://argentina.campus-party.org/
-Buenos Aires
-25-abr al 28-abr
-
-JAIIO
-Jornadas Argentinas de Informática
-Computación/Sistemas
-http://47jaiio.sadio.org.ar
-Buenos Aires
-3-sep al 7-sep
-
-WICC
-Workshop de Investigadores en Ciencias de la Computación
-Computación/Sistemas
-http://wicc2018.unne.edu.ar/
-Corrientes
-18-mar al 27-abr
+    <!-- Tabla de congresos e información general de eventos informáticos -->
+    <table>
+        <caption>Listado de Congresos y Eventos Informáticos</caption>
+        <thead>
+            <tr>
+                <th>Siglas</th>
+                <th>Congreso o Evento</th>
+                <th>Carrera</th>
+                <th>Web</th>
+                <th>Lugar</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <!-- Usamos colspan="2" para eliminar CPAR y unificar la celda con la contigua -->
+                <td colspan="2">Campus Party</td>
+                <td>Computación/Sistemas</td>
+                <td><a href="http://argentina.campus-party.org/" target="_blank">http://argentina.campus-party.org/</a></td>
+                <!-- Usamos rowspan="2" para unificar las celdas de Buenos Aires -->
+                <td rowspan="2">Buenos Aires</td>
+                <td>25-abr al 28-abr</td>
+            </tr>
+            <tr>
+                <td>JAIIO</td>
+                <td>Jornadas Argentinas de Informática</td>
+                <td>Computación/Sistemas</td>
+                <td><a href="http://47jaiio.sadio.org.ar" target="_blank">http://47jaiio.sadio.org.ar</a></td>
+                <!-- La celda de Buenos Aires de esta fila se omite porque la de arriba la abarca con rowspan -->
+                <td>3-sep al 7-sep</td>
+            </tr>
+            <tr>
+                <td>WICC</td>
+                <td>Workshop de Investigadores en Ciencias de la Computación</td>
+                <td>Computación/Sistemas</td>
+                <td><a href="http://wicc2018.unne.edu.ar/" target="_blank">http://wicc2018.unne.edu.ar/</a></td>
+                <td>Corrientes</td>
+                <td>18-mar al 27-abr</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
