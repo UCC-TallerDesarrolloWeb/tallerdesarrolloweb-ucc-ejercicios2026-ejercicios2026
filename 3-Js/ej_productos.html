@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogo de Productos</title>
+    <link rel="stylesheet" href="catalogo.css">
+    <script type="text/javascript" src="tienda.js"></script>
+
+</head>
+<body class="grid-container" onload="mostrarCatalogo();contarProductos()"> 
+    <header class="item1">
+        <h1>Catalogo de Productos</h1>
+    </header>
+    
+    <nav class="item2">
+        <a href="ej_productos.html">Catalogo de Productos</a>
+        <a href="carrito.html">Carrito de Compras</a>
+        <div id="cant-prod">0</div>
+    </nav>
+
+    <aside class="item3">
+        <fieldset>
+            <legend>Buscador</legend>
+            <label for="buscador">Buscar:</label>
+            <input type="text" id="buscador" name="buscador" placeholder="Ingrese el nombre del producto" oninput="filtrarProductos()">
+        </fieldset>
+        <fieldset>
+            <legend>Precios</legend>
+            <p>
+                <label for="precioMin">Precio Mínimo:</label>
+                <input type="number" id="precioMin" name="precioMin" min="0" placeholder="Ingrese precio mínimo" oninput="filtrarProductos()" onchange="filtrarProductos()">
+            </p>
+            <p>
+                <label for="precioMax">Precio Máximo:</label>
+                <input type="number" id="precioMax" name="precioMax" min="0" placeholder="Ingrese precio máximo" oninput="filtrarProductos()" onchange="filtrarProductos()">
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>Marca</legend>
+            <select id="marca" name="marca" onchange="filtrarProductos()">
+                <option value="Todas">Todas</option>
+                <option value="Gran Marc">Gran Marc</option>
+                <option value="Daedo">Daedo</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>Tipo de Productos</legend>
+            <p>
+                <input type="checkbox" name="tipo" id="protectores" value="protectores" onchange="filtrarProductos()">
+                <label for="protectores">Protectores</label>
+            </p>
+            <p>
+                <input type="checkbox" name="tipo" id="entrenamiento" value="entrenamiento" onchange="filtrarProductos()">
+                <label for="entrenamiento">Entrenamiento</label>
+            </p>
+            <p>
+                <input type="checkbox" name="tipo" id="dobok" value="dobok" onchange="filtrarProductos()">
+                <label for="dobok">Dobok</label>
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>Ordenar Catalogo</legend>
+            <select id="ordenar" name="ordenar" onchange="ordenarCatalogo()">
+                <option value="mayor">por Precio (Mayor a Menor)</option>
+                <option value="menor">por Precio (Menor a Mayor)</option>
+                <option value="alfabetico">por Nombre (A-Z)</option>
+                <option value="alfabetico-inverso">por Nombre (Z-A)</option>
+            </select>
+        </fieldset>
+    </aside>
+
+    <dialog id="modal">
+            <h2 id="nombre-producto">Cabezal Cerrado</h2>
+            <p id="descripcion-producto">Cabezal de Sparring disponible en color negro y blanco.</p>
+            <button type="button" onclick="cerrarModal()">Cerrar</button>
+            <button type="button" onclick="agregarAlCarrito()">Agregar al Carrito</button>
+        </dialog>
+        
+    <main class="item4" id="catalogo">
+        <div>
+            <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/cabezal-cerrado.webp" alt="Cabezal Cerrado">
+            <h3>Cabezal Cerrado</h3>
+            <button type="button" onclick="mostrarModal(0)">Ver detalle de producto</button>
+        </div>
+
+        <div>
+            <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/dobok.webp" alt="Dobok">
+            <h3>Dobok</h3>
+            <button type="button" onclick="mostrarModal(1)">Ver detalle de producto</button>
+        </div>
+
+        <div>
+            <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/escudo-potencia.webp" alt="Escudo de Potencia" >
+            <h3>Escudo de Potencia</h3>
+            <button type="button" onclick="mostrarModal(2)">Ver detalle de producto</button>
+        </div>
+
+        <div>
+            <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/foco-con-dedos.webp" alt="Foco con Dedos">
+            <h3>Foco con Dedos</h3>
+            <button type="button" onclick="mostrarModal(3)">Ver detalle de producto</button>
+        </div>
+
+        <div>
+            <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/protectores-manos.webp" alt="Protectores de Manos">
+            <h3>Protectores de Manos</h3>
+            <button type="button" onclick="mostrarModal(4)">Ver detalle de producto</button>
+        </div>
+
+        <div>
+            <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/protectores-pie.webp" alt="Protectores de Pie">
+            <h3>Protectores de Pie</h3>
+            <button type="button" onclick="mostrarModal(5)">Ver detalle de producto</button>
+        </div>
+    </main>
+
+        <footer class="item5">Contactos</footer>
+
+</body>
+</html>
