@@ -9,34 +9,34 @@
 # Checklist de Ejercicios OBLIGATORIOS por unidad
 
 ## Unidad 1: Introducción y Herramientas de Desarrollo
--  [ ] Readme.md
--  [ ] .gitignore
+-  [x] Readme.md
+-  [x] .gitignore
 
 ## Unidad 2: Fundamentos de HTML5 y CSS3
 
 ### HTML
--  [ ] Primer HTML
--  [ ] Secciones
--  [ ] Títulos
--  [ ] Listas
--  [ ] Link
--  [ ] Tablas I
--  [ ] Tablas II
--  [ ] Tablas III
--  [ ] Tablas VI
--  [ ] Comentarios
--  [ ] Formulario
--  [ ] Accesibilidad
--  [ ] Multimedia
+-  [x] Primer HTML
+-  [x] Secciones
+-  [x] Títulos
+-  [x] Listas
+-  [x] Link
+-  [x] Tablas I
+-  [x] Tablas II
+-  [x] Tablas III
+-  [x] Tablas VI
+-  [x] Comentarios
+-  [x] Formulario
+-  [x] Accesibilidad
+-  [x] Multimedia
 
 ### CSS
--  [ ] Propiedades tipográficas
--  [ ] Incrustado
--  [ ] Estilo con Descendientes
--  [ ] Pseudo Clases
--  [ ] CV
--  [ ] Backgrounds
--  [ ] Position
+-  [x] Propiedades tipográficas
+-  [x] Incrustado
+-  [x] Estilo con Descendientes
+-  [x] Pseudo Clases
+-  [x] CV
+-  [x] Backgrounds
+-  [x] Position
 -  [ ] 2 Columnas
 -  [ ] Grid
 -  [ ] grid-areas
@@ -47,24 +47,24 @@
 
 ## Unidad 3: JavaScript y ES6+
 
--  [ ] Hola Mundo!
--  [ ] Conversor de Unidades
--  [ ] Documentación
--  [ ] Grados a Radianes
--  [ ] Refactorización
--  [ ] Mostrar/Ocultar div
--  [ ] Mostrar/Ocultar Dialog
--  [ ] Operaciones Matemáticas
--  [ ] Conversor de Unidades II
--  [ ] Operaciones Matemáticas II
--  [ ] Renderizado Dinámico
--  [ ] Renderizado Dinámico del Dialog
--  [ ] Carrito de Compras con localstorage
--  [ ] Vaciar Carrito y Eliminar Producto
--  [ ] Filter
--  [ ] Formatear Precio
--  [ ] Total y Cantidad de Productos
--  [ ] Ordenar el catálogo
+-  [x] Hola Mundo!
+-  [x] Conversor de Unidades
+-  [x] Documentación
+-  [x] Grados a Radianes
+-  [x] Refactorización
+-  [x] Mostrar/Ocultar div
+-  [x] Mostrar/Ocultar Dialog
+-  [x] Operaciones Matemáticas
+-  [x] Conversor de Unidades II
+-  [x] Operaciones Matemáticas II
+-  [x] Renderizado Dinámico
+-  [x] Renderizado Dinámico del Dialog
+-  [x] Carrito de Compras con localstorage
+-  [x] Vaciar Carrito y Eliminar Producto
+-  [x] Filter
+-  [x] Formatear Precio
+-  [x] Total y Cantidad de Productos
+-  [x] Ordenar el catálogo
 
 ## Unidad 4: Funcionamiento del Navegador y Herramientas de Desarrollo
 -  [ ] Checkeo de accesiilidad: AXE
@@ -107,14 +107,18 @@
 
 ### Ejercicio Readme.md
 
-- Agregar títulos secundarios:
-- Autor
-- Contenido/Descripción
-- Agregar los autores con items
-- Poner los apellidos de los autores en negrita
-- Agregar un link del aula virtual
-- Agregar info de contacto en una tabla
-- Agregar emoji
+## Autor 👨‍💻
+- Pedro **Gatti** - Legajo: 2519717
+
+## Contenido / Descripción 📚
+Repositorio oficial para el cursado y resolución de actividades prácticas de la materia **Desarrollo Web** (Segundo Año, Semestre 2) en la carrera de Ingeniería Informática de la [Universidad Católica de Córdoba](https://ucc.edu.ar).
+
+🔗 **Aula Virtual:** [Aula Virtual UCC - Desarrollo Web](https://presencial.ucc.edu.ar/course/view.php?id=15191)
+
+## Información de Contacto ✉️
+| Nombre | Apellido | Correo Institucional | GitHub |
+| :--- | :--- | :--- | :--- |
+| Pedro | **Gatti** | [2519717@ucc.edu.ar](mailto:2519717@ucc.edu.ar) | [@PedroGattiUCC](https://github.com/PedroGattiUCC) |
 
 ### Ejercicio: .gitignore
 

@@ -1,44 +1,181 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <title>CV Nombre Apellido</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Pedro Gatti</title>
+    <!-- Favicon de la página -->
+    <link rel="shortcut icon" href="imagenes/icono_usuario.jpg" type="image/jpeg">
+
+    <!-- Fuentes de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilo por Tag: body con gradiente de fondo y centrado */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #6dd5ed 100%);
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            color: #2d3748;
+            box-sizing: border-box;
+        }
+
+        /* Contenedor principal con margen superior para no solaparse con el position: fixed */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-top: 170px;
+        }
+
+        /* Estilo por Tag: divs con bordes, margen, padding, fondo con opacidad y sombra */
+        div {
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            margin: 20px 0;
+            padding: 24px;
+            background-color: rgba(255, 255, 255, 0.92);
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        div:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Estilo por ID y Ejercicio Position: cabecera fija arriba con position: fixed */
+        #cabecera-cv {
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 40px);
+            max-width: 800px;
+            z-index: 1000;
+            display: flow-root;
+            text-align: left;
+            background: linear-gradient(to right, #ffffff, #f0f4f8);
+            border-left: 6px solid #1e3c72;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+            margin: 0;
+        }
+
+        #cabecera-cv .foto-perfil {
+            float: left;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 25px;
+            border: 3px solid #2a5298;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Sombra a textos y títulos */
+        h1, h2, h3, h4 {
+            margin: 0 0 10px 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            color: #1e3c72;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        h2 {
+            color: #4a5568;
+            font-size: 1.15rem;
+            font-weight: 400;
+        }
+
+        h3 {
+            color: #2a5298;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+            font-size: 1.3rem;
+        }
+
+        /* Estilo por Clase: secciones temáticas */
+        .card-seccion {
+            text-align: left;
+        }
+
+        .card-seccion p {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+
+        .card-seccion span {
+            font-weight: 600;
+            color: #1a202c;
+        }
+
+        /* Sub-cajas anidadas para los cursos */
+        .subcard {
+            background-color: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 12px;
+            box-shadow: none;
+        }
+
+        .subcard h4 {
+            color: #2b6cb0;
+            margin-bottom: 5px;
+        }
+    </style>
 </head>
+
 <body>
-
-<div>
-    <h1>Nombre Alumno</h1>
-    <h2>Ing. en Computacion</h2>
-</div>
-
-<div>
-    <h3>Datos Personales</h3>
-    <p><span>Fecha de Nacimiento:</span> dd/mm/aaaa</p>
-    <p><span>Email:</span> email@email.com</p>
-</div>
-
-<div>
-    <h3>Formacion Academica</h3>
-    <p><span>Carrera:</span> Ingeniería XXXXX</p>
-    <p><span>Universidad:</span> Universidad Católica de Córdoba</p>
-    <p><span>Año de Ingreso:</span> 2018</p>
-</div>
-
-<div>
-    <h3>Cursos</h3>
-
-    <div>
-        <h4>Nombre Curso 1</h4>
-        <p><span>Lugar:</span> Nombre Institución</p>
-        <p><span>Año:</span> XXXX </p>
+    <!-- Cabecera por ID con position: fixed, foto circular y flotante a la izquierda -->
+    <div id="cabecera-cv">
+        <img src="imagenes/icono_usuario.jpg" alt="Foto de Perfil Pedro Gatti" class="foto-perfil">
+        <h1>Pedro Gatti</h1>
+        <h2>Estudiante de Ingeniería Informática</h2>
     </div>
 
-    <div>
-        <h4>Nombre Curso 2</h4>
-        <p><span>Lugar:</span> Nombre Institución</p>
-        <p><span>Año:</span> XXXX </p>
-    </div>
-</div>
+    <main>
+        <!-- Sección de Datos Personales por Clase -->
+        <div class="card-seccion">
+            <h3>Datos Personales</h3>
+            <p><span>Email:</span> 2519717@ucc.edu.ar</p>
+            <p><span>Ubicación:</span> Córdoba, Argentina</p>
+            <p><span>GitHub:</span> github.com/PedroGattiUCC</p>
+        </div>
 
+        <!-- Sección de Formación Académica -->
+        <div class="card-seccion">
+            <h3>Formación Académica</h3>
+            <p><span>Carrera:</span> Ingeniería Informática</p>
+            <p><span>Universidad:</span> Universidad Católica de Córdoba (UCC)</p>
+            <p><span>Estado:</span> En curso - 2º Año</p>
+        </div>
+
+        <!-- Sección de Cursos y Proyectos -->
+        <div class="card-seccion">
+            <h3>Cursos y Certificaciones</h3>
+
+            <div class="subcard">
+                <h4>Desarrollo Web Full Stack</h4>
+                <p><span>Institución:</span> UCC - Facultad de Ingeniería</p>
+                <p><span>Año:</span> 2026</p>
+            </div>
+
+            <div class="subcard">
+                <h4>Fundamentos de Programación y Git</h4>
+                <p><span>Institución:</span> Universidad Católica de Córdoba</p>
+                <p><span>Año:</span> 2025</p>
+            </div>
+        </div>
+    </main>
 </body>
+
 </html>

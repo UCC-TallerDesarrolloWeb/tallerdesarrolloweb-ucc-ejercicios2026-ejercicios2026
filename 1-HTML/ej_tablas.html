@@ -1,47 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <title>Tablas</title>
-
+    <title>Tablas - Congresos y Eventos</title>
     <style>
-        table, tr, td, th{
+        table,
+        tr,
+        td,
+        th {
             border: 1px solid #000000;
+            border-collapse: collapse;
+            padding: 8px;
         }
     </style>
 </head>
 
-<!--Cree una tabla para visualizar la  información de los diferentes congresos (emplee etiquetas semánticas de tablas)-->
-<!--Elimine las siglas CPAR, y 'Campus Party' debe ocupar 2 celdas-->
-<!--Como campus party y Jaiio comparten el mismo lugar, unifique las celdas que contienen 'Buenos Aires'-->
 <body>
+    <!-- Comentario: Tabla de información de congresos y eventos académicos -->
+    <table>
+        <!-- Accesibilidad: Título semántico para la tabla -->
+        <caption>Cronograma de Congresos y Eventos de Informática y Sistemas</caption>
 
-Siglas
-Congreso o Evento
-Carrera
-Web
-Lugar
-Fecha
+        <!-- Encabezado de la tabla con etiquetas thead y th -->
+        <thead>
+            <tr>
+                <th>Siglas</th>
+                <th>Congreso o Evento</th>
+                <th>Carrera</th>
+                <th>Web</th>
+                <th>Lugar</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
 
-CPAR
-Campus Party
-Computación/Sistemas
-http://argentina.campus-party.org/
-Buenos Aires
-25-abr al 28-abr
+        <!-- Cuerpo de la tabla con etiqueta tbody -->
+        <tbody>
+            <!-- Fila 1: Campus Party (emplea colspan="2" para unificar Siglas y Evento, y rowspan="2" para el Lugar) -->
+            <tr>
+                <td colspan="2">Campus Party</td>
+                <td>Computación/Sistemas</td>
+                <td><a href="http://argentina.campus-party.org/" target="_blank">http://argentina.campus-party.org/</a></td>
+                <td rowspan="2">Buenos Aires</td>
+                <td>25-abr al 28-abr</td>
+            </tr>
 
-JAIIO
-Jornadas Argentinas de Informática
-Computación/Sistemas
-http://47jaiio.sadio.org.ar
-Buenos Aires
-3-sep al 7-sep
+            <!-- Fila 2: JAIIO (comparte Lugar con Campus Party mediante rowspan) -->
+            <tr>
+                <td>JAIIO</td>
+                <td>Jornadas Argentinas de Informática</td>
+                <td>Computación/Sistemas</td>
+                <td><a href="http://47jaiio.sadio.org.ar" target="_blank">http://47jaiio.sadio.org.ar</a></td>
+                <td>3-sep al 7-sep</td>
+            </tr>
 
-WICC
-Workshop de Investigadores en Ciencias de la Computación
-Computación/Sistemas
-http://wicc2018.unne.edu.ar/
-Corrientes
-18-mar al 27-abr
+            <!-- Fila 3: WICC -->
+            <tr>
+                <td>WICC</td>
+                <td>Workshop de Investigadores en Ciencias de la Computación</td>
+                <td>Computación/Sistemas</td>
+                <td><a href="http://wicc2018.unne.edu.ar/" target="_blank">http://wicc2018.unne.edu.ar/</a></td>
+                <td>Corrientes</td>
+                <td>18-mar al 27-abr</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
+
 </html>

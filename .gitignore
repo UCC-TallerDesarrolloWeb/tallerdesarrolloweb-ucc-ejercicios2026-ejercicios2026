@@ -1,0 +1,28 @@
+# Dependencias
+node_modules/
+package-lock.json
+
+# Compilación y builds
+dist/
+build/
+out/
+.cache/
+
+# Entornos y logs
+.env
+.env.local
+*.log
+npm-debug.log*
+
+# Configuraciones de editores e IDEs
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
