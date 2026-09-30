@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Productos</title>
+    <link rel="stylesheet" href="productos.css">
+</head>
+<body>
+
+<header class="item1">
+    <h1>Tienda de Taekwondo</h1>
+</header>
+
+<nav class="item2">
+    <button class="btn btn-catalogo">Catálogo</button>
+    <button class="btn btn-carrito">Carrito de Compras</button>
+</nav>
+
+<aside class="item3">Posicion para futuros filtros
+    <form name="filter">
+        <fieldset>
+            <legend>Busqueda</legend>
+            <label for="search"></label>
+            <input type="text" name="search" id="search">
+        </fieldset>
+        <fieldset>
+            <p>
+            <legend>Precios</legend>
+            <label for="minimo"></label>
+            <input type="number" name="minimo" id="precio-min" min="0">
+            </p>
+            <p>
+            <label for="maximo"></label>
+            <input type="number" name="maximo" id="precio-max" min="0">
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>Tipo de productos</legend>
+            <p>
+                <input type="checkbox" name="tipo" id="protectores" value="protectores">    
+                <label for="protectores">Protectores</label>
+            </p>
+            <p>
+                <input type="checkbox" name="tipo" id="entrenamiento" value="entrenamiento">
+                <label for="entrenamiento">Entrenamiento</label>
+            </p>
+            <p>
+                <input type="checkbox" id="dobok" name="tipo" value="dobok">
+                <label for="dobok">Dobok</label>
+            </p>
+        </fieldset>
+    </form>
+</aside>
+
+<main class="item4">
+    <div class="tarjeta">
+        <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/cabezal-cerrado.webp" alt="Cabezal Sparring">
+        <h3>Cabezal Sparring</h3>
+    </div>
+
+    <div class="tarjeta">
+        <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/dobok.webp" alt="Dobok Dan">
+        <h3>Dobok Dan</h3>
+    </div>
+
+    <div class="tarjeta">
+        <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/escudo-potencia.webp" alt="Escudo de Potencia">
+        <h3>Escudo de Potencia</h3>
+    </div>
+
+    <div class="tarjeta">
+        <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/foco-con-dedos.webp" alt="Par de focos redondos">
+        <h3>Par de focos redondos</h3>
+    </div>
+
+    <div class="tarjeta">
+        <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/protectores-manos.webp" alt="Guantes 10 onzas">
+        <h3>Guantes 10 onzas</h3>
+    </div>
+
+    <div class="tarjeta">
+        <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/protectores-manos.webp" alt="Protectores Pie">
+        <h3>Protectores Pie</h3>
+    </div>
+</main>
+
+<footer class="item5">Info de Contacto</footer>
+
+</body>
+</html>
