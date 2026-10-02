@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Ejercicio Formulario</title>
@@ -11,33 +11,73 @@
     </style>
 </head>
 <body>
-<!--Cree un Formulario con los campos que se proponen a continuacion-->
-<!--Agregue el atributo legend-->
-
-<!--Si tienes dudas de como hacer un formulario, puedes consultar:
-    https://www.w3schools.com/html/tryit.asp?filename=tryhtml_elem_output-->
-
 <h3>Suscribase a Nuestro Portal de Noticias! Crear una cuenta es rápido!</h3>
-Nombre:
-Apellido:
-Sexo: Masculino Femenino
-Edad:
-Email:
-Usuario:
-Password:
-Confirmar Password:
+<form action="#" method="post">
+        <legend>Datos personales</legend>
 
-Tipo de servicio: Free / Standard / Premium
-Tema:
-Política
-Negocios
-Tecnología
-Salud
+        <p>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" size="40" maxlength="40" placeholder="Ingrese su nombre" required>
+        </p>
+        <p>
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" size="40" maxlength="40" placeholder="Ingrese su apellido" required>
+        </p>
+        <p>
+            <input type="radio" id="masculino" name="sexo" value="masculino" placeholder="Seleccione su sexo" required>
+            <label for="masculino">Masculino</label>
+            <input type="radio" id="femenino" name="sexo" value="femenino" placeholder="Seleccione su sexo">
+            <label for="femenino">Femenino</label>
+        </p>
+        <p>
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" min="1" max="120" maxlength="3" placeholder="Ingrese su edad" required>
+        </p>
+        <p>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" maxlength="100" placeholder="ejemplo@correo.com" required>
+        </p>
+        <p>
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" name="usuario" size="40" maxlength="30" placeholder="Ingrese un nombre de usuario" required>
+        </p>
+        <p>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" maxlength="30" placeholder="Ingrese una contraseña" required>
+        </p>
+        <p>
+            <label for="confirmar-password">Confirmar Password:</label>
+            <input type="password" id="confirmar-password" name="confirmar-password" maxlength="30" placeholder="Repita su contraseña" required>
+        </p>
 
-Agregue un comentario:
+        <legend>Preferencias de suscripción</legend>
 
-Boton de Enviar
-
+        <p>
+            <label for="servicio">Tipo de servicio:</label>
+            <select id="servicio" name="servicio">
+                <option value="free">Free</option>
+                <option value="standard">Standard</option>
+                <option value="premium">Premium</option>
+            </select>
+        </p>
+        <p>
+            <input type="checkbox" id="politica" name="tema" value="politica" placeholder="Seleccione un tema">
+            <label for="politica">Política</label>
+            <input type="checkbox" id="negocios" name="tema" value="negocios" placeholder="Seleccione un tema">
+            <label for="negocios">Negocios</label>
+            <input type="checkbox" id="tecnologia" name="tema" value="tecnologia" placeholder="Seleccione un tema">
+            <label for="tecnologia">Tecnología</label>
+            <input type="checkbox" id="salud" name="tema" value="salud" placeholder="Seleccione un tema">
+            <label for="salud">Salud</label>
+        </p>
+        <p>
+            <label for="comentario">Agregue un comentario:</label><br>
+            <textarea id="comentario" name="comentario" rows="5" cols="40" maxlength="500" placeholder="Escriba su comentario"></textarea>
+        </p>
+    <p>
+        <input type="submit" value="Enviar" placeholder="Enviar formulario">
+    </p>
+</form>
 
 </body>
 </html>

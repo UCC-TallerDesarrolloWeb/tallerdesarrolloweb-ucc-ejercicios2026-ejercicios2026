@@ -1,0 +1,28 @@
+.tituloNoticia {
+    color: #00FFFF;
+    font-size: 24px;
+    text-align: center;
+}
+
+.tituloPrincipal {
+    color: #32dc32; 
+    font-size: 36px;
+    text-align: center;
+}
+
+.subtitulotituloNoticia {
+    color: #A52A2A; 
+    font-size: 20px;
+    text-align: center;
+}
+
+.body {
+font-family: Arial, sans-serif;
+    line-height: 1.5;
+    margin: 20px;
+}
+
+.grid-item {
+    column-count: 2;
+    column-gap: 16px;
+}
