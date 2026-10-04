@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Nicolas Bulacio">
+    <meta name="description" content="Simulador de parcialito de HTML basado en el banco de preguntas y las clases de la Unidad 2">
+    <title>Simulador Parcialito HTML</title>
+    <style>
+        :root {
+            --bg: #f4f7fb;
+            --panel: #ffffff;
+            --ink: #172033;
+            --muted: #5f6b7a;
+            --line: #d7e0ea;
+            --brand: #0b67c2;
+            --brand-dark: #084d91;
+            --ok: #197a43;
+            --bad: #b42318;
+            --warn: #9a6700;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--ink);
+            background: var(--bg);
+            line-height: 1.5;
+        }
+
+        header,
+        footer {
+            background: #162033;
+            color: #ffffff;
+        }
+
+        header {
+            padding: 28px 18px;
+        }
+
+        header div,
+        main,
+        footer div {
+            width: min(1120px, calc(100% - 32px));
+            margin: 0 auto;
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin-top: 0;
+            line-height: 1.2;
+        }
+
+        h1 {
+            margin-bottom: 8px;
+            font-size: 2rem;
+        }
+
+        header p,
+        footer p {
+            margin: 0;
+            color: #d9e5f4;
+        }
+
+        main {
+            padding: 22px 0 40px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        nav a {
+            display: inline-block;
+            padding: 8px 12px;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            color: var(--brand);
+            background: var(--panel);
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            border-color: var(--brand);
+        }
+
+        section,
+        aside {
+            margin-bottom: 18px;
+            padding: 18px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+        }
+
+        fieldset {
+            margin: 0 0 16px;
+            padding: 16px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+        }
+
+        legend {
+            padding: 0 8px;
+            font-weight: bold;
+        }
+
+        label {
+            cursor: pointer;
+        }
+
+        input,
+        select,
+        textarea,
+        button {
+            font: inherit;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        select,
+        textarea {
+            width: min(100%, 440px);
+            padding: 8px 10px;
+            border: 1px solid #b8c3cf;
+            border-radius: 6px;
+        }
+
+        textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 12px 18px;
+        }
+
+        .field {
+            display: grid;
+            gap: 6px;
+        }
+
+        .hint {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .quiz-question {
+            margin-bottom: 16px;
+            padding: 16px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #fbfdff;
+        }
+
+        .quiz-question h3 {
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+        }
+
+        .options {
+            display: grid;
+            gap: 8px;
+        }
+
+        .option {
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+            padding: 7px 8px;
+            border-radius: 6px;
+        }
+
+        .option:hover {
+            background: #eef5fc;
+        }
+
+        .match-row {
+            display: grid;
+            grid-template-columns: minmax(220px, 1fr) minmax(160px, 260px);
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .actions {
+            position: sticky;
+            bottom: 0;
+            z-index: 2;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            padding: 12px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 -4px 12px rgba(20, 31, 47, 0.08);
+        }
+
+        button {
+            padding: 9px 14px;
+            border: 0;
+            border-radius: 6px;
+            color: #ffffff;
+            background: var(--brand);
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: var(--brand-dark);
+        }
+
+        button.secondary {
+            color: var(--ink);
+            background: #e9eef5;
+        }
+
+        button.secondary:hover {
+            background: #dbe4ee;
+        }
+
+        progress {
+            width: min(100%, 320px);
+            height: 18px;
+        }
+
+        #resultado {
+            display: none;
+            border-left: 5px solid var(--brand);
+        }
+
+        .score-ok {
+            color: var(--ok);
+        }
+
+        .score-warn {
+            color: var(--warn);
+        }
+
+        .score-bad {
+            color: var(--bad);
+        }
+
+        .correct {
+            border-color: rgba(25, 122, 67, 0.45);
+            background: #effaf3;
+        }
+
+        .incorrect {
+            border-color: rgba(180, 35, 24, 0.45);
+            background: #fff4f2;
+        }
+
+        .answer {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed var(--line);
+            color: var(--muted);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        caption {
+            margin-bottom: 8px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        th,
+        td {
+            padding: 9px;
+            border: 1px solid var(--line);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: #eef4fb;
+        }
+
+        code {
+            padding: 1px 4px;
+            border-radius: 4px;
+            background: #edf1f6;
+        }
+
+        footer {
+            padding: 18px;
+        }
+
+        @media (max-width: 680px) {
+            .match-row {
+                grid-template-columns: 1fr;
+            }
+
+            .actions {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Simulador Parcialito HTML</h1>
+            <p>Banco de practica basado en el simulacro de la profe y en las filminas de HTML de la Unidad 2.</p>
+        </div>
+    </header>
+
+    <main>
+        <nav aria-label="Navegacion de repaso">
+            <a href="#datos">Datos</a>
+            <a href="#simulacro">Simulacro</a>
+            <a href="#chuleta">Chuleta HTML</a>
+            <a href="#resultado">Resultado</a>
+        </nav>
+
+        <section id="datos">
+            <h2>Datos del intento</h2>
+            <p class="hint">Este bloque tambien sirve para practicar etiquetas de formulario: <code>fieldset</code>, <code>legend</code>, <code>label</code>, <code>input</code>, <code>select</code>, <code>optgroup</code>, <code>datalist</code> y <code>textarea</code>.</p>
+
+            <form id="quizForm" action="#" method="get">
+                <fieldset>
+                    <legend>Informacion general</legend>
+                    <div class="grid">
+                        <p class="field">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" size="40" maxlength="40" placeholder="Ingrese su nombre">
+                        </p>
+
+                        <p class="field">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" size="40" maxlength="80" placeholder="nombre@ejemplo.com">
+                        </p>
+
+                        <p class="field">
+                            <label for="preguntasObjetivo">Preguntas objetivo</label>
+                            <input type="number" id="preguntasObjetivo" name="preguntasObjetivo" min="5" max="36" placeholder="36">
+                        </p>
+
+                        <p class="field">
+                            <label for="temaFuerte">Tema que queres reforzar</label>
+                            <input list="temasHtml" id="temaFuerte" name="temaFuerte" placeholder="Formularios">
+                            <datalist id="temasHtml">
+                                <option value="Estructura HTML">
+                                <option value="Formularios">
+                                <option value="Tablas">
+                                <option value="Accesibilidad">
+                                <option value="Multimedia">
+                            </datalist>
+                        </p>
+
+                        <p class="field">
+                            <label for="modo">Modo de practica</label>
+                            <select id="modo" name="modo">
+                                <option value="" selected disabled>Seleccione un modo</option>
+                                <optgroup label="Estudio">
+                                    <option value="normal">Normal</option>
+                                    <option value="repaso">Repaso tranquilo</option>
+                                </optgroup>
+                                <optgroup label="Parcialito">
+                                    <option value="rapido">Rapido</option>
+                                    <option value="sin-ayuda">Sin mirar apuntes</option>
+                                </optgroup>
+                            </select>
+                        </p>
+
+                        <p class="field">
+                            <label for="colorMarca">Color para marcar dificultad</label>
+                            <input type="color" id="colorMarca" name="colorMarca" value="#0b67c2">
+                        </p>
+                    </div>
+
+                    <p class="field">
+                        <label for="notas">Notas antes de empezar</label>
+                        <textarea id="notas" name="notas" placeholder="Ejemplo: repasar target, fieldset, label for, audio/video..."></textarea>
+                    </p>
+                </fieldset>
+
+                <section id="simulacro" aria-labelledby="tituloSimulacro">
+                    <h2 id="tituloSimulacro">Simulacro autocorregible</h2>
+                    <p class="hint">Las preguntas de opciones multiples pueden tener una o varias correctas. Las de correspondencia se responden con desplegables.</p>
+                    <p>
+                        <label for="avance">Avance respondido</label><br>
+                        <progress id="avance" value="0" max="36">0%</progress>
+                        <span id="avanceTexto" class="hint">0 de 36</span>
+                    </p>
+                    <div id="questions"></div>
+                </section>
+
+                <div class="actions">
+                    <button type="submit">Corregir simulacro</button>
+                    <button type="button" class="secondary" id="mostrarRespuestas">Mostrar respuestas</button>
+                    <button type="reset" class="secondary">Limpiar</button>
+                    <span class="hint">Consejo: si una opcion dice "siempre", "unicamente" o mezcla CSS/JS con HTML, sospecha.</span>
+                </div>
+            </form>
+        </section>
+
+        <section id="resultado" aria-live="polite"></section>
+
+        <aside id="chuleta">
+            <h2>Chuleta rapida HTML</h2>
+            <table>
+                <caption>Temas que mas aparecen en el parcialito</caption>
+                <thead>
+                    <tr>
+                        <th>Tema</th>
+                        <th>Idea clave</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Estructura</td>
+                        <td><code>&lt;!DOCTYPE html&gt;</code>, <code>html</code>, <code>head</code>, <code>meta charset="UTF-8"</code>, <code>title</code> y <code>body</code>.</td>
+                    </tr>
+                    <tr>
+                        <td>Semantica</td>
+                        <td><code>header</code>, <code>nav</code>, <code>main</code>, <code>section</code>, <code>article</code>, <code>aside</code> y <code>footer</code> describen la estructura del contenido.</td>
+                    </tr>
+                    <tr>
+                        <td>Formularios</td>
+                        <td><code>label for</code> debe coincidir con el <code>id</code> del campo. <code>fieldset</code> agrupa y <code>legend</code> titula el grupo.</td>
+                    </tr>
+                    <tr>
+                        <td>Tablas</td>
+                        <td><code>caption</code> titula la tabla. <code>colspan</code> une columnas y <code>rowspan</code> une filas.</td>
+                    </tr>
+                    <tr>
+                        <td>Accesibilidad</td>
+                        <td>Usar <code>alt</code> en imagenes, <code>caption</code> en tablas, <code>label</code> en inputs y enlaces con texto claro.</td>
+                    </tr>
+                    <tr>
+                        <td>Multimedia</td>
+                        <td><code>audio</code> y <code>video</code> aceptan <code>controls</code>, <code>autoplay</code>, <code>loop</code>, <code>muted</code> y contenido alternativo.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </aside>
+    </main>
+
+    <footer>
+        <div>
+            <p>Practica local de HTML - Unidad 2 - Taller de Desarrollo Web.</p>
+        </div>
+    </footer>
+
+    <script>
+        const questions = [
+            {
+                title: "¿Donde se puede mostrar el contenido de la etiqueta <title>?",
+                type: "multi",
+                options: [
+                    ["a", "En la barra de titulo del navegador"],
+                    ["b", "En los buscadores de Internet"],
+                    ["c", "Al hacer un marcador a la pagina"],
+                    ["d", "Como titulo visible obligatorio dentro del body"],
+                    ["e", "Dentro de cada imagen como texto alternativo"]
+                ],
+                answer: ["a", "b", "c"]
+            },
+            {
+                title: "¿Que funcion cumplen <fieldset> y <legend>?",
+                type: "multi",
+                options: [
+                    ["a", "legend crea un titulo para un grupo de campos fieldset"],
+                    ["b", "fieldset ayuda a la legibilidad y facilidad de acceso en formularios extensos"],
+                    ["c", "fieldset representa un conjunto de elementos agrupados en un formulario"],
+                    ["d", "legend reemplaza a todos los labels del formulario"],
+                    ["e", "fieldset envia automaticamente el formulario"]
+                ],
+                answer: ["a", "b", "c"]
+            },
+            {
+                title: "¿Que valores especiales puede tomar el atributo target en un hipervinculo <a> segun la clase?",
+                type: "multi",
+                options: [
+                    ["a", "_blank"],
+                    ["b", "_self"],
+                    ["c", "_parent"],
+                    ["d", "_top"],
+                    ["e", "_main"],
+                    ["f", "_external"]
+                ],
+                answer: ["a", "b", "c", "d"]
+            },
+            {
+                title: "Respecto al campo input type=\"radio\", ¿que caracteristicas se destacan?",
+                type: "multi",
+                options: [
+                    ["a", "Permite elegir una sola opcion entre un grupo"],
+                    ["b", "Los radios de un mismo grupo deben tener el mismo name"],
+                    ["c", "El atributo checked permite que aparezca marcado por defecto"],
+                    ["d", "Permite elegir varias opciones simultaneamente dentro del mismo grupo"],
+                    ["e", "Solo funciona dentro de tablas"]
+                ],
+                answer: ["a", "b", "c"]
+            },
+            {
+                title: "¿Para que sirven los atributos colspan y rowspan en tablas HTML?",
+                type: "multi",
+                options: [
+                    ["a", "rowspan unifica o extiende celdas en sentido vertical, es decir filas"],
+                    ["b", "colspan unifica o extiende celdas en sentido horizontal, es decir columnas"],
+                    ["c", "Ambos permiten combinar celdas contiguas"],
+                    ["d", "colspan se usa para reproducir audio"],
+                    ["e", "rowspan define la cantidad maxima de caracteres de un input"]
+                ],
+                answer: ["a", "b", "c"]
+            },
+            {
+                title: "¿Como deben ser los comentarios en HTML?",
+                type: "multi",
+                options: [
+                    ["a", "Se pueden utilizar en cualquier tipo de documento HTML"],
+                    ["b", "Ayudan a documentar y explicar el codigo dentro del documento"],
+                    ["c", "Su sintaxis es <!--Esto es un comentario-->"],
+                    ["d", "Se muestran siempre al usuario final en la pagina"],
+                    ["e", "Ejecutan codigo JavaScript automaticamente"]
+                ],
+                answer: ["a", "b", "c"]
+            },
+            {
+                title: "¿Cuales enunciados sobre la etiqueta <canvas> son correctos?",
+                type: "multi",
+                options: [
+                    ["a", "Proporciona una API para dibujar lineas 2D, imagenes y textos"],
+                    ["b", "Cada pixel dentro del lienzo puede ser controlado"],
+                    ["c", "Es un contenedor de graficos que requiere un script para dibujar"],
+                    ["d", "Soporta los atributos width y height"],
+                    ["e", "Dibuja automaticamente sin JavaScript ni instrucciones"],
+                    ["f", "Su funcion principal es crear listas desplegables"]
+                ],
+                answer: ["a", "b", "c", "d"]
+            },
+            {
+                title: "En la estructura de una tabla HTML, ¿que elementos forman parte de su sintaxis estandar segun el simulacro?",
+                type: "multi",
+                options: [
+                    ["a", "<thead>"],
+                    ["b", "<tbody>"],
+                    ["c", "<tr>"],
+                    ["d", "<th>"],
+                    ["e", "<fieldset>"],
+                    ["f", "<option>"]
+                ],
+                answer: ["a", "b", "c", "d"]
+            },
+            {
+                title: "¿Como se relacionan los elementos <label> y los campos de entrada?",
+                type: "multi",
+                options: [
+                    ["a", "El atributo for del label debe contener el mismo texto que el id del input"],
+                    ["b", "label representa una etiqueta asociada a un campo de formulario"],
+                    ["c", "label mejora la accesibilidad en los formularios"],
+                    ["d", "placeholder reemplaza por completo al label"],
+                    ["e", "label solo puede usarse con textarea"]
+                ],
+                answer: ["a", "b", "c"]
+            },
+            {
+                title: "¿Que caracteristicas tiene la etiqueta <video> en HTML5?",
+                type: "multi",
+                options: [
+                    ["a", "Soporta formatos como mp4, webm y ogg"],
+                    ["b", "Permite incluir la etiqueta track para subtitulos o descripciones"],
+                    ["c", "Se pueden configurar atributos como controls, autoplay, muted, width y height"],
+                    ["d", "Permite añadir archivos de video de forma nativa sin plugins de terceros"],
+                    ["e", "Necesita obligatoriamente Flash Player"],
+                    ["f", "Solo sirve para incrustar videos de YouTube"]
+                ],
+                answer: ["a", "b", "c", "d"]
+            },
+            {
+                title: "¿Que type puede tener <input>?",
+                type: "multi",
+                options: [
+                    ["a", "text"],
+                    ["b", "number"],
+                    ["c", "password"],
+                    ["d", "color"],
+                    ["e", "varchar"],
+                    ["f", "dropdown"]
+                ],
+                answer: ["a", "b", "c", "d"]
+            },
+            {
+                title: "¿Que funciones o caracteristicas cumplen las etiquetas <meta>?",
+                type: "multi",
+                options: [
+                    ["a", "No son imprescindibles"],
+                    ["b", "Permiten identificar parametros de la web como autores"],
+                    ["c", "Permiten definir la codificacion de caracteres"],
+                    ["d", "Se ven como parrafos dentro del body"],
+                    ["e", "Siempre generan una tabla automaticamente"]
+                ],
+                answer: ["a", "b", "c"]
+            },
+            {
+                title: "¿Que caracteristicas tienen los titulos <hX>?",
+                type: "multi",
+                options: [
+                    ["a", "h1 es el titulo de mayor importancia"],
+                    ["b", "Segun el material, solo puede haber 1 h1 por pagina"],
+                    ["c", "h6 es el titulo de menor importancia"],
+                    ["d", "Existe h7 como titulo menos importante que h6"],
+                    ["e", "No aportan jerarquia al documento"]
+                ],
+                answer: ["a", "b", "c"]
+            },
+            {
+                title: "Selecciona cada atributo de input segun corresponda.",
+                type: "match",
+                prompts: [
+                    ["Altera el ancho del cuadro de texto", "size"],
+                    ["Cantidad maxima de caracteres que se pueden ingresar", "maxlength"],
+                    ["Deshabilita el campo y no permite que el usuario ingrese", "disabled"],
+                    ["Ayuda visual del contenido del input", "placeholder"]
+                ],
+                choices: ["size", "maxlength", "disabled", "placeholder", "checked", "target"]
+            },
+            {
+                title: "¿Que atributos y formatos soporta la etiqueta <audio>?",
+                type: "multi",
+                options: [
+                    ["a", "Atributos: src, preload, autoplay, loop, muted, controls"],
+                    ["b", "Formatos: mp3, ogg, aac, opus, flac, wav"],
+                    ["c", "Permite incluir texto alternativo para navegadores incompatibles"],
+                    ["d", "Solo acepta archivos mp4"],
+                    ["e", "Requiere estar dentro de una etiqueta video"]
+                ],
+                answer: ["a", "b", "c"]
+            },
+            {
+                title: "¿Que afirmaciones sobre la etiqueta <article> son verdaderas?",
+                type: "multi",
+                options: [
+                    ["a", "Debe tener sentido por si mismo"],
+                    ["b", "Ejemplos de uso son entradas de blog o mensajes de un foro"],
+                    ["c", "Especifica contenido independiente"],
+                    ["d", "Se usa exclusivamente para logos"],
+                    ["e", "Reemplaza al elemento head"]
+                ],
+                answer: ["a", "b", "c"]
+            },
+            {
+                title: "¿Que afirmaciones sobre la etiqueta <header> son correctas?",
+                type: "multi",
+                options: [
+                    ["a", "Especifica un encabezado de un documento o seccion"],
+                    ["b", "Puede contener el logo y el titulo de la pagina"],
+                    ["c", "Solo puede aparecer una vez en todo el sitio web"],
+                    ["d", "Debe ir siempre despues del footer"]
+                ],
+                answer: ["a", "b"]
+            },
+            {
+                title: "Respecto a las etiquetas anidadas, ¿cuales afirmaciones son correctas?",
+                type: "multi",
+                options: [
+                    ["a", "Significa que una etiqueta esta dentro de otra"],
+                    ["b", "Un error tipico es olvidarse de cerrar etiquetas"],
+                    ["c", "Generalmente la ultima etiqueta en abrirse es la primera en cerrarse"],
+                    ["d", "Errores de orden al cerrar etiquetas pueden generar demoras al renderizar una pagina"],
+                    ["e", "Las etiquetas anidadas pueden cerrarse en cualquier orden"]
+                ],
+                answer: ["a", "b", "c", "d"]
+            },
+            {
+                title: "¿Cuales etiquetas de HTML o atributos ayudan a mejorar la accesibilidad?",
+                type: "multi",
+                options: [
+                    ["a", "label"],
+                    ["b", "alt"],
+                    ["c", "caption"],
+                    ["d", "autoplay"],
+                    ["e", "blink"]
+                ],
+                answer: ["a", "b", "c"]
+            },
+            {
+                title: "Identifica las etiquetas semanticas y sus definiciones.",
+                type: "match",
+                prompts: [
+                    ["Contenido independiente que debe tener sentido por si mismo", "article"],
+                    ["Contenido predominante de la pagina", "main"],
+                    ["Conjunto de enlaces de navegacion", "nav"],
+                    ["Seccion de un documento", "section"],
+                    ["Pie de pagina de un documento o seccion", "footer"],
+                    ["Contenido colocado como barra lateral", "aside"]
+                ],
+                choices: ["article", "main", "nav", "section", "footer", "aside", "header", "div"]
+            },
+            {
+                title: "Sobre el elemento <div>, ¿que aspectos son correctos?",
+                type: "multi",
+                options: [
+                    ["a", "Define un bloque de contenido o seccion de la pagina"],
+                    ["b", "Permite realizar operaciones sobre ese bloque especifico"],
+                    ["c", "Sirve para aplicarle diferentes estilos"],
+                    ["d", "Tiene el significado semantico de contenido principal"],
+                    ["e", "Es un formato de imagen"]
+                ],
+                answer: ["a", "b", "c"]
+            },
+            {
+                title: "Seleccione cada etiqueta acorde a su funcionalidad.",
+                type: "match",
+                prompts: [
+                    ["Subrayado", "<u>"],
+                    ["Texto en negrita", "<strong>"],
+                    ["Subindices", "<sub>"],
+                    ["Texto en cursiva", "<em>"],
+                    ["Superindices", "<sup>"]
+                ],
+                choices: ["<u>", "<strong>", "<sub>", "<em>", "<sup>", "<mark>", "<small>"]
+            },
+            {
+                title: "¿Que informacion sobre UTF-8 se menciona en el material?",
+                type: "multi",
+                options: [
+                    ["a", "Es un formato de codificacion de caracteres"],
+                    ["b", "Significa 8-bit Unicode Transformation Format"],
+                    ["c", "Se relaciona con el control de caracteres de 8 bits"],
+                    ["d", "Es una version de CSS"],
+                    ["e", "Sirve para comprimir imagenes"]
+                ],
+                answer: ["a", "b", "c"]
+            },
+            {
+                title: "¿Que etiquetas se utilizan para crear listas desplegables u opciones agrupadas en un formulario?",
+                type: "multi",
+                options: [
+                    ["a", "<select>"],
+                    ["b", "<option>"],
+                    ["c", "<optgroup>"],
+                    ["d", "<datalist>"],
+                    ["e", "<caption>"],
+                    ["f", "<thead>"]
+                ],
+                answer: ["a", "b", "c", "d"]
+            },
+            {
+                title: "¿Cuales consejos practicos de accesibilidad son correctos?",
+                type: "multi",
+                options: [
+                    ["a", "Usar el atributo alt en las imagenes para describir el contenido visual"],
+                    ["b", "Emplear el tag caption para los titulos de las tablas"],
+                    ["c", "Utilizar correctamente los hipervinculos evitando frases como 'Click Aqui'"],
+                    ["d", "Describir figuras, diagramas o animaciones con el atributo longdesc"],
+                    ["e", "Omitir labels si hay placeholder"],
+                    ["f", "Usar siempre enlaces con texto generico"]
+                ],
+                answer: ["a", "b", "c", "d"]
+            },
+            {
+                title: "¿Que uso tiene la etiqueta <iframe>?",
+                type: "multi",
+                options: [
+                    ["a", "Permite incrustar otro documento HTML dentro del actual"],
+                    ["b", "Se puede usar para incluir videos de YouTube"],
+                    ["c", "El atributo principal es src"],
+                    ["d", "Compila codigo JavaScript"],
+                    ["e", "Solo se utiliza para imagenes"]
+                ],
+                answer: ["a", "b", "c"]
+            },
+            {
+                title: "Extra clase: ¿Que elementos forman parte de la estructura minima de un documento HTML?",
+                type: "multi",
+                options: [
+                    ["a", "<!DOCTYPE html>"],
+                    ["b", "<html>"],
+                    ["c", "<head>"],
+                    ["d", "<body>"],
+                    ["e", "<database>"],
+                    ["f", "<server>"]
+                ],
+                answer: ["a", "b", "c", "d"]
+            },
+            {
+                title: "Extra clase: ¿Que atributos son habituales o importantes en una imagen?",
+                type: "multi",
+                options: [
+                    ["a", "src"],
+                    ["b", "alt"],
+                    ["c", "title"],
+                    ["d", "href"],
+                    ["e", "colspan"]
+                ],
+                answer: ["a", "b", "c"]
+            },
+            {
+                title: "Extra clase: ¿Que etiquetas se usan para listas?",
+                type: "multi",
+                options: [
+                    ["a", "<ul> para listas no ordenadas"],
+                    ["b", "<ol> para listas ordenadas"],
+                    ["c", "<li> para cada item"],
+                    ["d", "<tr> para cada item de lista"],
+                    ["e", "<caption> para cada item de lista"]
+                ],
+                answer: ["a", "b", "c"]
+            },
+            {
+                title: "Extra clase: ¿Que afirmaciones sobre hipervinculos son correctas?",
+                type: "multi",
+                options: [
+                    ["a", "La etiqueta es <a>"],
+                    ["b", "El atributo href indica el destino"],
+                    ["c", "El texto del enlace deberia tener sentido por si mismo"],
+                    ["d", "target=\"_blank\" abre en una nueva pestaña o ventana"],
+                    ["e", "La etiqueta <a> solo puede apuntar a archivos CSS"]
+                ],
+                answer: ["a", "b", "c", "d"]
+            },
+            {
+                title: "Extra clase: ¿Que inputs fueron practicados en el ejercicio de formulario?",
+                type: "multi",
+                options: [
+                    ["a", "text"],
+                    ["b", "radio"],
+                    ["c", "number"],
+                    ["d", "email"],
+                    ["e", "password"],
+                    ["f", "checkbox"],
+                    ["g", "submit"],
+                    ["h", "router"]
+                ],
+                answer: ["a", "b", "c", "d", "e", "f", "g"]
+            },
+            {
+                title: "Extra clase: ¿Que elementos ayudan a organizar una tabla?",
+                type: "multi",
+                options: [
+                    ["a", "<table>"],
+                    ["b", "<caption>"],
+                    ["c", "<tr>"],
+                    ["d", "<th>"],
+                    ["e", "<td>"],
+                    ["f", "<footer> dentro de cada celda como obligatorio"]
+                ],
+                answer: ["a", "b", "c", "d", "e"]
+            },
+            {
+                title: "Extra clase: ¿Que buenas practicas HTML aparecen en el cierre del material?",
+                type: "multi",
+                options: [
+                    ["a", "Nombre de etiquetas en minuscula"],
+                    ["b", "Anidar correctamente"],
+                    ["c", "Cerrar las etiquetas"],
+                    ["d", "Usar ficheros externos para CSS y JavaScript cuando corresponda"],
+                    ["e", "Escribir todas las etiquetas en mayuscula siempre"]
+                ],
+                answer: ["a", "b", "c", "d"]
+            },
+            {
+                title: "Extra clase: ¿Que afirmaciones sobre multimedia son correctas?",
+                type: "multi",
+                options: [
+                    ["a", "<audio> permite agregar sonido"],
+                    ["b", "<video> permite agregar video"],
+                    ["c", "<source> permite ofrecer distintos archivos o formatos"],
+                    ["d", "controls muestra controles de reproduccion"],
+                    ["e", "muted puede silenciar por defecto"],
+                    ["f", "HTML5 necesita plugins de terceros para audio y video"]
+                ],
+                answer: ["a", "b", "c", "d", "e"]
+            },
+            {
+                title: "Extra clase: ¿Que opciones describen bien el uso de <section> y <article>?",
+                type: "multi",
+                options: [
+                    ["a", "section agrupa una seccion tematica del documento"],
+                    ["b", "article representa contenido independiente"],
+                    ["c", "article deberia poder entenderse fuera del contexto general"],
+                    ["d", "section y article reemplazan obligatoriamente a todos los div"],
+                    ["e", "article se usa solo para formularios"]
+                ],
+                answer: ["a", "b", "c"]
+            },
+            {
+                title: "Extra clase: ¿Que debe recordarse sobre <select>, <option>, <optgroup> y <datalist>?",
+                type: "multi",
+                options: [
+                    ["a", "select crea una lista desplegable"],
+                    ["b", "option representa cada opcion"],
+                    ["c", "optgroup agrupa opciones por categoria"],
+                    ["d", "datalist sugiere opciones para un input"],
+                    ["e", "datalist impide escribir valores propios siempre"]
+                ],
+                answer: ["a", "b", "c", "d"]
+            },
+            {
+                title: "Extra clase: ¿Cuales son errores tipicos a evitar?",
+                type: "multi",
+                options: [
+                    ["a", "Usar enlaces que dicen solamente 'Click aqui'"],
+                    ["b", "Olvidar el atributo alt en imagenes importantes"],
+                    ["c", "No asociar label e input con for e id"],
+                    ["d", "Cerrar etiquetas en orden incorrecto"],
+                    ["e", "Usar UTF-8 para caracteres especiales"]
+                ],
+                answer: ["a", "b", "c", "d"]
+            }
+        ];
+
+        const form = document.querySelector("#quizForm");
+        const container = document.querySelector("#questions");
+        const resultBox = document.querySelector("#resultado");
+        const progress = document.querySelector("#avance");
+        const progressText = document.querySelector("#avanceTexto");
+        const showAnswersButton = document.querySelector("#mostrarRespuestas");
+
+        progress.max = questions.length;
+        progressText.textContent = `0 de ${questions.length}`;
+
+        function escapeHtml(text) {
+            return text
+                .replaceAll("&", "&amp;")
+                .replaceAll("<", "&lt;")
+                .replaceAll(">", "&gt;")
+                .replaceAll('"', "&quot;");
+        }
+
+        function renderQuestions() {
+            container.innerHTML = questions.map((question, index) => {
+                const number = index + 1;
+
+                if (question.type === "match") {
+                    const rows = question.prompts.map(([prompt], rowIndex) => `
+                        <div class="match-row">
+                            <label for="q${index}_${rowIndex}">${escapeHtml(prompt)}</label>
+                            <select id="q${index}_${rowIndex}" name="q${index}_${rowIndex}">
+                                <option value="" selected>Seleccione...</option>
+                                ${question.choices.map(choice => `<option value="${escapeHtml(choice)}">${escapeHtml(choice)}</option>`).join("")}
+                            </select>
+                        </div>
+                    `).join("");
+
+                    return `
+                        <article class="quiz-question" id="pregunta${number}">
+                            <h3>${number}. ${escapeHtml(question.title)}</h3>
+                            ${rows}
+                            <div class="answer" hidden></div>
+                        </article>
+                    `;
+                }
+
+                const options = question.options.map(([value, text]) => {
+                    const id = `q${index}_${value}`;
+                    return `
+                        <label class="option" for="${id}">
+                            <input type="checkbox" id="${id}" name="q${index}" value="${value}">
+                            <span>${value}. ${escapeHtml(text)}</span>
+                        </label>
+                    `;
+                }).join("");
+
+                return `
+                    <article class="quiz-question" id="pregunta${number}">
+                        <h3>${number}. ${escapeHtml(question.title)}</h3>
+                        <div class="options">${options}</div>
+                        <div class="answer" hidden></div>
+                    </article>
+                `;
+            }).join("");
+        }
+
+        function selectedAnswers(index) {
+            return [...form.querySelectorAll(`input[name="q${index}"]:checked`)].map(input => input.value).sort();
+        }
+
+        function matchingAnswers(index) {
+            const question = questions[index];
+            return question.prompts.map((_, rowIndex) => form.elements[`q${index}_${rowIndex}`].value);
+        }
+
+        function sameArray(left, right) {
+            return left.length === right.length && left.every((item, index) => item === right[index]);
+        }
+
+        function answerText(question) {
+            if (question.type === "match") {
+                return question.prompts.map(([prompt, answer]) => `${prompt} -> ${answer}`).join("; ");
+            }
+
+            return question.options
+                .filter(([value]) => question.answer.includes(value))
+                .map(([value, text]) => `${value}. ${text}`)
+                .join("; ");
+        }
+
+        function isAnswered(question, index) {
+            if (question.type === "match") {
+                return matchingAnswers(index).some(Boolean);
+            }
+
+            return selectedAnswers(index).length > 0;
+        }
+
+        function updateProgress() {
+            const answered = questions.filter((question, index) => isAnswered(question, index)).length;
+            progress.value = answered;
+            progressText.textContent = `${answered} de ${questions.length}`;
+        }
+
+        function correctQuestion(question, index) {
+            if (question.type === "match") {
+                const user = matchingAnswers(index);
+                const expected = question.prompts.map(([, answer]) => answer);
+                return sameArray(user, expected);
+            }
+
+            return sameArray(selectedAnswers(index), [...question.answer].sort());
+        }
+
+        function showCorrection(showOnlyAnswers = false) {
+            let correct = 0;
+
+            questions.forEach((question, index) => {
+                const card = document.querySelector(`#pregunta${index + 1}`);
+                const answer = card.querySelector(".answer");
+                const ok = correctQuestion(question, index);
+
+                card.classList.remove("correct", "incorrect");
+                if (!showOnlyAnswers) {
+                    card.classList.add(ok ? "correct" : "incorrect");
+                }
+
+                if (ok) {
+                    correct += 1;
+                }
+
+                answer.hidden = false;
+                answer.innerHTML = `<strong>Correcta:</strong> ${escapeHtml(answerText(question))}`;
+            });
+
+            if (!showOnlyAnswers) {
+                const percent = Math.round((correct / questions.length) * 100);
+                const className = percent >= 80 ? "score-ok" : percent >= 60 ? "score-warn" : "score-bad";
+                resultBox.style.display = "block";
+                resultBox.innerHTML = `
+                    <h2>Resultado</h2>
+                    <p class="${className}"><strong>${correct} de ${questions.length}</strong> correctas - ${percent}%</p>
+                    <p>${percent >= 80 ? "Muy bien. Estas bastante firme para el parcialito." : "Hay que pegarle otra vuelta a las marcadas en rojo, sobre todo formularios, accesibilidad y multimedia."}</p>
+                `;
+                resultBox.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        }
+
+        renderQuestions();
+        form.addEventListener("change", updateProgress);
+        form.addEventListener("submit", event => {
+            event.preventDefault();
+            showCorrection(false);
+        });
+        form.addEventListener("reset", () => {
+            setTimeout(() => {
+                document.querySelectorAll(".quiz-question").forEach(card => {
+                    card.classList.remove("correct", "incorrect");
+                    const answer = card.querySelector(".answer");
+                    answer.hidden = true;
+                    answer.textContent = "";
+                });
+                resultBox.style.display = "none";
+                updateProgress();
+            }, 0);
+        });
+        showAnswersButton.addEventListener("click", () => showCorrection(true));
+    </script>
+</body>
+</html>

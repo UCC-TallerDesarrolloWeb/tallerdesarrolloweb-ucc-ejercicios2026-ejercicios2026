@@ -6,6 +6,15 @@
 - Mira los videos de las diapositivas que explican cómo resolver cada ejercicio
 - Marca en este readme que ejercicios ya has resuelto
 
+# Mapa de carpetas
+
+- `UNIDAD 1`: filminas de Introducción y Herramientas de Desarrollo, Git y Git parte II. Incluye la guía `GUIA_PARCIALITO_U1.md`.
+- `UNIDAD 2`: filminas y ejercicios de HTML, CSS y prototipado. Incluye los entregables del proyecto de restaurante.
+- `UNIDAD 3`: filminas JavaScript partes I, II y III, y ejercicios independientes.
+- `UNIDAD 5`: ejercicios de Bootstrap y SASS.
+- `UNIDAD 6`: ejercicios de React.
+- `UNIDAD 7`: ejercicios de Backend y APIs.
+
 # Checklist de Ejercicios OBLIGATORIOS por unidad
 
 ## Unidad 1: Introducción y Herramientas de Desarrollo
@@ -15,48 +24,56 @@
 ## Unidad 2: Fundamentos de HTML5 y CSS3
 
 ### HTML
--  [ ] Primer HTML
--  [ ] Secciones
--  [ ] Títulos
--  [ ] Listas
--  [ ] Link
--  [ ] Tablas I
--  [ ] Tablas II
--  [ ] Tablas III
--  [ ] Tablas VI
--  [ ] Comentarios
--  [ ] Formulario
--  [ ] Accesibilidad
--  [ ] Multimedia
+-  [x] Primer HTML
+-  [x] Secciones
+-  [x] Títulos
+-  [x] Listas
+-  [x] Link
+-  [x] Tablas I
+-  [x] Tablas II
+-  [x] Tablas III
+-  [x] Tablas VI
+-  [x] Comentarios
+-  [x] Formulario
+-  [x] Accesibilidad
+-  [x] Multimedia
 
 ### CSS
--  [ ] Propiedades tipográficas
--  [ ] Incrustado
--  [ ] Estilo con Descendientes
--  [ ] Pseudo Clases
--  [ ] CV
--  [ ] Backgrounds
--  [ ] Position
--  [ ] 2 Columnas
--  [ ] Grid
--  [ ] grid-areas
--  [ ] Mejora
--  [ ] Transitions
--  [ ] Viewport
--  [ ] Responsive
+-  [x] Propiedades tipográficas
+-  [x] Incrustado
+-  [x] Estilo con Descendientes
+-  [x] Pseudo Clases
+-  [x] CV
+-  [x] Backgrounds
+-  [x] Position
+-  [x] 2 Columnas
+-  [x] Grid
+-  [x] grid-areas
+-  [x] Mejora
+-  [x] Transitions
+-  [x] Viewport
+-  [x] Responsive
+
+### Prototipado
+-  [x] Diagrama de organización
+-  [x] Sketch / Thumbnail Sketch
+-  [x] Wireflow
+-  [x] Wireframe
+-  [x] Prototipo navegable
+-  [x] Evaluación de interfaz
 
 ## Unidad 3: JavaScript y ES6+
 
--  [ ] Hola Mundo!
--  [ ] Conversor de Unidades
--  [ ] Documentación
--  [ ] Grados a Radianes
--  [ ] Refactorización
--  [ ] Mostrar/Ocultar div
+-  [x] Hola Mundo!
+-  [x] Conversor de Unidades
+-  [x] Documentación
+-  [x] Grados a Radianes
+-  [x] Refactorización
+-  [x] Mostrar/Ocultar div
 -  [ ] Mostrar/Ocultar Dialog
--  [ ] Operaciones Matemáticas
--  [ ] Conversor de Unidades II
--  [ ] Operaciones Matemáticas II
+-  [x] Operaciones Matemáticas
+-  [x] Conversor de Unidades II
+-  [x] Operaciones Matemáticas II
 -  [ ] Renderizado Dinámico
 -  [ ] Renderizado Dinámico del Dialog
 -  [ ] Carrito de Compras con localstorage

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Nicolas Bulacio">
+    <meta name="description" content="Entregables de arquitectura, sketch, wireframe y prototipado para una pagina web de restaurante">
+    <title>Prototipado - Restaurante</title>
+    <style>
+        :root {
+            --ink: #20211f;
+            --muted: #656861;
+            --paper: #f5f4ef;
+            --panel: #ffffff;
+            --line: #d5d4cd;
+            --accent: #a33120;
+            --green: #285845;
+        }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { margin: 0; color: var(--ink); background: var(--paper); font-family: Arial, Helvetica, sans-serif; line-height: 1.55; }
+        header { padding: 40px 20px; color: #fff; background: var(--green); }
+        header div, main, footer div { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+        h1, h2, h3 { line-height: 1.2; }
+        h1 { margin: 0 0 8px; }
+        h2 { margin-top: 0; }
+        nav { position: sticky; top: 0; z-index: 10; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; padding: 10px 16px; border-bottom: 1px solid var(--line); background: rgba(255, 255, 255, .96); }
+        nav a { padding: 8px 11px; color: var(--green); font-weight: 700; text-decoration: none; }
+        main { padding: 26px 0 48px; }
+        section { margin-bottom: 20px; padding: 22px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); }
+        .lead { max-width: 760px; color: var(--muted); }
+        .asset-grid, .criteria-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+        figure { margin: 0; padding: 12px; border: 1px solid var(--line); background: #fafaf8; }
+        figure img { display: block; width: 100%; height: auto; }
+        figcaption { padding-top: 10px; color: var(--muted); font-size: .92rem; }
+        .button { display: inline-block; padding: 10px 16px; border-radius: 4px; color: #fff; background: var(--accent); font-weight: 700; text-decoration: none; }
+        .criterion { padding: 15px; border-left: 4px solid var(--green); background: #f3f7f4; }
+        .criterion strong { display: block; margin-bottom: 4px; }
+        footer { padding: 22px 16px; color: #fff; background: #202b27; }
+        @media (max-width: 720px) {
+            .asset-grid, .criteria-grid { grid-template-columns: 1fr; }
+            section { padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Proyecto: pagina web de restaurante</h1>
+            <p>Arquitectura de informacion, sketch, wireflow, wireframes y prototipo navegable.</p>
+        </div>
+    </header>
+    <nav aria-label="Entregables de prototipado">
+        <a href="#arquitectura">Arquitectura</a>
+        <a href="#sketch">Sketch</a>
+        <a href="#wireflow">Wireflow</a>
+        <a href="#wireframe">Wireframe</a>
+        <a href="#prototipo">Prototipo</a>
+        <a href="#evaluacion">Evaluacion</a>
+    </nav>
+    <main>
+        <section id="arquitectura">
+            <h2>Diagrama de organizacion</h2>
+            <p class="lead">El sitio se organiza alrededor de Inicio, Conocenos, Menu y Pedido. La ubicacion se presenta al final de Conocenos mediante un mapa enlazado, por lo que no ocupa un elemento independiente en la navegacion.</p>
+            <figure>
+                <img src="diagrama-organizacion.svg" alt="Diagrama de organizacion del sitio web del restaurante">
+                <figcaption>Mapa de contenidos y relaciones entre las pantallas principales.</figcaption>
+            </figure>
+        </section>
+        <section id="sketch">
+            <h2>Sketch y Thumbnail Sketch</h2>
+            <p class="lead">Bocetos de baja fidelidad que definen jerarquia, opciones, campos y acciones antes de decidir colores o detalles visuales.</p>
+            <div class="asset-grid">
+                <figure><img src="Sketch/sketch-desktop.svg" alt="Sketch de escritorio para Inicio, Conocenos, Menu y Pedido"><figcaption>Secuencia de pantallas para computadora.</figcaption></figure>
+                <figure><img src="Sketch/sketch-mobile.svg" alt="Sketch para celular de la pagina Conocenos"><figcaption>Adaptacion para celular con contenido apilado.</figcaption></figure>
+            </div>
+        </section>
+        <section id="wireflow">
+            <h2>Wireflow</h2>
+            <p class="lead">El flujo permite explorar el menu, agregar productos, revisar el pedido, completar los datos del cliente y confirmar la compra. Tambien contempla errores de campos obligatorios.</p>
+            <figure><img src="Wireframes/wireflow.svg" alt="Wireflow del proceso de compra del restaurante"><figcaption>Flujo normal y retorno ante un error de validacion.</figcaption></figure>
+        </section>
+        <section id="wireframe">
+            <h2>Wireframes</h2>
+            <p class="lead">Representan la ubicacion definitiva de contenidos y controles sin definir todavia la identidad visual final.</p>
+            <div class="asset-grid">
+                <figure><img src="Wireframes/wireframe-desktop.svg" alt="Wireframe de escritorio del sitio del restaurante"><figcaption>Escritorio: navegacion visible, bloques alternados y productos en columnas.</figcaption></figure>
+                <figure><img src="Wireframes/wireframe-mobile.svg" alt="Wireframe para celular del sitio del restaurante"><figcaption>Celular: menu compacto, una columna y acciones de ancho completo.</figcaption></figure>
+            </div>
+        </section>
+        <section id="prototipo">
+            <h2>Prototipo navegable</h2>
+            <p class="lead">La version HTML permite recorrer Inicio, Conocenos, Menu y Pedido. El mapa de Conocenos abre Google Maps y el formulario muestra los campos previstos para finalizar una compra.</p>
+            <a class="button" href="prototipo.html">Abrir prototipo del restaurante</a>
+        </section>
+        <section id="evaluacion">
+            <h2>Evaluacion de la interfaz</h2>
+            <div class="criteria-grid">
+                <div class="criterion"><strong>Finalidad visible</strong>El inicio explica que se puede consultar el menu y realizar un pedido.</div>
+                <div class="criterion"><strong>Flujo normal</strong>Inicio, seleccion de productos, revision del pedido y confirmacion.</div>
+                <div class="criterion"><strong>Campos obligatorios</strong>Nombre, telefono, direccion y metodo de pago se identifican claramente.</div>
+                <div class="criterion"><strong>Mensajes de error</strong>Si falta un dato, el usuario permanece en Pedido y recibe una indicacion concreta.</div>
+                <div class="criterion"><strong>Diseño responsivo</strong>Las columnas se apilan y la navegacion se simplifica en pantallas angostas.</div>
+                <div class="criterion"><strong>Ubicacion accesible</strong>El mapa aparece al final de CONOCENOS y se abre al tocarlo.</div>
+            </div>
+        </section>
+    </main>
+    <footer><div>Unidad 2 - Prototipado y diseño de interfaz de usuario.</div></footer>
+</body>
+</html>

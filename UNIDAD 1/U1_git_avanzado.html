@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Git</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reset.css" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/league.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/base16/zenburn.css" />
+
+    <link rel="stylesheet" href="./_assets/slides/css/filminas.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown data-separator="^---" data-separator-vertical="^\r?\n----\r?\n$">
+          <textarea data-template>
+            
+
+# Git (parte II)
+Created by <i class="fab fa-telegram"></i>
+edme88
+
+---
+<!-- .slide: style="font-size: 0.60em" -->
+<style>
+.grid-container2 {
+    display: grid;
+    grid-template-columns: auto auto;
+    font-size: 0.8em;
+    text-align: left !important;
+}
+
+.grid-item {
+    border: 3px solid rgba(121, 177, 217, 0.8);
+    padding: 20px;
+    text-align: left !important;
+}
+</style>
+## Temario
+<div class="grid-container2">
+<div class="grid-item">
+
+### GIT
+* Repaso de comandos
+
+### Más Comandos
+* git reset
+* git stash
+* git checkout commit
+* eliminar commit
+* modificar commit
+* git revert
+* git rebase
+
+</div>
+<div class="grid-item">
+
+
+* Autenticación Segura
+    * PAT
+    * 2 Factores
+    * SSH
+    * Ejercicio: Configurar SSH
+* Readme.md
+
+[Ejercicio: Escribir readme.md](U1_git_avanzado.html#/22)
+
+* .gitignore
+
+[Ejercicio: .gitignore](U1_git_avanzado.html#/24)
+
+* configuraciones de github
+
+[Ejercicio: Configuración GitHub](U1_git_avanzado.html#/26)
+
+* cursos de git
+
+</div>
+</div>
+
+---
+### Qué comandos aprendimos la clase pasada?
+<ul>
+<li class="fragment">git config</li>
+<li class="fragment">git init</li>
+<li class="fragment">git add</li>
+<li class="fragment">git commit</li>
+<li class="fragment">git push</li>
+<li class="fragment">git pull</li>
+<li class="fragment">git log</li>
+</ul>
+
+---
+### Cómo funcionan los comandos que aprendimos la clase pasada?
+![Git Repaso](images/herramientas/comandoGit2.png)
+
+<small class="fragment">1 git add</small>
+<small class="fragment">2 git commit -m</small>
+<small class="fragment">3 git push</small>
+<small class="fragment">4 git clone/pull</small>
+<small class="fragment">5 git diff</small>
+<small class="fragment">6 git commit -a -m</small>
+
+---
+
+### ¿A donde va el código cuando hago PUSH?
+
+El código se sube al repositorio del cual fue clonado. Si no recuerdas la URL puedes ejecutar:
+```shell
+git remote -v
+```
+Y si la url es incorrecta y deseo cambiarla:
+```shell
+git remote set-url origin NUEVA-URL
+```
+
+---
+## git reset
+Revierte el efecto de un git add, es decir, elimina el archivo del área de staging (index), pero NO borra los cambios del archivo.
+```
+git reset nombreArchivo.extensionArchivo
+```
+
+---
+### git stash
+Guarda los cambios no confirmados (sin commit) y revierte el directorio de trabajo al último commit limpio.
+```
+git stash
+```
+Para recuperar los cambios guardados:
+```
+git stash apply
+```
+
+---
+### git checkout commit
+Permite volver a un commit específico:
+```
+git checkout id-del-commit
+```
+Para volver a la rama donde estámos (y poder continuar trabajando):
+```
+git checkout nombre-rama
+```
+
+---
+### eliminar el último commit
+Si quieres eliminar el último commit (pero aún no hiciste push):
+
+Si quieres mantener los cambios:
+```
+git reset --soft HEAD~1
+```
+Si quieres eliminar los últimos cambios:
+```
+git reset --hard HEAD~1
+```
+
+---
+
+### Modificar el último commit
+Si quieres modificar el último commit (pero aún no hiciste push):
+Solo cambios en el mensaje:
+```
+git commit --amend -m "Este es el mensaje correcto"
+```
+Si quieres agregar más archivos en el commit:
+```
+git add src/archivo-con-cambios.js
+# Vuelve a hacer el commit con el parámetro amend
+git commit --amend -m "Mensaje del commit"
+```
+
+---
+
+### git revert
+Para revertir cambios de un commit específico que YA ha sido pusheado:
+```
+git revert 74a1092
+```
+* Se crea un nuevo commit inverso al commit 74a1092
+* El commit original sigue existiendo en el historial.
+
+---
+
+### Git: Ejercicio revertir cambios
+<!-- .slide: style="font-size: 0.90em" -->
+(Emplea **clear** para limpiar la consola entre pasos)
+1. Emplea el **add** para añadir un archivo nuevo y verifica que su **status** está en verde.
+2. Usando **reset** quita el archivo del área de **staging**.
+3. Para perder los cambios aplicados emplea **stash**
+4. Usar **stash apply** para recuperar esos cambios.
+5. Usa **log** para visualizar el historial de commits. Emplea el **checkout** para volver a un commit especifico.
+6. Usa **checkeot** para volver a la rama principal
+7. Realiza un commit local y reviertelo empleando el **reset --soft HEAD~1**
+8. Modifica el mensaje del último commit con un **--amend**
+
+---
+
+### git rebase
+Permite modificar el "punto de partida" de una rama. Sirve para mantener un historial del proyecto lineal. 
+
+![git rebase](images/herramientas/rebase.svg)
+
+---
+
+### git rebase
+1. Ir a la branch que se necesita de base y asegurarnos de tener la última version
+```
+git checkout develop
+git pull origin develop
+```
+2. Ir a la branch que se desea cambiar la base
+```
+git checkout feature-windows
+git rebase develop
+```
+
+----
+
+3. En caso de existir algún conflicto, resolver el conflicto manualmente. Realizar un 
+```
+git add <file>
+```
+y posteriormente CONTINUAR con el rebase 
+```
+git rebase --continue
+```
+4. Una vez que el rebase esté completo, ejecutar:
+```
+git push origin feature-windows --force
+```
+
+----
+
+![Hablando de git](images/herramientas/hablando-de-git.png)
+
+---
+### Git: Autenticación Segura
+A partir de agosto/2021 github solicita un método seguro de autenticación, como:
+1. **PAT:** Token de Acceso Personal
+2. **2FA:** Autenticación de Dos Factores (2023)
+3. **SSH:** Secure Shell
+
+---
+### Pasos para generar el PAT
+<!-- .slide: style="font-size: 0.90em" -->
+1. En **gitHub** entrar a la sección de Setting
+2. En el menú de la izquierda ingresar a **Developer Setting**
+3. Seleccionar **Personal Access Token**
+4. Click en el botón **Generate New Token**
+5. Copiar el token y guardarlo en un lugar seguro (posteriormente no hay forma de acceder para volver a verlo)
+6. Si empleamos **Git Credential Manager**, la primera vez que realices acciones con **git clone** o **git push** te pedirá user/pass (y la password es en realidad este token). Posteriormente ya queda almacenado.
+
+----
+
+### Administrador de Credenciales
+
+#### Windows
+1. Buscar el "Administrador de Credenciales"
+2. Click en "Credenciales de Windows"
+3. Hacer click en github
+
+#### Mac
+1. En **Mac** abrí "Acceso a Llaveros" desde Spotlight o /Aplicaciones/Utilidades/Acceso a Llaveros.
+2. Buscá git o github.com.
+
+---
+### Pasos para autenticación de 2 Factores
+Esta configuración es obligatoria desde agosto/2023
+1. En **gitHub** entrar a la sección de Setting
+2. En el menú de la izquierda ingresar a **Password and authentication**
+3. Click en **Enable two-factor authentication**
+4. Para configurarlo con mensaje desde el celular (o [google authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=es_AR), o [microsoft authenticadtor](https://play.google.com/store/apps/details?id=com.azure.authenticator&hl=es_AR)), click en "Set up using SMS"
+
+----
+
+<div class="grid-container2">
+<div class="grid-item">
+
+![Auth Key](images/herramientas/github-authkey.png)
+
+</div>
+<div class="grid-item">
+
+![Key](images/herramientas/auth.png)
+
+</div></div>
+
+---
+## SSH
+**Secure Shell** es una forma de autenticarse en servidores remotos sin tener que escribir la contraseña siempre.
+
+Funciona empleando 2 claves: la privada (solo para tí), la pública (para todo internet).
+
+---
+### [Como configurar SSH?](https://medium.com/humantodev/configurar-ssh-github-enwindows-10-linux-y-macos-e843eb6d104e#:~:text=%C2%BFQu%C3%A9%20es%20SSH%3F,(PARA%20TODA%20LA%20HUMANIDAD))
+<!--https://platzi.com/tutoriales/1557-git-github/4067-configurar-llaves-ssh-en-git-y-github/?gclid=EAIaIQobChMI35TBz4ij9gIVgwWRCh1ddwUPEAAYAiAAEgJJJfD_BwE&gclsrc=aw.ds-->
+<!-- .slide: style="font-size: 0.60em" -->
+
+1. Abrir CMD
+2. Correr el comando
+````
+ssh-keygen -t rsa -b 4096 -C "tu@email.com"
+````
+    - La terminal responde: Generating public/private rsa key pair.
+    - Enter file in which to save the key: **ENTER**
+    - Enter passphrase (empty for no passphrase): **ENTER**
+    - Your identification has been saved in cd .ssh.
+    - Your public key has been saved in cd .ssh.pub.
+    - The key fingerprint is: SHA256:.......
+3. Correr el comando
+````
+cd .ssh
+````
+4. Correr el comando
+````
+more id_rsa.pub
+````
+5. Copiar el texto que dice "ssh-rsa BLA BLA"
+6. Ingresar a gitHub, Setting, SSH and GPG Keys, New SSH Key, pegar la clave
+
+----
+
+## SSH en GitHub
+![SSH en GitHub](images/herramientas/sshKey.png)
+
+---
+## Readme.md
+<!-- .slide: style="font-size: 0.80em" -->
+Seguramente te estes preguntando: qué es ese readme.md que se autogeneró? 
+Es un archivo que deberian tener todos los proyectos de Soft. El mismo se supone que sea una:
+* Guía rápida de la aplicación o librería y de cómo empezar a usarla.
+* Instrucciones de configuración, instalación, operación, manifiesto de archivos, información sobre licencia y el desarrollador, bug conocidos, solución a problemas, créditos y agradecimientos, registro de cambios o versiones (ChangeLog), sección de noticias, etc.
+
+<!--https://jesuslc.com/2016/07/12/como-escribir-un-readme-que-mole/-->
+
+----
+
+## Ejemplos de Readmes
+[RevealJS](https://github.com/hakimel/reveal.js)
+
+[MelonJS](https://github.com/melonjs/melonjs)
+
+[nvm-sh](https://github.com/nvm-sh/nvm)
+
+---
+## Markdown
+Markdown es una forma de estilo de texto en la web, que permite controlar la visualización del documento; dar formato a 
+las palabras en negrita o cursiva, agregar imágenes y crear listas.
+ 
+En su mayoría, Markdown es solo texto normal con algunos caracteres no alfabéticos, como # o * que permiten formatear el 
+texto.
+
+----
+
+## Readme.md
+![Markdown](images/herramientas/markdown.png)
+
+[Visualizador de Markdown](https://dillinger.io/)
+
+----
+
+## Readme.md
+
+En VSC puedes visualizar un archivo Markdonwn empleando **Ctrl + K V** en Windows/Linux o **Cmd + K V** en Mac.
+
+---
+## Ejercicio Readme.md
+Emplear el repositorio de ejercicios [template](https://classroom.github.com/a/06Rmc9s1)
+* Agregar títulos secundarios:
+ * Autor
+ * Contenido/Descripción
+* Agregar los autores con items
+* Poner los apellidos de los autores en negrita
+* Agregar un link del aula virtual
+* Agregar info de contacto en una tabla
+* Agregar [emoji](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md)
+
+----
+
+## Ejercicios
+Se debe crear una **branch** para los ejercicios de cada unidad.
+
+Una vez realizados todos los ejercicios de una unidad, se debe realizar un **pull request** y **mergearlo**.
+
+----
+
+## Ejercicio Readme.md
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NlmsWZmC_IQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
+## .gitignore
+El archivo "gitignore" sirve para decirle a Git qué archivos o directorios completos debe ignorar y no subir al repositorio de código. 
+
+Puede que no sea necesario versionar esos archivos porque: son privados y no se desea compartir, son archivos binarios 
+con datos que no se desea versionar (instaladores, diagramas, etc).
+
+---
+## Ejercicio: .gitignore
+* Crear un archivo .gitignore
+* Incluir el nombre de la carpeta que se desea ignorar
+* Subir los cambios al repositorio remoto
+
+----
+
+## Ejercicio: .gitignore
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1yGiz06KKRo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
+
+### Configuraciones de Github
+Las configuraciones comunes y recomendadas en proyectos de GitHub están pensadas para:
+- Garantizar calidad de código
+- Evitar errores comunes
+- Estandarizar el trabajo en equipo
+- Automatizar procesos de CI/CD
+
+---
+
+### Configuraciones de Github
+- Bloquear push directo a **main/master**. Permitir merge solo via Pull Requests (PR).
+- Requerir revisión de PRs de al menos 1 aprobador antes mergear.
+- Requerir que los PR pasen los tests (CI)
+- Verificar que el proyecto esté correctamente linteado
+- Evitar force-push en ramas protegidas.
+- Requerir branches actualizados antes de mergear (evita conflictos inesperados).
+
+----
+
+### Ejercicio: Configuración de GitHub
+<!-- .slide: style="font-size: 0.80em" -->
+1. Presionar **Setting** en el repositorio que se desae configurar.
+2. En la sección **Rules** click en **New Ruleset** y seleccionar **New Branch Ruleset**
+3. Colocar un **Rule Name**, como "Block Main"
+4. Checkear la opción **Require a pull request before merging**. Seleccionar cantidad de approvals necesarios: "1". 
+5. Seleccionar sub-opciones necesarias como:
+    - Dismiss stale pull request approvals when new commits are pushed
+    - Require approval of the most recent reviewable push
+    - Require status checks to pass
+
+<!--
+### Ejercicio: GitHubActions con Conventional Commits
+1. Crear un archivo **.github/workflows/validate-commits.yml**
+2. En el archivo escribir:
+```yml
+name: Check Conventional Commits
+
+on:
+  push:
+     branches:
+        - "**"
+
+jobs:
+  lint-commits:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Lint commits with commitlint
+        uses: wagoid/commitlint-github-action@v5
+        with:
+          configFile: ./commitlint.config.js
+  
+  lint-code:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ESLint
+        run: npm run lint
+```
+-->
+
+---
+#### Sigo sin enter como funcionan las ramas con los comandos...
+* push
+* pull
+* merge
+
+No te preocupes, te lo explicamos con gatitos 😺 (si, nada que tenga gatitos puede fallar!)
+
+----
+
+![Git Puss](images/herramientas/git-puss.jpg)
+
+----
+
+![Git Purr](images/herramientas/git-purr.jpg)
+
+----
+
+![Git Merge-Rebase](images/herramientas/git-merge-rebase.jpg)
+ 
+---
+## +
+Existen muchos comandos de git, y parámetros que se pueden agregar a comandos ya existentes, pero has aprendido lo básico 
+(e inclusive un poquito más) para que puedas trabajar versionando tus proyectos de software.
+ 
+---
+
+## Cursos de Git
+* [TAU - Source Control for Test Automation with Git](https://testautomationu.applitools.com/git-tutorial/) 
+* [Learn Git Branching](https://learngitbranching.js.org/)
+* [Codecademy](https://www.codecademy.com/learn/learn-git)
+* [Digital House](https://www.digitalhouse.com/ar)
+* [Dev-talles](https://cursos.devtalles.com/courses/git-github-control-versiones)
+
+
+---
+## ¿Dudas, Preguntas, Comentarios?
+![DUDAS](images/pregunta.gif)
+
+          </textarea>
+        </section>
+      </div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./mermaid/dist/mermaid.min.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        slideNumber: true,
+        highlight: {
+          highlightOnLoad: false
+        },
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"_":["slides"],"static":"public"}, queryOptions);
+    </script>
+
+    <script src="./_assets/slides/js/pruebas.js"></script>
+    <script src="./_assets/slides/js/init.js"></script>
+
+    <script>
+      Reveal.initialize(options);
+      Reveal.addEventListener('ready', function (event) {
+        const blocks = Reveal.getRevealElement().querySelectorAll('pre code:not(.mermaid)');
+        const hlp = Reveal.getPlugin('highlight');
+        blocks.forEach(hlp.highlightBlock);
+      });
+    </script>
+
+    <script>
+      const mermaidOptions = extend({ startOnLoad: false }, {});
+      mermaid.startOnLoad = false;
+      mermaid.initialize(mermaidOptions);
+      const cb = function (event) {
+        mermaid.init(mermaidOptions, '.stack.present > .present pre code.mermaid');
+        mermaid.init(mermaidOptions, '.slides > .present:not(.stack) pre code.mermaid');
+      }
+      Reveal.addEventListener('ready', cb);
+      Reveal.addEventListener('slidetransitionend', cb);
+    </script>
+  </body>
+</html>

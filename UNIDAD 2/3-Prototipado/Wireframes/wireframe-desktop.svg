@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="900" viewBox="0 0 1280 900">
+  <rect width="1280" height="900" fill="#eeeeea"/>
+  <g font-family="Arial, sans-serif" fill="#262626" stroke="#555" stroke-width="2">
+    <text x="640" y="40" text-anchor="middle" font-size="26" font-weight="700" stroke="none">WIREFRAME DESKTOP - CONOCENOS</text>
+    <rect x="80" y="70" width="1120" height="760" fill="#fff"/>
+    <rect x="100" y="90" width="1080" height="58" fill="#eee"/>
+    <text x="125" y="126" font-size="18" font-weight="700" stroke="none">LOGO</text>
+    <text x="700" y="126" font-size="17" stroke="none">INICIO   CONOCENOS   MENU   PEDIDO</text>
+    <rect x="100" y="165" width="1080" height="95" fill="#f5f5f5"/>
+    <text x="640" y="212" text-anchor="middle" font-size="30" font-weight="700" stroke="none">CONOCENOS</text>
+    <text x="640" y="240" text-anchor="middle" font-size="16" stroke="none">Conoce la historia detras de nuestra cocina</text>
+
+    <rect x="130" y="290" width="430" height="130" fill="#ddd" stroke-dasharray="8 5"/><path d="M130 290L560 420M560 290L130 420"/>
+    <text x="610" y="320" font-size="21" font-weight="700" stroke="none">NUESTRA HISTORIA</text><path d="M610 345H1100M610 370H1050M610 395H1085"/>
+
+    <text x="130" y="470" font-size="21" font-weight="700" stroke="none">NUESTRA COCINA</text><path d="M130 495H600M130 520H560M130 545H590"/>
+    <rect x="690" y="450" width="430" height="130" fill="#ddd" stroke-dasharray="8 5"/><path d="M690 450L1120 580M1120 450L690 580"/>
+
+    <rect x="130" y="615" width="990" height="125" fill="#e5e5e5"/>
+    <text x="625" y="650" text-anchor="middle" font-size="21" font-weight="700" stroke="none">DONDE ESTAMOS</text>
+    <rect x="155" y="668" width="940" height="48" fill="#fff"/><text x="625" y="698" text-anchor="middle" font-size="16" stroke="none">MAPA DE GOOGLE - CLICK ABRE LA UBICACION</text>
+    <rect x="100" y="760" width="1080" height="48" fill="#eee"/><text x="640" y="790" text-anchor="middle" font-size="16" stroke="none">CONTACTO: TELEFONO / INSTAGRAM</text>
+  </g>
+</svg>

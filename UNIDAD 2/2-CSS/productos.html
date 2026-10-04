@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Catalogo de Productos</title>
+    <style>
+        :root {
+            --color-principal: #175c8a;
+            --color-secundario: #f2b84b;
+            --color-fondo: #eef3f7;
+            --color-panel: #ffffff;
+            --color-texto: #1d2733;
+            --color-linea: #cbd6e2;
+            --espacio: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body.grid-container {
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-areas:
+                "cabecera cabecera cabecera cabecera"
+                "links links links links"
+                "lateral principal principal principal"
+                "pie pie pie pie";
+            gap: var(--espacio);
+            padding: var(--espacio);
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--color-texto);
+            background-color: var(--color-fondo);
+        }
+
+        .item1,
+        .item2,
+        .item3,
+        .item4,
+        .item5 {
+            padding: var(--espacio);
+            border: 1px solid var(--color-linea);
+            border-radius: 8px;
+            background-color: var(--color-panel);
+        }
+
+        .item1 {
+            grid-area: cabecera;
+            color: #ffffff;
+            background-color: var(--color-principal);
+        }
+
+        .item2 {
+            grid-area: links;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .item3 {
+            grid-area: lateral;
+        }
+
+        .item4 {
+            grid-area: principal;
+        }
+
+        .item5 {
+            grid-area: pie;
+            text-align: center;
+        }
+
+        h1,
+        h2,
+        p {
+            margin-top: 0;
+        }
+
+        .boton-nav {
+            display: inline-block;
+            padding: 10px 14px;
+            border-radius: 6px;
+            color: #ffffff;
+            background-color: var(--color-principal);
+            text-decoration: none;
+            transition: background-color 0.25s ease, padding 0.25s ease;
+        }
+
+        .boton-nav:hover {
+            padding: 10px 22px;
+            background-color: var(--color-secundario);
+            color: #1d2733;
+        }
+
+        fieldset {
+            border: 1px solid var(--color-linea);
+            border-radius: 8px;
+        }
+
+        legend {
+            padding: 0 8px;
+            font-weight: bold;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        .productos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: var(--espacio);
+        }
+
+        .tarjeta {
+            padding: 12px;
+            border: 1px solid var(--color-linea);
+            border-radius: 8px;
+            background-color: #f9fbfd;
+        }
+
+        .tarjeta img {
+            display: block;
+            width: 100%;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 6px;
+            background-color: #dbe7f2;
+        }
+
+        .tarjeta h3 {
+            margin: 10px 0 0;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 760px) {
+            body.grid-container {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "cabecera"
+                    "links"
+                    "lateral"
+                    "principal"
+                    "pie";
+            }
+        }
+    </style>
+</head>
+<body class="grid-container">
+    <header class="item1">
+        <h1>Catálogo deportivo</h1>
+        <p>Ejercicio de grid, grid-areas, legend y transitions.</p>
+    </header>
+
+    <nav class="item2">
+        <a class="boton-nav" href="#catalogo">Catálogo</a>
+        <a class="boton-nav" href="#carrito">Carrito de Compras</a>
+    </nav>
+
+    <aside class="item3">
+        <form>
+            <fieldset>
+                <legend>Filtros</legend>
+
+                <label>
+                    <input type="checkbox" name="categoria" value="protectores">
+                    Protectores
+                </label>
+
+                <label>
+                    <input type="checkbox" name="categoria" value="entrenamiento">
+                    Entrenamiento
+                </label>
+
+                <label>
+                    <input type="checkbox" name="categoria" value="indumentaria">
+                    Indumentaria
+                </label>
+            </fieldset>
+        </form>
+    </aside>
+
+    <main class="item4" id="catalogo">
+        <h2>Productos</h2>
+        <div class="productos-grid">
+            <div class="tarjeta">
+                <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/cabezal-cerrado.webp" alt="Cabezal de sparring">
+                <h3>Cabezal Sparring</h3>
+            </div>
+            <div class="tarjeta">
+                <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/dobok.webp" alt="Dobok para entrenamiento">
+                <h3>Dobok Dan</h3>
+            </div>
+            <div class="tarjeta">
+                <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/escudo-potencia.webp" alt="Escudo de potencia">
+                <h3>Escudo de Potencia</h3>
+            </div>
+            <div class="tarjeta">
+                <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/foco-con-dedos.webp" alt="Focos redondos">
+                <h3>Par de Focos</h3>
+            </div>
+            <div class="tarjeta">
+                <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/protectores-manos.webp" alt="Guantes de 10 onzas">
+                <h3>Guantes 10 Onzas</h3>
+            </div>
+            <div class="tarjeta">
+                <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/protectores-manos.webp" alt="Protectores de pie">
+                <h3>Protectores Pie</h3>
+            </div>
+        </div>
+    </main>
+
+    <footer class="item5" id="carrito">
+        <p>Carrito de compras listo para continuar en JavaScript.</p>
+    </footer>
+</body>
+</html>

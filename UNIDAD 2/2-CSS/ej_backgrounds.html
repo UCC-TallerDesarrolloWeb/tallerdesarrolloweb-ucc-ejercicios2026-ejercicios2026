@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ejercicio Backgrounds</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #172033;
+            background-color: #9ed7ff;
+            background-image: url("imagenes/fondo_mario.jpg");
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            background-size: cover;
+            background-origin: border-box;
+        }
+
+        main {
+            width: min(980px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 28px 0;
+        }
+
+        section {
+            padding: 18px;
+            border: 8px solid rgba(16, 82, 129, 0.25);
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.9);
+            background-image: url("imagenes/fondo_mario.jpg");
+            background-repeat: repeat-x;
+            background-position: left bottom;
+            background-size: 260px auto;
+            background-origin: padding-box;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        .atributos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .atributos li {
+            padding: 10px;
+            border: 1px solid #b9cad8;
+            border-radius: 6px;
+            background-color: rgba(255, 255, 255, 0.86);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <h1>Backgrounds</h1>
+            <p>
+                Esta pagina prueba distintos atributos de fondo: imagen, color, origen,
+                posicion, repeticion y tamanio.
+            </p>
+
+            <ul class="atributos">
+                <li><strong>background-image:</strong> imagen local</li>
+                <li><strong>background-color:</strong> color base</li>
+                <li><strong>background-origin:</strong> border-box y padding-box</li>
+                <li><strong>background-position:</strong> center bottom</li>
+                <li><strong>background-repeat:</strong> no-repeat y repeat-x</li>
+                <li><strong>background-size:</strong> cover y tamanio fijo</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

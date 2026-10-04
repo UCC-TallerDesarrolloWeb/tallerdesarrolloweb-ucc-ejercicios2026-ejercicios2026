@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="1120" viewBox="0 0 520 1120">
+  <rect width="520" height="1120" fill="#eeeeea"/>
+  <g font-family="Arial, sans-serif" fill="#262626" stroke="#555" stroke-width="2">
+    <text x="260" y="38" text-anchor="middle" font-size="23" font-weight="700" stroke="none">WIREFRAME MOBILE</text>
+    <rect x="80" y="65" width="360" height="1010" rx="18" fill="#fff"/>
+    <rect x="100" y="90" width="320" height="56" fill="#eee"/><text x="120" y="124" font-size="16" font-weight="700" stroke="none">LOGO</text><text x="380" y="126" font-size="22" stroke="none">MENU</text>
+    <text x="260" y="195" text-anchor="middle" font-size="26" font-weight="700" stroke="none">CONOCENOS</text>
+    <rect x="115" y="225" width="290" height="140" fill="#ddd" stroke-dasharray="8 5"/><path d="M115 225L405 365M405 225L115 365"/>
+    <text x="125" y="400" font-size="19" font-weight="700" stroke="none">NUESTRA HISTORIA</text><path d="M125 425H395M125 448H370M125 471H390"/>
+    <rect x="115" y="505" width="290" height="140" fill="#ddd" stroke-dasharray="8 5"/><path d="M115 505L405 645M405 505L115 645"/>
+    <text x="125" y="680" font-size="19" font-weight="700" stroke="none">NUESTRA COCINA</text><path d="M125 705H395M125 728H370M125 751H390"/>
+    <text x="260" y="805" text-anchor="middle" font-size="19" font-weight="700" stroke="none">DONDE ESTAMOS</text>
+    <rect x="115" y="830" width="290" height="120" fill="#e5e5e5"/><text x="260" y="895" text-anchor="middle" font-size="15" stroke="none">MAPA DE GOOGLE</text>
+    <text x="260" y="980" text-anchor="middle" font-size="14" stroke="none">Tocar para abrir Maps</text>
+    <rect x="100" y="1005" width="320" height="45" fill="#eee"/><text x="260" y="1033" text-anchor="middle" font-size="14" stroke="none">CONTACTO</text>
+  </g>
+</svg>

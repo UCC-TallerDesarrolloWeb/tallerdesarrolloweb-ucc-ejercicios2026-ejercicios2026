@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <title>CV Nicolás Bulacio</title>
+    <link rel="shortcut icon" href="imagenes/icono_usuario.jpg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding-top: 230px;
+            font-family: "Roboto", Arial, Helvetica, sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #d7f0ff, #f3f8fb);
+            color: #1f2933;
+        }
+
+        div {
+            border: 1px solid #7a8a99;
+            margin: 18px auto;
+            padding: 18px;
+            width: 80%;
+            max-width: 850px;
+            border-radius: 12px;
+            background-color: #ffffff;
+            opacity: 0.95;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.18);
+        }
+
+        span {
+            font-weight: bold;
+        }
+
+        #presentacion {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            z-index: 10;
+            transform: translateX(-50%);
+            min-height: 150px;
+            background-color: #d8ecff;
+        }
+
+        .foto-perfil {
+            float: left;
+            width: 130px;
+            height: 130px;
+            margin-right: 20px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+        }
+
+        .seccion {
+            background-color: #f8fbff;
+        }
+
+        .curso {
+            width: auto;
+            background-color: #eef6ff;
+        }
+    </style>
+</head>
+<body>
+
+<div id="presentacion">
+    <img class="foto-perfil" src="imagenes/icono_usuario.jpg" alt="Foto de perfil de Nicolás Bulacio">
+    <h1>Nicolás Bulacio</h1>
+    <h2>Ing. en Computación</h2>
+</div>
+
+<div class="seccion">
+    <h3>Datos Personales</h3>
+    <p><span>Fecha de Nacimiento:</span> 01/01/2006</p>
+    <p><span>Email:</span> nicolas.bulacio@email.com</p>
+</div>
+
+<div class="seccion">
+    <h3>Formación Académica</h3>
+    <p><span>Carrera:</span> Ingeniería en Computación</p>
+    <p><span>Universidad:</span> Universidad Católica de Córdoba</p>
+    <p><span>Año de Ingreso:</span> 2025</p>
+</div>
+
+<div class="seccion">
+    <h3>Cursos</h3>
+
+    <div class="curso">
+        <h4>Taller de Desarrollo Web</h4>
+        <p><span>Lugar:</span> Universidad Católica de Córdoba</p>
+        <p><span>Año:</span> 2026</p>
+    </div>
+
+    <div class="curso">
+        <h4>Herramientas de Desarrollo</h4>
+        <p><span>Lugar:</span> Universidad Católica de Córdoba</p>
+        <p><span>Año:</span> 2026</p>
+    </div>
+</div>
+
+</body>
+</html>

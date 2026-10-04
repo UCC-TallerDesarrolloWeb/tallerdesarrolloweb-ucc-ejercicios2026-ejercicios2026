@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Prototipo navegable de la pagina web de un restaurante">
+    <title>Restaurante - Prototipo</title>
+    <style>
+        :root { --ink: #20211f; --paper: #f7f6f1; --green: #244f3e; --red: #a33120; --line: #d9d6cd; --white: #fff; }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { margin: 0; color: var(--ink); background: var(--paper); font-family: Arial, Helvetica, sans-serif; line-height: 1.55; }
+        img { display: block; width: 100%; height: 100%; object-fit: cover; }
+        h1, h2, h3 { letter-spacing: 0; line-height: 1.15; }
+        h2 { font-size: clamp(1.8rem, 5vw, 3rem); text-align: center; }
+        .site-header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid var(--line); background: rgba(255,255,255,.96); }
+        .nav { display: flex; align-items: center; justify-content: space-between; width: min(1120px, calc(100% - 32px)); min-height: 66px; margin: auto; }
+        .brand { color: var(--green); font-size: 1.2rem; font-weight: 800; text-decoration: none; }
+        .links { display: flex; gap: 24px; }
+        .links a { color: var(--ink); font-weight: 700; text-decoration: none; }
+        .hero { display: grid; place-items: center; min-height: 620px; padding: 40px 18px; color: #fff; text-align: center; background: linear-gradient(rgba(15,24,20,.58),rgba(15,24,20,.58)), url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1800&q=85") center/cover; }
+        .hero h1 { margin: 0; font-size: clamp(2.5rem, 8vw, 5.5rem); }
+        .hero p { font-size: 1.25rem; }
+        .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+        .button, button { display: inline-flex; justify-content: center; align-items: center; min-height: 42px; padding: 10px 16px; border: 0; border-radius: 4px; color: #fff; background: var(--red); font: inherit; font-weight: 700; text-decoration: none; cursor: pointer; }
+        main section { padding: 64px max(18px, calc((100% - 1120px)/2)); }
+        .about-row { display: grid; grid-template-columns: 1fr 1fr; min-height: 330px; margin-bottom: 34px; background: #fff; }
+        .about-row:nth-of-type(even) .about-image { order: 2; }
+        .about-image { min-height: 300px; }
+        .about-copy { display: grid; align-content: center; padding: clamp(26px, 5vw, 60px); }
+        .menu-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 26px; }
+        .menu-tabs span { padding: 7px 12px; border-bottom: 2px solid var(--green); font-weight: 700; }
+        .products { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+        .product { overflow: hidden; border: 1px solid var(--line); border-radius: 6px; background: #fff; }
+        .product img { height: 210px; }
+        .product-body { padding: 18px; }
+        .product h3 { margin: 0; }
+        .price { color: var(--green); font-size: 1.15rem; font-weight: 800; }
+        .order { display: grid; grid-template-columns: minmax(260px, .8fr) minmax(320px, 1.2fr); gap: 24px; background: #e9eee9; }
+        .order-panel { padding: 24px; border: 1px solid var(--line); background: #fff; }
+        #pedido-lista { min-height: 110px; padding-left: 20px; }
+        .total { font-size: 1.25rem; font-weight: 800; }
+        label, fieldset { display: grid; gap: 6px; margin-bottom: 14px; }
+        input { min-height: 42px; padding: 8px 10px; border: 1px solid #999; border-radius: 3px; font: inherit; }
+        fieldset { border: 1px solid var(--line); }
+        fieldset label { display: flex; align-items: center; margin: 0; }
+        #pedido-estado { min-height: 48px; color: var(--red); font-weight: 700; }
+        .map-link { position: relative; display: grid; place-items: center; min-height: 260px; overflow: hidden; border: 2px solid #cad1cb; color: var(--ink); text-decoration: none; background: repeating-linear-gradient(35deg,#eef1ed 0,#eef1ed 28px,#dfe6df 29px,#dfe6df 31px); }
+        .map-link span { padding: 14px 18px; border: 1px solid var(--line); background: #fff; font-weight: 800; }
+        footer { padding: 22px 18px; color: #fff; text-align: center; background: #202b27; }
+        @media (max-width: 760px) {
+            .links { gap: 12px; font-size: .86rem; }
+            .hero { min-height: 520px; }
+            .about-row, .products, .order { grid-template-columns: 1fr; }
+            .about-row:nth-of-type(even) .about-image { order: initial; }
+            .product img { height: 240px; }
+        }
+        @media (max-width: 480px) {
+            .nav { align-items: flex-start; flex-direction: column; padding: 10px 0; }
+            .links { width: 100%; justify-content: space-between; }
+            main section { padding-top: 44px; padding-bottom: 44px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav" aria-label="Navegacion principal">
+            <a class="brand" href="#inicio">RESTAURANTE</a>
+            <div class="links"><a href="#inicio">Inicio</a><a href="#conocenos">Conocenos</a><a href="#menu">Menu</a><a href="#pedido">Pedido</a></div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div><h1>RESTAURANTE</h1><p>Disfruta nuestra cocina</p><div class="actions"><a class="button" href="#menu">Ver menu</a><a class="button" href="#pedido">Hacer pedido</a></div></div>
+        </section>
+
+        <section id="conocenos">
+            <h2>CONOCENOS</h2>
+            <div class="about-row"><div class="about-image"><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1000&q=80" alt="Salon del restaurante"></div><div class="about-copy"><h3>Nuestra historia</h3><p>Nacimos como un lugar de encuentro para compartir platos abundantes, sabores conocidos y una atencion cercana.</p></div></div>
+            <div class="about-row"><div class="about-image"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=80" alt="Preparacion de un plato con ingredientes frescos"></div><div class="about-copy"><h3>Nuestra cocina</h3><p>Trabajamos con ingredientes frescos y recetas simples, cuidando cada preparacion desde la cocina hasta la mesa.</p></div></div>
+            <div class="about-row"><div class="about-image"><img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=1000&q=80" alt="Integrante del equipo de cocina"></div><div class="about-copy"><h3>Nuestro equipo</h3><p>Cocineros y personal de salon trabajan juntos para que cada visita se sienta comoda y especial.</p></div></div>
+            <h3>Donde estamos</h3>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=restaurante+C%C3%B3rdoba+Argentina" target="_blank" rel="noopener"><span>Abrir ubicacion en Google Maps</span></a>
+        </section>
+
+        <section id="menu">
+            <h2>NUESTRO MENU</h2>
+            <div class="menu-tabs" aria-label="Categorias"><span>Entradas</span><span>Platos principales</span><span>Bebidas</span><span>Postres</span></div>
+            <div class="products">
+                <article class="product"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80" alt="Hamburguesa con papas"><div class="product-body"><h3>Hamburguesa</h3><p>Carne, queso, vegetales y papas.</p><p class="price">$8.500</p><button type="button" data-product="Hamburguesa" data-price="8500">Agregar</button></div></article>
+                <article class="product"><img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=900&q=80" alt="Pizza con tomate y albahaca"><div class="product-body"><h3>Pizza</h3><p>Salsa de tomate, mozzarella y albahaca.</p><p class="price">$10.000</p><button type="button" data-product="Pizza" data-price="10000">Agregar</button></div></article>
+                <article class="product"><img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=900&q=80" alt="Pasta servida en un plato"><div class="product-body"><h3>Pasta</h3><p>Pasta fresca con salsa de la casa.</p><p class="price">$9.000</p><button type="button" data-product="Pasta" data-price="9000">Agregar</button></div></article>
+            </div>
+        </section>
+
+        <section class="order" id="pedido">
+            <article class="order-panel"><h2>Tu pedido</h2><ul id="pedido-lista"></ul><p class="total">Total: <span id="pedido-total">$0</span></p><a class="button" href="#menu">Seguir agregando</a></article>
+            <article class="order-panel"><h2>Datos del cliente</h2><form id="pedido-form" novalidate><label>Nombre *<input name="name" autocomplete="name" required></label><label>Telefono *<input name="phone" type="tel" autocomplete="tel" required></label><label>Direccion *<input name="address" autocomplete="street-address" required></label><fieldset><legend>Metodo de pago *</legend><label><input type="radio" name="payment" value="Efectivo"> Efectivo</label><label><input type="radio" name="payment" value="Transferencia"> Transferencia</label><label><input type="radio" name="payment" value="Tarjeta"> Tarjeta</label></fieldset><button type="submit">Confirmar compra</button><p id="pedido-estado" role="status" aria-live="polite"></p></form></article>
+        </section>
+    </main>
+    <footer>Contacto: restaurante@ejemplo.com | Instagram: @restaurante</footer>
+    <script src="prototipo.js"></script>
+</body>
+</html>

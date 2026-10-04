@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850">
+  <rect width="1200" height="850" fill="#f5f4ee"/>
+  <g font-family="Comic Sans MS, Arial, sans-serif" fill="#303030" stroke="#575757" stroke-width="2">
+    <text x="600" y="38" text-anchor="middle" font-size="26" font-weight="700" stroke="none">THUMBNAIL SKETCH - CELULAR</text>
+    <g transform="translate(70 70)">
+      <rect width="300" height="720" rx="15" fill="#fff"/>
+      <text x="150" y="28" text-anchor="middle" font-size="18" stroke="none">INICIO</text>
+      <rect x="15" y="42" width="270" height="42" fill="none"/><text x="28" y="68" font-size="14" stroke="none">LOGO</text><text x="250" y="68" font-size="20" stroke="none">☰</text>
+      <rect x="15" y="98" width="270" height="210" fill="none" stroke-dasharray="8 5"/>
+      <text x="150" y="155" text-anchor="middle" font-size="21" stroke="none">RESTAURANTE</text><text x="150" y="188" text-anchor="middle" font-size="14" stroke="none">Disfruta nuestra cocina</text>
+      <rect x="78" y="220" width="145" height="35" fill="none"/><text x="150" y="244" text-anchor="middle" font-size="13" stroke="none">VER MENU</text>
+      <text x="150" y="350" text-anchor="middle" font-size="17" stroke="none">DESTACADOS</text>
+      <rect x="28" y="375" width="244" height="110" fill="none"/><rect x="28" y="505" width="244" height="110" fill="none"/>
+      <rect x="70" y="645" width="160" height="38" fill="none"/><text x="150" y="670" text-anchor="middle" font-size="13" stroke="none">HACER PEDIDO</text>
+    </g>
+    <g transform="translate(450 70)">
+      <rect width="300" height="720" rx="15" fill="#fff"/>
+      <text x="150" y="28" text-anchor="middle" font-size="18" stroke="none">CONOCENOS</text>
+      <rect x="15" y="42" width="270" height="42" fill="none"/><text x="28" y="68" font-size="14" stroke="none">LOGO</text><text x="250" y="68" font-size="20" stroke="none">☰</text>
+      <text x="150" y="118" text-anchor="middle" font-size="21" stroke="none">CONOCENOS</text>
+      <rect x="28" y="140" width="244" height="90" fill="none" stroke-dasharray="8 5"/><text x="150" y="190" text-anchor="middle" font-size="13" stroke="none">IMAGEN</text>
+      <text x="40" y="258" font-size="15" stroke="none">NUESTRA HISTORIA</text><path d="M40 275H260M40 291H245"/>
+      <rect x="28" y="315" width="244" height="90" fill="none" stroke-dasharray="8 5"/><text x="150" y="365" text-anchor="middle" font-size="13" stroke="none">IMAGEN</text>
+      <text x="40" y="433" font-size="15" stroke="none">NUESTRA COCINA</text><path d="M40 450H260M40 466H245"/>
+      <rect x="28" y="495" width="244" height="90" fill="none"/><text x="150" y="545" text-anchor="middle" font-size="13" stroke="none">MAPA GOOGLE</text>
+      <text x="150" y="615" text-anchor="middle" font-size="13" stroke="none">Tocar para abrir Maps</text>
+      <rect x="28" y="645" width="244" height="38" fill="none"/><text x="150" y="670" text-anchor="middle" font-size="13" stroke="none">CONTACTO</text>
+    </g>
+    <g transform="translate(830 70)">
+      <rect width="300" height="720" rx="15" fill="#fff"/>
+      <text x="150" y="28" text-anchor="middle" font-size="18" stroke="none">PEDIDO</text>
+      <rect x="15" y="42" width="270" height="42" fill="none"/><text x="28" y="68" font-size="14" stroke="none">LOGO</text><text x="250" y="68" font-size="20" stroke="none">☰</text>
+      <text x="35" y="120" font-size="19" stroke="none">TU PEDIDO</text>
+      <rect x="28" y="140" width="244" height="115" fill="none"/><path d="M40 170H255M40 200H255M40 230H255"/>
+      <text x="35" y="290" font-size="15" stroke="none">TOTAL: $-----</text>
+      <text x="35" y="330" font-size="13" stroke="none">Nombre *</text><rect x="28" y="342" width="244" height="34" fill="none"/>
+      <text x="35" y="405" font-size="13" stroke="none">Telefono *</text><rect x="28" y="417" width="244" height="34" fill="none"/>
+      <text x="35" y="480" font-size="13" stroke="none">Direccion *</text><rect x="28" y="492" width="244" height="34" fill="none"/>
+      <text x="35" y="565" font-size="13" stroke="none">( ) Efectivo  ( ) Transferencia</text><text x="35" y="590" font-size="13" stroke="none">( ) Tarjeta</text>
+      <rect x="28" y="625" width="244" height="45" fill="none"/><text x="150" y="654" text-anchor="middle" font-size="14" stroke="none">CONFIRMAR COMPRA</text>
+    </g>
+  </g>
+</svg>

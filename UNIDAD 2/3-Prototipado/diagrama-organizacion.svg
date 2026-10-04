@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650">
+  <rect width="1200" height="650" fill="#f8f7f2"/>
+  <g font-family="Arial, sans-serif" fill="#252525" text-anchor="middle">
+    <text x="600" y="42" font-size="28" font-weight="700">DIAGRAMA DE ORGANIZACION</text>
+    <rect x="475" y="70" width="250" height="70" rx="5" fill="#fff" stroke="#285845" stroke-width="3"/>
+    <text x="600" y="113" font-size="24" font-weight="700">RESTAURANTE</text>
+    <path d="M600 140V180M155 180H1045M155 180V215M450 180V215M750 180V215M1045 180V215" fill="none" stroke="#666" stroke-width="3"/>
+
+    <g font-size="22" font-weight="700">
+      <rect x="45" y="215" width="220" height="62" fill="#fff" stroke="#777" stroke-width="2"/><text x="155" y="254">INICIO</text>
+      <rect x="340" y="215" width="220" height="62" fill="#fff" stroke="#777" stroke-width="2"/><text x="450" y="254">CONOCENOS</text>
+      <rect x="640" y="215" width="220" height="62" fill="#fff" stroke="#777" stroke-width="2"/><text x="750" y="254">MENU</text>
+      <rect x="935" y="215" width="220" height="62" fill="#fff" stroke="#777" stroke-width="2"/><text x="1045" y="254">PEDIDO</text>
+    </g>
+
+    <g font-size="18">
+      <path d="M155 277V315M450 277V315M750 277V315M1045 277V315" stroke="#777" stroke-width="2"/>
+      <rect x="45" y="315" width="220" height="130" fill="#fff" stroke="#aaa" stroke-width="2"/>
+      <text x="155" y="350">Presentacion</text><text x="155" y="385">Platos destacados</text><text x="155" y="420">Accesos principales</text>
+
+      <rect x="340" y="315" width="220" height="190" fill="#fff" stroke="#aaa" stroke-width="2"/>
+      <text x="450" y="350">Nuestra historia</text><text x="450" y="385">Nuestra cocina</text><text x="450" y="420">Nuestro equipo</text><text x="450" y="455">Mapa de Google</text><text x="450" y="490">Contacto</text>
+
+      <rect x="640" y="315" width="220" height="165" fill="#fff" stroke="#aaa" stroke-width="2"/>
+      <text x="750" y="350">Entradas</text><text x="750" y="385">Platos principales</text><text x="750" y="420">Bebidas</text><text x="750" y="455">Postres</text>
+
+      <rect x="935" y="315" width="220" height="190" fill="#fff" stroke="#aaa" stroke-width="2"/>
+      <text x="1045" y="350">Productos</text><text x="1045" y="385">Datos del cliente</text><text x="1045" y="420">Metodo de pago</text><text x="1045" y="455">Confirmacion</text><text x="1045" y="490">Mensajes de error</text>
+    </g>
+    <text x="600" y="600" font-size="18" fill="#656861">La ubicacion se integra dentro de CONOCENOS y no aparece en la navegacion principal.</text>
+  </g>
+</svg>

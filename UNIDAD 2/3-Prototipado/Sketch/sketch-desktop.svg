@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="930" viewBox="0 0 1280 930">
+  <rect width="1280" height="930" fill="#f5f4ee"/>
+  <g font-family="Comic Sans MS, Arial, sans-serif" fill="#303030" stroke="#575757" stroke-width="2">
+    <text x="640" y="35" text-anchor="middle" font-size="26" font-weight="700" stroke="none">THUMBNAIL SKETCH - COMPUTADORA</text>
+
+    <g transform="translate(35 65)">
+      <rect width="580" height="380" fill="#fff"/>
+      <text x="20" y="30" font-size="20" stroke="none">1. INICIO</text>
+      <rect x="15" y="45" width="550" height="38" fill="none"/><text x="30" y="70" font-size="15" stroke="none">LOGO</text><text x="260" y="70" font-size="14" stroke="none">INICIO  CONOCENOS  MENU  PEDIDO</text>
+      <rect x="15" y="96" width="550" height="145" fill="none" stroke-dasharray="8 5"/>
+      <text x="290" y="137" text-anchor="middle" font-size="22" stroke="none">RESTAURANTE</text>
+      <text x="290" y="170" text-anchor="middle" font-size="16" stroke="none">Disfruta nuestra cocina</text>
+      <rect x="225" y="190" width="130" height="32" fill="none"/><text x="290" y="212" text-anchor="middle" font-size="14" stroke="none">VER MENU</text>
+      <text x="290" y="270" text-anchor="middle" font-size="18" stroke="none">PLATOS DESTACADOS</text>
+      <rect x="30" y="285" width="155" height="70" fill="none"/><rect x="213" y="285" width="155" height="70" fill="none"/><rect x="395" y="285" width="155" height="70" fill="none"/>
+    </g>
+
+    <g transform="translate(665 65)">
+      <rect width="580" height="380" fill="#fff"/>
+      <text x="20" y="30" font-size="20" stroke="none">2. CONOCENOS</text>
+      <rect x="15" y="45" width="550" height="38" fill="none"/><text x="30" y="70" font-size="15" stroke="none">LOGO</text><text x="260" y="70" font-size="14" stroke="none">INICIO  CONOCENOS  MENU  PEDIDO</text>
+      <text x="290" y="115" text-anchor="middle" font-size="24" stroke="none">CONOCENOS</text>
+      <rect x="35" y="135" width="220" height="75" fill="none" stroke-dasharray="8 5"/><text x="145" y="177" text-anchor="middle" font-size="14" stroke="none">IMAGEN</text>
+      <text x="285" y="155" font-size="15" stroke="none">NUESTRA HISTORIA</text><path d="M285 170H530M285 186H510M285 202H525"/>
+      <path d="M50 242H270M50 258H255M50 274H265"/><text x="50" y="226" font-size="15" stroke="none">NUESTRA COCINA</text>
+      <rect x="320" y="222" width="220" height="65" fill="none" stroke-dasharray="8 5"/><text x="430" y="260" text-anchor="middle" font-size="14" stroke="none">IMAGEN</text>
+      <rect x="35" y="305" width="510" height="48" fill="none"/><text x="290" y="335" text-anchor="middle" font-size="15" stroke="none">MAPA DE GOOGLE - TOCAR PARA ABRIR</text>
+    </g>
+
+    <g transform="translate(35 500)">
+      <rect width="580" height="380" fill="#fff"/>
+      <text x="20" y="30" font-size="20" stroke="none">3. MENU</text>
+      <rect x="15" y="45" width="550" height="38" fill="none"/><text x="30" y="70" font-size="15" stroke="none">LOGO</text><text x="260" y="70" font-size="14" stroke="none">INICIO  CONOCENOS  MENU  PEDIDO</text>
+      <text x="290" y="115" text-anchor="middle" font-size="24" stroke="none">NUESTRO MENU</text>
+      <text x="35" y="150" font-size="14" stroke="none">ENTRADAS | PRINCIPALES | BEBIDAS | POSTRES</text>
+      <g transform="translate(30 170)"><rect width="155" height="160" fill="none"/><rect x="12" y="12" width="131" height="70" fill="none" stroke-dasharray="7 4"/><text x="77" y="105" text-anchor="middle" font-size="14" stroke="none">PRODUCTO $</text><rect x="35" y="120" width="85" height="27" fill="none"/></g>
+      <g transform="translate(213 170)"><rect width="155" height="160" fill="none"/><rect x="12" y="12" width="131" height="70" fill="none" stroke-dasharray="7 4"/><text x="77" y="105" text-anchor="middle" font-size="14" stroke="none">PRODUCTO $</text><rect x="35" y="120" width="85" height="27" fill="none"/></g>
+      <g transform="translate(395 170)"><rect width="155" height="160" fill="none"/><rect x="12" y="12" width="131" height="70" fill="none" stroke-dasharray="7 4"/><text x="77" y="105" text-anchor="middle" font-size="14" stroke="none">PRODUCTO $</text><rect x="35" y="120" width="85" height="27" fill="none"/></g>
+    </g>
+
+    <g transform="translate(665 500)">
+      <rect width="580" height="380" fill="#fff"/>
+      <text x="20" y="30" font-size="20" stroke="none">4. PEDIDO</text>
+      <rect x="15" y="45" width="550" height="38" fill="none"/><text x="30" y="70" font-size="15" stroke="none">LOGO</text><text x="260" y="70" font-size="14" stroke="none">INICIO  CONOCENOS  MENU  PEDIDO</text>
+      <text x="35" y="120" font-size="20" stroke="none">TU PEDIDO</text>
+      <path d="M35 145H325M35 170H325M35 195H325"/><text x="350" y="165" font-size="16" stroke="none">TOTAL $-----</text>
+      <text x="35" y="230" font-size="15" stroke="none">Nombre *</text><rect x="135" y="212" width="390" height="28" fill="none"/>
+      <text x="35" y="270" font-size="15" stroke="none">Telefono *</text><rect x="135" y="252" width="390" height="28" fill="none"/>
+      <text x="35" y="310" font-size="15" stroke="none">Direccion *</text><rect x="135" y="292" width="390" height="28" fill="none"/>
+      <text x="35" y="347" font-size="14" stroke="none">Pago: ( ) Efectivo  ( ) Transferencia  ( ) Tarjeta</text>
+      <rect x="380" y="333" width="160" height="30" fill="none"/><text x="460" y="354" text-anchor="middle" font-size="13" stroke="none">CONFIRMAR</text>
+    </g>
+  </g>
+</svg>
