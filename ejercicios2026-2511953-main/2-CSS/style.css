@@ -1,0 +1,25 @@
+body {
+    text-align: center;
+    font-family: "DM Sans", sans-serif;
+    background-image: linear-gradient(to right, blue, teal, lightblue);
+}
+
+h3 {
+    text-shadow: 4px 2px grey;
+}
+
+div {
+    border: 1px solid teal;
+    margin: 15px;
+    padding: 10px;
+    background-color: #90e0ef;
+    border-radius: 15px 10px 20px;
+    box-shadow: 10px 8px darkcyan;
+}
+
+#user {
+    width: 10%;
+    float: left;
+    border-radius: 10%;
+
+}
