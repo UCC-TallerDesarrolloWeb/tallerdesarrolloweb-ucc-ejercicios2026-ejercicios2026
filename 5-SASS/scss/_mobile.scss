@@ -1,0 +1,21 @@
+@media (max-width: 600px) {
+  #navbar ul {
+    display: none;
+  }
+
+  #showcase .container {
+    padding: 35px 25px;
+  }
+
+  #showcase h1 {
+    font-size: 1.35rem;
+  }
+
+  #features .container {
+    grid-template-columns: 1fr;
+  }
+
+  #features img {
+    height: auto;
+  }
+}
