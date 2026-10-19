@@ -1,0 +1,25 @@
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+        .main-style{
+            text-align: center;
+            background: linear-gradient(to right, rgb(118, 124, 144), rgb(106, 106, 199));
+        }
+
+        h3{
+            font-family: "Roboto Condensed", sans-serif;
+            text-shadow: 10px 4px grey;
+        }
+
+        div{
+            border: 3px solid rgb(107, 118, 139);
+            margin: 15px 20px;
+            padding: 15px 25px 12px;
+            background-color: rgb(233, 237, 223);
+            border-radius: 35px;
+            box-shadow: 10px 4px goldenrod;
+        }   
+
+        #user{
+            width: 15%;
+            float: left;
+            border-radius: 50%;
+        }

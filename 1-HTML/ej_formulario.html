@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Ejercicio Formulario</title>
@@ -11,33 +11,101 @@
     </style>
 </head>
 <body>
-<!--Cree un Formulario con los campos que se proponen a continuacion-->
-<!--Agregue el atributo legend-->
 
-<!--Si tienes dudas de como hacer un formulario, puedes consultar:
-    https://www.w3schools.com/html/tryit.asp?filename=tryhtml_elem_output-->
+    <h3>Suscríbase a Nuestro Portal de Noticias! Crear una cuenta es rápido!</h3>
 
-<h3>Suscribase a Nuestro Portal de Noticias! Crear una cuenta es rápido!</h3>
-Nombre:
-Apellido:
-Sexo: Masculino Femenino
-Edad:
-Email:
-Usuario:
-Password:
-Confirmar Password:
+    <form action="#" method="post">
+        
+        <!-- Grupo 1: Datos Personales -->
+        <fieldset>
+            <legend>Datos Personales</legend>
 
-Tipo de servicio: Free / Standard / Premium
-Tema:
-Política
-Negocios
-Tecnología
-Salud
+            <p>
+                <label for="nombre">Nombre: </label>
+                <input type="text" name="nombre" size="40" placeholder="Ingrese su nombre" maxlength="40" id="nombre">
+            </p>
 
-Agregue un comentario:
+            <p>
+                <label for="apellido">Apellido: </label>
+                <input type="text" name="apellido" size="40" placeholder="Ingrese su apellido" maxlength="40" id="apellido">
+            </p>
 
-Boton de Enviar
+            <p>
+                Sexo: 
+                <label for="masculino">Masculino</label>
+                <input type="radio" name="sexo" value="masculino" id="masculino"> 
 
+                <label for="femenino">Femenino</label>
+                <input type="radio" name="sexo" value="femenino" id="femenino">
+            </p>
+
+            <p>
+                <label for="edad">Edad: </label>
+                <input type="number" name="edad" placeholder="Edad" maxlength="3" id="edad">
+            </p>
+        </fieldset>
+
+        <!-- Grupo 2: Datos de la Cuenta -->
+        <fieldset>
+            <legend>Datos de la Cuenta</legend>
+
+            <p>
+                <label for="email">Email: </label>
+                <input type="email" name="email" size="40" placeholder="ejemplo@correo.com" maxlength="50" id="email">
+            </p>
+
+            <p>
+                <label for="usuario">Usuario: </label>
+                <input type="text" name="usuario" size="40" placeholder="Ingrese su usuario" maxlength="20" id="usuario">
+            </p>
+
+            <p>
+                <label for="password">Password: </label>
+                <input type="password" name="password" size="40" placeholder="Ingrese su contraseña" maxlength="20" id="password">
+            </p>
+
+            <p>
+                <label for="confirm_password">Confirmar Password: </label>
+                <input type="password" name="confirm_password" size="40" placeholder="Confirme su contraseña" maxlength="20" id="confirm_password">
+            </p>
+        </fieldset>
+
+        <!-- Grupo 3: Tipo de Suscripción -->
+        <fieldset>
+            <legend>Tipo de Suscripción</legend>
+
+            <p>
+                <label for="tipo-servicio">Tipo de servicio: </label>
+                <select name="tipo-servicio" id="tipo-servicio">
+                    <option value="free">Free</option>
+                    <option value="standard">Standard</option>
+                    <option value="premium">Premium</option>
+                </select>
+            </p>
+
+            <p>
+                Tema: 
+                <label for="politica">Política</label>
+                <input type="checkbox" name="tema" value="politica" id="politica"> 
+                
+                <label for="negocios">Negocios</label>
+                <input type="checkbox" name="tema" value="negocios" id="negocios"> 
+                
+                <label for="tecnologia">Tecnología</label>
+                <input type="checkbox" name="tema" value="tecnologia" id="tecnologia"> 
+                
+                <label for="salud">Salud</label>
+                <input type="checkbox" name="tema" value="salud" id="salud"> 
+            </p>
+
+            <p>
+                <label for="comentario">Agregue un comentario:</label><br>
+                <textarea name="comentario" id="comentario" rows="4" cols="40" placeholder="Escriba su comentario aquí..."></textarea>
+            </p>
+        </fieldset>
+
+        <p><input type="submit" value="Enviar"></p>
+    </form>
 
 </body>
 </html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cataogo de Productos</title>
+        <link href="catalogo.css" typer="text/css" rel="stylesheet">
+        <script defer src="tienda.js"></script>
+    </head>
+    <body class="grid-container" onload="mostrarCatalogo()">
+        <header class="item1">
+            Catalogo de Productos
+        </header>
+        <nav class="item2">
+            <a href="productos.html">Catalogo de Productos</a>
+            <a href="carrito.html">Carrito de compras <span id="contador-carrito">0</span></a>
+        </nav>
+        <aside class="item3">
+            <form>
+                <fieldset>
+                    <legend>Buscador</legend>
+                    <label for="search">Buscar </label>
+                    <input type="text" name="search" id="search" placeholder="Buscar..">
+                </fieldset>
+                <fieldset>
+                    <legend>Precios</legend>
+                    <p>
+                        <label for="precio-min">Mínimo </label>
+                        <input type="number" name="precio-min" id="precio-min" min="0" placeholder="0">
+                    </p>
+                    <p>
+                        <label for="precio-max">Máximo </label>
+                        <input type="number" name="precio-max" id="precio-max" min="0" placeholder="1000000">
+                    </p>
+                </fieldset>
+                <fieldset>
+                    <legend>Marca</legend>
+                    <select id="marca-filtro">
+                        <option value="Todas">Todas</option>
+                        <option value="Gran Marc">Gran Marc</option>
+                        <option value="Daedo">Daedo</option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <legend>Tipo de Productos</legend>
+                    <p>
+                        <label for="protectores">Protectores </label>
+                        <input type="checkbox" name="categoria" id="protectores" value="Protectores">
+                    </p>
+                    <p>
+                        <label for="entrenamiento">Entrenamiento </label>
+                        <input type="checkbox" name="categoria" id="entrenamiento" value="Entrenamiento">
+                    </p>
+                    <p>
+                        <label for="doboks">Doboks </label>
+                        <input type="checkbox" name="categoria" id="doboks" value="Dobok">
+                    </p>
+                </fieldset>
+                <fieldset>
+                    <legend> Ordenar Catalogo </legend>
+                    <select id="order" onchange="ordenarCatalogo()">
+                        <option value="mayor">por Precio - de Mayor a Menor</option>
+                        <option value="menor">por Precio - de Menor a Mayor</option>
+                        <option value="a-z"> por Nombre - de A-Z</option>
+                        <option value="z-a"> por Nombre - de Z-A</option>
+                    </select>
+                </fieldset>
+            </form>
+        </aside>
+        <dialog id="modal">
+                <h2 id="nombre-producto">Cabezal cerrado</h2>
+                <p id="descripcion-producto">cabezal de sparring disponible en color azul y rojo</p>
+                <button type="button" onclick="cerrarModal()">cerrar</button>
+            </dialog>
+        <main class="item4" id="catalogo">
+            
+        </main>
+        <footer class="item5">
+            Contacto
+        </footer>
+
+    </body>
+</html>
