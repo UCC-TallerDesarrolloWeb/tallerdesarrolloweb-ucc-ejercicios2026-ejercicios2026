@@ -1,0 +1,20 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  content: center;
+}
+
+.header {
+  display: grid;
+  direction: flow;
+  gap: 1rem;
+
+  h1 {
+    justify-content: center;
+  }
+
+  img {
+    justify-content: left;
+  }
+}
