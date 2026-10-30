@@ -9,22 +9,22 @@
 # Checklist de Ejercicios OBLIGATORIOS por unidad
 
 ## Unidad 1: Introducción y Herramientas de Desarrollo
--  [ ] Readme.md
--  [ ] .gitignore
+-  [x] Readme.md
+-  [x] .gitignore
 
 ## Unidad 2: Fundamentos de HTML5 y CSS3
 
 ### HTML
--  [ ] Primer HTML
--  [ ] Secciones
--  [ ] Títulos
--  [ ] Listas
--  [ ] Link
--  [ ] Tablas I
--  [ ] Tablas II
--  [ ] Tablas III
--  [ ] Tablas VI
--  [ ] Comentarios
+-  [x] Primer HTML
+-  [x] Secciones
+-  [x] Títulos
+-  [x] Listas
+-  [x] Link
+-  [x] Tablas I
+-  [x] Tablas II
+-  [x] Tablas III
+-  [x] Tablas VI
+-  [x] Comentarios
 -  [ ] Formulario
 -  [ ] Accesibilidad
 -  [ ] Multimedia
@@ -121,3 +121,21 @@
 - Crear un archivo .gitignore
 - Incluir el nombre de la carpeta que se desea ignorar
 - Subir los cambios al repositorio remoto
+
+
+---
+
+# Ejercicio: README.md 🚀
+
+## Autor
+* Gonzalo **Marrin**
+
+## Contenido/Descripción
+Repositorio para resolver los trabajos prácticos y guías de la materia.
+
+[Acceso al Aula Virtual](https://fjs.ucc.edu.ar/)
+
+## Contacto
+| Nombre | Email |
+| :--- | :--- |
+| Gonzalo Marin | 2523776@ucc.edu.ar |
