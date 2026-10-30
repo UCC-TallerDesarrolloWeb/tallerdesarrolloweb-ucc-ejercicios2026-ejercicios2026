@@ -1,0 +1,110 @@
+body {
+    font-family: Verdana, Geneva, sans-serif;
+    background-color: #f4f6f7;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #1a5276;
+}
+
+/* Contenedor grid */
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Tarjetas */
+.tarjeta {
+    background-color: #ffffff;
+    border: 1px solid #d5dbdb;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.tarjeta h3 {
+    color: #1a5276;
+    font-size: 16px;
+    margin-bottom: 0;
+}
+/* Panel de filtros */
+.filtros {
+    max-width: 280px;
+    margin: 0 auto 25px auto;
+}
+
+.filtros fieldset {
+    border: 1px solid #7f8c8d;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.filtros legend {
+    font-weight: bold;
+    color: #1a5276;
+    padding: 0 8px;
+}
+
+.filtros input[type="text"],
+.filtros input[type="number"],
+.filtros select {
+    padding: 4px;
+    border: 1px solid #aab7b8;
+    border-radius: 4px;
+}
+/* Variables de colores reutilizables */
+:root {
+    --color-catalogo: #8b0000;
+    --color-catalogo-hover: #b22222;
+    --color-carrito: #2a1fa8;
+    --color-carrito-hover: #4636d9;
+    --color-texto-boton: #ffffff;
+}
+
+nav {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.btn {
+    color: var(--color-texto-boton);
+    border: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    cursor: pointer;
+    /* La transición suaviza el cambio de fondo y de padding */
+    transition: background-color 0.4s ease, padding 0.4s ease;
+}
+
+.btn-catalogo {
+    background-color: var(--color-catalogo);
+}
+
+.btn-catalogo:hover {
+    background-color: var(--color-catalogo-hover);
+    padding: 15px 30px;
+}
+
+.btn-carrito {
+    background-color: var(--color-carrito);
+}
+
+.btn-carrito:hover {
+    background-color: var(--color-carrito-hover);
+    padding: 15px 30px;
+}

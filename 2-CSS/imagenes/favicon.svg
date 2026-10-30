@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="fondo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2c3e50"/>
+      <stop offset="100%" stop-color="#4ca1af"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#fondo)"/>
+  <text x="32" y="33"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="28"
+        font-weight="bold"
+        fill="#ffffff"
+        text-anchor="middle"
+        dominant-baseline="central">BG</text>
+</svg>

@@ -2,41 +2,117 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>CV Nombre Apellido</title>
+    <title>CV Baltazar Galindez</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ----- Estilo por TAG ----- */
+        body {
+            font-family: 'Poppins', Verdana, sans-serif;
+            /* Fondo con gradiente */
+            background: linear-gradient(to bottom right, #2c3e50, #4ca1af);
+            /* Centrar todo el contenido del body */
+            text-align: center;
+            margin: 0;
+            padding: 30px;
+        }
+
+        h1, h2, h3, h4 {
+            /* Sombra en los títulos */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        p {
+            /* Sombra en los textos */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        div {
+            /* Borde visible */
+            border: 2px solid #1a5276;
+            /* Margin y padding */
+            margin: 20px auto;
+            padding: 20px;
+            width: 70%;
+            /* Color plano y opacidad */
+            background-color: #ffffff;
+            opacity: 0.9;
+            /* Esquinas redondeadas */
+            border-radius: 15px;
+            /* Sombra del div */
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        img {
+            /* Imagen circular */
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            /* Alineada a la izquierda */
+            float: left;
+            margin-right: 20px;
+        }
+
+        /* ----- Estilo por ID ----- */
+        #encabezado {
+            background-color: #d6eaf8;
+            border-color: #21618c;
+        }
+
+        /* ----- Estilo por CLASE ----- */
+        .etiqueta {
+            font-weight: bold;
+            color: #1a5276;
+        }
+
+        .curso {
+            background-color: #eaf2f8;
+            width: 85%;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
 
-<div>
-    <h1>Nombre Alumno</h1>
+<div id="encabezado">
+    <img src="icono_usuario.jpg" alt="Foto de Baltazar Galindez">
+    <h1>Baltazar Galindez</h1>
     <h2>Ing. en Computacion</h2>
 </div>
 
 <div>
     <h3>Datos Personales</h3>
-    <p><span>Fecha de Nacimiento:</span> dd/mm/aaaa</p>
-    <p><span>Email:</span> email@email.com</p>
+    <p><span class="etiqueta">Fecha de Nacimiento:</span> dd/mm/aaaa</p>
+    <p><span class="etiqueta">Email:</span> email@email.com</p>
 </div>
 
 <div>
     <h3>Formacion Academica</h3>
-    <p><span>Carrera:</span> Ingeniería XXXXX</p>
-    <p><span>Universidad:</span> Universidad Católica de Córdoba</p>
-    <p><span>Año de Ingreso:</span> 2018</p>
+    <p><span class="etiqueta">Carrera:</span> Ingeniería en Computación</p>
+    <p><span class="etiqueta">Universidad:</span> Universidad Católica de Córdoba</p>
+    <p><span class="etiqueta">Año de Ingreso:</span> 2018</p>
 </div>
 
 <div>
     <h3>Cursos</h3>
 
-    <div>
+    <div class="curso">
         <h4>Nombre Curso 1</h4>
-        <p><span>Lugar:</span> Nombre Institución</p>
-        <p><span>Año:</span> XXXX </p>
+        <p><span class="etiqueta">Lugar:</span> Nombre Institución</p>
+        <p><span class="etiqueta">Año:</span> XXXX </p>
     </div>
 
-    <div>
+    <div class="curso">
         <h4>Nombre Curso 2</h4>
-        <p><span>Lugar:</span> Nombre Institución</p>
-        <p><span>Año:</span> XXXX </p>
+        <p><span class="etiqueta">Lugar:</span> Nombre Institución</p>
+        <p><span class="etiqueta">Año:</span> XXXX </p>
     </div>
 </div>
 

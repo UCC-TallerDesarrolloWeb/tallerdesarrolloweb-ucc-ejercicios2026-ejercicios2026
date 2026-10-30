@@ -3,9 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <title>Ejercicio Columnas</title>
+
+    <style>
+        /* Tipo de fuente de toda la página, por Tag */
+        body {
+            font-family: Verdana, Geneva, sans-serif;
+        }
+
+        /* Título de la página, por ID */
+        #tituloPrincipal {
+            color: darkblue;
+        }
+
+        /* Título de la noticia, por clase */
+        .tituloNoticia {
+            font-size: 36px;
+        }
+
+        /* Pseudo clases del hipervínculo */
+        a:link,
+        a:visited {
+            color: darkgreen;
+        }
+
+        a:hover {
+            font-size: 24px;
+        }
+
+        a:active {
+            font-weight: bold;
+        }
+
+        /* ===== FORMA 1 (CSS2): float + width ===== */
+        .columna1 {
+            float: left;
+            width: 50%;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+
+        .columna2 {
+            float: right;
+            width: 50%;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+
+        /* El article debe "contener" a los divs flotados */
+        article {
+            overflow: hidden;
+        }
+
+        /* ===== FORMA 2 (CSS3): column-count + column-gap =====
+        article {
+            column-count: 2;
+            column-gap: 40px;
+        }
+        */
+    </style>
 </head>
 <body>
-<!--Cree los estilos CSS necesarios para que el texto se visualice en 2 columnas-->
 <header>
     <h1 id="tituloPrincipal">Diario On-line</h1>
 </header>
@@ -14,7 +71,7 @@
     <h3 class="tituloNoticia">CordoBici</h3>
     Publicado el 07/03/2018 en Agropecuarias y Ambiente
     <article>
-        <div>
+        <div class="columna1">
             <p>
                 Un intercambio académico inspiró a Joaquín, Nicolás, Guido y Facundo para elegir el tema de su trabajo final.
                 Dos de ellos estuvieron el año pasado en Sevilla y se quedaron "enamorados" –palabras textuales- de su
@@ -44,7 +101,7 @@
                 de la tesis.
             </p>
         </div>
-        <div class="grid-item">
+        <div class="columna2">
             <p>
                 Gracias a una profunda investigación comercial, sumada a una simulación realizada por un programa llamado
                 anylogic, consiguieron localizar de manera estratégica 19 estaciones con 280 bicicletas, en Nueva Córdoba y

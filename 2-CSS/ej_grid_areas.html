@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio Grid Areas</title>
+
+    <style>
+        /* El body es el grid-container: 4 columnas imaginarias */
+        body {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            font-family: Verdana, Geneva, sans-serif;
+            margin: 0;
+            padding: 10px;
+        }
+
+        /* Estilo general de las áreas */
+        body > * {
+            border: 2px solid #1a5276;
+            border-radius: 8px;
+            padding: 15px;
+            background-color: #d6eaf8;
+            text-align: center;
+        }
+
+        /* grid-area: fila-inicio / columna-inicio / fila-fin / columna-fin */
+
+        /* item1: cabecera, ocupa las 4 columnas */
+        .item1 {
+            grid-area: 1 / 1 / 2 / 5;
+        }
+
+        /* item2: links de navegación, ocupa las 4 columnas */
+        .item2 {
+            grid-area: 2 / 1 / 3 / 5;
+        }
+
+        /* item3: menú lateral, ocupa 1 columna */
+        .item3 {
+            grid-area: 3 / 1 / 4 / 2;
+        }
+
+        /* item4: principal, ocupa 3 columnas */
+        .item4 {
+            grid-area: 3 / 2 / 4 / 5;
+        }
+
+        /* item5: pie de página, ocupa las 4 columnas */
+        .item5 {
+            grid-area: 4 / 1 / 5 / 5;
+        }
+    </style>
+</head>
+<body>
+
+<header class="item1">
+    <h1>Cabecera de la página</h1>
+</header>
+
+<nav class="item2">
+    <a href="#">Inicio</a> |
+    <a href="#">Productos</a> |
+    <a href="#">Contacto</a>
+</nav>
+
+<aside class="item3">
+    <h3>Menú lateral</h3>
+    <p>Categoría 1</p>
+    <p>Categoría 2</p>
+    <p>Categoría 3</p>
+</aside>
+
+<main class="item4">
+    <h2>Contenido principal</h2>
+    <p>Acá va el contenido central de la página.</p>
+</main>
+
+<footer class="item5">
+    <p>Pie de página &copy; 2026</p>
+</footer>
+
+</body>
+</html>
