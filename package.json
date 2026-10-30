@@ -1,0 +1,36 @@
+{
+  "name": "ejemplo-clase",
+  "version": "1.0.0",
+  "description": "Ejemplo de Instalacion de node JS",
+  "keywords": [
+    "nodeJS",
+    "ejemplo",
+    "clase"
+  ],
+  "homepage": "https://github.com/UCC-TallerDesarrolloWeb/ejercicios2026-facundogrilloucc#readme",
+  "bugs": {
+    "url": "https://github.com/UCC-TallerDesarrolloWeb/ejercicios2026-facundogrilloucc/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UCC-TallerDesarrolloWeb/ejercicios2026-facundogrilloucc.git"
+  },
+  "author": "facundogrilloucc",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "testing"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "sass": "^1.105.1"
+  },
+  "devDependencies": {
+    "eslint": "^10.12.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.6",
+    "jest": "^30.5.2",
+    "prettier": "^3.9.9"
+  },
+  "private": true
+}
