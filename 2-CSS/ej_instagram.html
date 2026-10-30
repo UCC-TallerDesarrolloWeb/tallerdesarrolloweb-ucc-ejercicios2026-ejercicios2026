@@ -1,47 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instagram</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    </head>
+    <style>
+        body {
+            margin: 0;
+            padding: 10px;
+        }
+
+        .fila::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        /* Las imagenes ocupan el 100% de su columna */
+        .columna img {
+            width: 100%;
+            display: block;
+        }
+
+        /* PANTALLAS DE 601px O MAS: 3 COLUMNAS */
+        @media screen and (min-width: 601px) {
+            .columna {
+                float: left;
+                width: 33.33%;
+                padding: 5px;
+                box-sizing: border-box;
+            }
+        }
+
+        /* PANTALLAS DE HASTA 600px: 1 COLUMNA */
+        @media screen and (max-width: 600px) {
+            .columna {
+                float: none;
+                width: 100%;
+                padding: 5px;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
 <body>
 
-<div>
-    <div>
-        <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/satoshito89_01.png">
+<div class="fila">
+    <div class="columna">
+        <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/satoshito89_01.png" alt="Publicación 1">
     </div>
-    <div>
-        <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/satoshito89_02.png">
+    <div class="columna">
+        <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/satoshito89_02.png" alt="Publicación 2">
     </div>
-    <div>
-        <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/satoshito89_03.png">
-    </div>
-</div>
-
-<div>
-    <div>
-        <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/satoshito89_04.png">
-    </div>
-    <div>
-        <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/satoshito89_05.png">
-    </div>
-    <div>
-        <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/satoshito89_06.png">
+    <div class="columna">
+        <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/satoshito89_03.png" alt="Publicación 3">
     </div>
 </div>
 
-<div>
-    <div>
-        <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/satoshito89_07.png">
+<div class="fila">
+    <div class="columna">
+        <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/satoshito89_04.png" alt="Publicación 4">
     </div>
-    <div>
-        <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/satoshito89_08.png">
+    <div class="columna">
+        <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/satoshito89_05.png" alt="Publicación 5">
     </div>
-    <div>
-        <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/satoshito89_09.png">
+    <div class="columna">
+        <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/satoshito89_06.png" alt="Publicación 6">
     </div>
 </div>
+
+<div class="fila">
+    <div class="columna">
+        <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/satoshito89_07.png" alt="Publicación 7">
+    </div>
+    <div class="columna">
+        <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/satoshito89_08.png" alt="Publicación 8">
+    </div>
+    <div class="columna">
+        <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/satoshito89_09.png" alt="Publicación 9">
+    </div>
+</div>
+
 </body>
 </html>

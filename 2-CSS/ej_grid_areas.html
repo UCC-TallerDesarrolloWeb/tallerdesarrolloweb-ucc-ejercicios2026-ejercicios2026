@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio Grid Areas</title>
+    <style>
+        /* GRID CONTAINER EN EL BODY */
+        body {
+            font-family: Verdana, Geneva, sans-serif;
+            margin: 0;
+            padding: 10px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);   /* 4 columnas imaginarias */
+            grid-gap: 10px;
+            grid-template-areas:
+                "cabecera cabecera cabecera cabecera"
+                "links    links    links    links"
+                "menu     principal principal principal"
+                "pie      pie      pie      pie";
+        }
+
+        /* CLASES itemN CON SU GRID-AREA */
+        .item1 {
+            grid-area: cabecera;
+            background-color: #1f3a5f;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .item2 {
+            grid-area: links;
+            background-color: #2f5c8a;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .item3 {
+            grid-area: menu;
+            background-color: #c9d6e3;
+            padding: 15px;
+        }
+
+        .item4 {
+            grid-area: principal;
+            background-color: #eeeeee;
+            padding: 15px;
+        }
+
+        .item5 {
+            grid-area: pie;
+            background-color: #14263f;
+            color: #ffffff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .item2 a {
+            color: #ffffff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        .item3 ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .item3 li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+<!-- CABECERA DE LA PÁGINA -->
+<header class="item1">
+    <h1>Diario On-line</h1>
+</header>
+
+<!-- LINKS DE NAVEGACIÓN -->
+<nav class="item2">
+    <a href="#">Inicio</a>
+    <a href="#">Noticias</a>
+    <a href="#">Deportes</a>
+    <a href="#">Contacto</a>
+</nav>
+
+<!-- MENÚ LATERAL -->
+<aside class="item3">
+    <h3>Secciones</h3>
+    <ul>
+        <li>Política</li>
+        <li>Economía</li>
+        <li>Sociedad</li>
+        <li>Ambiente</li>
+        <li>Tecnología</li>
+    </ul>
+</aside>
+
+<!-- CONTENIDO PRINCIPAL -->
+<main class="item4">
+    <h2>CordoBici</h2>
+    <p>
+        Un intercambio académico inspiró a Joaquín, Nicolás, Guido y Facundo para elegir el tema de su
+        trabajo final. Dos de ellos estuvieron el año pasado en Sevilla y se quedaron enamorados de su
+        sistema de bicicletas públicas.
+    </p>
+    <p>
+        Gracias a una profunda investigación comercial, sumada a una simulación realizada por un programa
+        llamado anylogic, consiguieron localizar de manera estratégica 19 estaciones con 280 bicicletas,
+        en Nueva Córdoba y Ciudad Universitaria.
+    </p>
+</main>
+
+<!-- PIE DE PÁGINA -->
+<footer class="item5">
+    <p>Taller de Desarrollo Web - UCC - 2026</p>
+</footer>
+
+</body>
+</html>

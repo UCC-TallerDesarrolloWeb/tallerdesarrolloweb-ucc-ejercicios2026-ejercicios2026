@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio Backgrounds</title>
+    <style>
+        /* Fondo de toda la página */
+        body {
+            background-image: url("imagenes/fondo_mario.jpg");
+            background-color: #5c94fc;              /* color de respaldo */
+            background-repeat: no-repeat;           /* no se repite */
+            background-position: center top;        /* posición */
+            background-size: cover;                 /* cubre toda la pantalla */
+            background-attachment: fixed;           /* queda fijo al hacer scroll */
+            font-family: Verdana, Geneva, sans-serif;
+            color: #ffffff;
+            margin: 0;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+        }
+
+        .caja {
+            width: 400px;
+            height: 200px;
+            margin: 25px auto;
+            padding: 20px;
+            border: 5px dashed #ffffff;
+            color: #000000;
+            font-weight: bold;
+        }
+
+        /* background-repeat: repeat (mosaico) */
+        .repetido {
+            background-image: url("imagenes/fondo_mario.jpg");
+            background-repeat: repeat;
+            background-size: 100px 100px;
+        }
+
+        /* background-repeat: repeat-x (solo en horizontal) */
+        .repetido-x {
+            background-image: url("imagenes/fondo_mario.jpg");
+            background-repeat: repeat-x;
+            background-size: 100px 100px;
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        /* background-position + background-size: contain */
+        .posicion {
+            background-image: url("imagenes/fondo_mario.jpg");
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            background-size: contain;
+            background-color: #d3d3d3;
+        }
+
+        /* background-origin: content-box (la imagen arranca despues del padding) */
+        .origen {
+            background-image: url("imagenes/fondo_mario.jpg");
+            background-repeat: no-repeat;
+            background-origin: content-box;
+            background-size: 100% 100%;
+            background-color: #ffcc00;
+        }
+
+        /* forma abreviada (shorthand) de background */
+        .abreviada {
+            background: #228b22 url("imagenes/fondo_mario.jpg") no-repeat center / 150px 150px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Ejercicio: Backgrounds</h1>
+
+<div class="caja repetido">background-repeat: repeat</div>
+
+<div class="caja repetido-x">background-repeat: repeat-x</div>
+
+<div class="caja posicion">background-position: right bottom / background-size: contain</div>
+
+<div class="caja origen">background-origin: content-box</div>
+
+<div class="caja abreviada">background (forma abreviada)</div>
+
+</body>
+</html>
