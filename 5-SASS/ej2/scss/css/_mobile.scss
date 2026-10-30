@@ -1,0 +1,10 @@
+@media(width<700px){
+    #navbar{
+        .container{
+            flex-direction: column;
+        }
+        ul{
+            margin-left: 0;
+            padding: 15px}
+    }
+}

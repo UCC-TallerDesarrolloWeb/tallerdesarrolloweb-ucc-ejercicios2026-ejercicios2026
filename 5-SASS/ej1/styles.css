@@ -1,0 +1,22 @@
+/* Error: Module loop: this module is already being loaded.
+ *   ,--> anidacion.scss
+ * 2 | @use 'anidacion';
+ *   | ^^^^^^^^^^^^^^^^ new load
+ *   '
+ *   ,--> styles.scss
+ * 6 | @use 'anidacion';
+ *   | ================ original load
+ *   '
+ *   anidacion.scss 2:1  @use
+ *   styles.scss 6:1     root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Module loop: this module is already being loaded.\a   \250c \2500 \2500 > anidacion.scss\a 2 \2502  @use 'anidacion';\d\a   \2502  ^^^^^^^^^^^^^^^^ new load\a   \2575 \a   \250c \2500 \2500 > styles.scss\a 6 \2502  @use 'anidacion';\d\a   \2502  \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501  original load\a   \2575 \a   anidacion.scss 2:1  @use\a   styles.scss 6:1     root stylesheet";
+}
