@@ -1,0 +1,22 @@
+$color-card: #ffffff;
+$color-titulo: #14213d;
+$color-texto: #4a5568;
+
+.card {
+  padding: 24px;
+  background: $color-card;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba($color-titulo, 0.12);
+
+  &__titulo {
+    margin: 0 0 4px;
+    color: $color-titulo;
+    text-transform: capitalize;
+  }
+
+  &__subtitulo {
+    margin: 0 0 16px;
+    color: $color-texto;
+    text-transform: capitalize;
+  }
+}

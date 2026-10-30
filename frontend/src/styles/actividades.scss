@@ -1,0 +1,66 @@
+$color-fondo: #e9eef2;
+$color-titulo: #14213d;
+$color-texto: #4a5568;
+$color-principal: #0f766e;
+$color-borde: #e2e8f0;
+
+.actividades-container {
+  flex: 1;
+  box-sizing: border-box;
+  padding: 32px 16px;
+  background: $color-fondo;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  h1 {
+    margin: 0 0 24px;
+    text-align: center;
+    color: $color-titulo;
+  }
+}
+
+.actividades-lista {
+  max-width: 720px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.horarios {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-top: 1px solid $color-borde;
+  }
+
+  .dia {
+    font-weight: 600;
+    color: $color-principal;
+  }
+
+  .hora {
+    color: $color-texto;
+  }
+}
+
+.btn-inscribir {
+  width: 100%;
+  margin-top: 16px;
+  padding: 11px;
+  border: 0;
+  border-radius: 8px;
+  background: $color-principal;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover {
+    background: #0b5d57;
+  }
+}
