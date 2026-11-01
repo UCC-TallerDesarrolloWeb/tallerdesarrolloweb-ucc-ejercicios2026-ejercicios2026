@@ -9,62 +9,62 @@
 # Checklist de Ejercicios OBLIGATORIOS por unidad
 
 ## Unidad 1: Introducción y Herramientas de Desarrollo
--  [ ] Readme.md
--  [ ] .gitignore
+-  [X] Readme.md
+-  [X] .gitignore
 
 ## Unidad 2: Fundamentos de HTML5 y CSS3
 
 ### HTML
--  [ ] Primer HTML
--  [ ] Secciones
--  [ ] Títulos
--  [ ] Listas
--  [ ] Link
--  [ ] Tablas I
--  [ ] Tablas II
--  [ ] Tablas III
--  [ ] Tablas VI
--  [ ] Comentarios
--  [ ] Formulario
--  [ ] Accesibilidad
--  [ ] Multimedia
+-  [X] Primer HTML
+-  [X] Secciones
+-  [X] Títulos
+-  [X] Listas
+-  [X] Link
+-  [X] Tablas I
+-  [X] Tablas II
+-  [X] Tablas III
+-  [X] Tablas VI
+-  [X] Comentarios
+-  [X] Formulario
+-  [X] Accesibilidad
+-  [X] Multimedia
 
 ### CSS
--  [ ] Propiedades tipográficas
--  [ ] Incrustado
--  [ ] Estilo con Descendientes
--  [ ] Pseudo Clases
--  [ ] CV
--  [ ] Backgrounds
+-  [X] Propiedades tipográficas
+-  [X] Incrustado
+-  [X] Estilo con Descendientes
+-  [X] Pseudo Clases
+-  [X] CV
+-  [X] Backgrounds
 -  [ ] Position
--  [ ] 2 Columnas
--  [ ] Grid
--  [ ] grid-areas
--  [ ] Mejora
--  [ ] Transitions
--  [ ] Viewport
--  [ ] Responsive
+-  [X] 2 Columnas
+-  [X] Grid
+-  [X] grid-areas
+-  [X] Mejora
+-  [X] Transitions
+-  [X] Viewport
+-  [X] Responsive
 
 ## Unidad 3: JavaScript y ES6+
 
--  [ ] Hola Mundo!
--  [ ] Conversor de Unidades
--  [ ] Documentación
--  [ ] Grados a Radianes
--  [ ] Refactorización
--  [ ] Mostrar/Ocultar div
--  [ ] Mostrar/Ocultar Dialog
--  [ ] Operaciones Matemáticas
--  [ ] Conversor de Unidades II
--  [ ] Operaciones Matemáticas II
--  [ ] Renderizado Dinámico
--  [ ] Renderizado Dinámico del Dialog
--  [ ] Carrito de Compras con localstorage
--  [ ] Vaciar Carrito y Eliminar Producto
--  [ ] Filter
--  [ ] Formatear Precio
--  [ ] Total y Cantidad de Productos
--  [ ] Ordenar el catálogo
+-  [X] Hola Mundo!
+-  [X] Conversor de Unidades
+-  [X] Documentación
+-  [X] Grados a Radianes
+-  [X] Refactorización
+-  [X] Mostrar/Ocultar div
+-  [X] Mostrar/Ocultar Dialog
+-  [X] Operaciones Matemáticas
+-  [X] Conversor de Unidades II
+-  [X] Operaciones Matemáticas II
+-  [X] Renderizado Dinámico
+-  [X] Renderizado Dinámico del Dialog
+-  [X] Carrito de Compras con localstorage
+-  [X] Vaciar Carrito y Eliminar Producto
+-  [X] Filter
+-  [X] Formatear Precio
+-  [X] Total y Cantidad de Productos
+-  [X] Ordenar el catálogo
 
 ## Unidad 4: Funcionamiento del Navegador y Herramientas de Desarrollo
 -  [ ] Checkeo de accesiilidad: AXE
@@ -73,24 +73,24 @@
 ## Unidad 5: Frameworks y Preprocesadores CSS
 
 ### BootStrap
--  [ ] Instagram
--  [ ] Componente para selección de vuelos
--  [ ] Timeline
--  [ ] Componente Perfil
--  [ ] Youtube
+-  [X] Instagram
+-  [X] Componente para selección de vuelos
+-  [X] Timeline
+-  [X] Componente Perfil
+-  [X] Youtube
 
 ### SASS
--  [ ] Sass básico
--  [ ] Diseño de Interiores
+-  [X] Sass básico
+-  [X] Diseño de Interiores
 
 ## Unidad 6: Frameworks de JavaScript: React, Vue y Angular
--  [ ] Instalación de React Usando Vite
--  [ ] Login Básico
--  [ ] Redirección de Rutas
--  [ ] Outlet
--  [ ] Estructura del Proyecto
--  [ ] Imágenes
--  [ ] Children
+-  [X] Instalación de React Usando Vite
+-  [X] Login Básico
+-  [X] Redirección de Rutas
+-  [X] Outlet
+-  [X] Estructura del Proyecto
+-  [X] Imágenes
+-  [X] Children
 
 
 ## Unidad 7: Backend y APIs
