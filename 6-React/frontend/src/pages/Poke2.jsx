@@ -3,22 +3,25 @@ import PokeCard from "../components/PokeCard";
 
 const Poke2 = () => {
   const [pokeData, setPokeData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const BASE_URL = "https://pokeapi.co/api/v2/pokemon/";
 
-  const fetchpokemon = async (id) => {
+  const fetchallpokemon = async () => {
     try {
-      const response = await fetch(`${BASE_URL}${id}`);
-      const data = await response.json();
-      setPokeData((prev) => [...prev, data]);
+      setLoading(true);
+      const promises = [];
+      for (let i = 1; i <= 20; i++) {
+        promises.push(
+          fetch(`${BASE_URL}${i}`).then((response) => response.json())
+        );
+      }
+      const data = await Promise.all(promises);
+      setPokeData(data);
     } catch (error) {
       console.error("error al realizar el fetch de pokemon", error);
-    }
-  };
-
-  const fetchallpokemon = async () => {
-    for (let i = 1; i < 20; i++) {
-      fetchpokemon(i);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -26,14 +29,14 @@ const Poke2 = () => {
     fetchallpokemon();
   }, []);
 
-  if (!pokeData) {
+  if (loading) {
     return <h2>Cargando pokemon ..</h2>;
   }
 
   return (
     <>
       {pokeData.map((pokemon) => (
-        <PokeCard pokeData={pokeData} key={pokemon.id} />
+        <PokeCard pokeData={pokemon} key={pokemon.id} />
       ))}
     </>
   );
