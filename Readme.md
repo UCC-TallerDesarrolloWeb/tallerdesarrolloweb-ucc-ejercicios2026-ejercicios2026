@@ -73,9 +73,9 @@
 ## Unidad 5: Frameworks y Preprocesadores CSS
 
 ### BootStrap
--  [ ] Instagram
--  [ ] Componente para selección de vuelos
--  [ ] Timeline
+-  [x] Instagram
+-  [x] Componente para selección de vuelos
+-  [x] Timeline
 -  [ ] Componente Perfil
 -  [ ] Youtube
 
