@@ -1,51 +1,33 @@
 import { useState } from "react";
-import "../styles/Login.scss";
+import "@styles/login.scss";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
-  const navigate = useNavigate();
-
-  const handleLogin = async (e) => {
-    e.preventDefault();
-
-    if (userName == "admin" && password == "admin") {
-      console.log("correcto");
-      localStorage.setItem("isLoggedIn", "True");
-      navigate("/actividades");
-    } else {
-      console.log("incorrecto");
-    }
-  };
-
-  return (
-    <div className="login-container">
-      <form className="login-form" onSubmit={handleLogin}>
-        <h2>Iniciar Sesion</h2>
-
-        <label htmlFor="username">nombre</label>
-        <input
-          type="text"
-          id="username"
-          placeholder="usuario"
-          onChange={(e) => setUserName(e.target.value)}
-          value={userName}
-        />
-
-        <label htmlFor="password"> contraseña</label>
-        <input
-          type="password"
-          id="password"
-          placeholder="password"
-          onChange={(f) => setPassword(f.target.value)}
-          value={password}
-        />
-
-        <button type="submit">ingresar</button>
-      </form>
-    </div>
-  );
-};
-
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+    const handleLogin = async (e) => {
+        e.preventDefault();
+        if(username == "admin" && password == "admin"){
+            console.log("Login OK");
+            localStorage.setItem("isLoggedIn", "true");
+            navigate('/actividades');
+        }
+        else{
+            console.log("Login Incorrecto")
+        }
+        }
+    return (
+        <div className="login-container">
+            <form className="login-form" onSubmit={handleLogin}>
+                <h2>Iniciar Sesión</h2>
+                <label htmlFor="username">Username</label>
+                <input type="text" placeholder="Usuario" onChange={(e) => setUsername(e.target.value)} value={username} required/>
+                <label htmlFor="password">Password</label>
+                <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} value={password} required/>
+                <button type="submit">Ingresar</button>
+            </form>
+        </div>
+    )
+}
 export default Login;
