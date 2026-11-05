@@ -1,0 +1,30 @@
+{
+  "name": "ejercicios2026-greg-07-svg",
+  "version": "1.0.0",
+  "description": "actividades semanales",
+  "keywords": [
+    "actividades",
+    "taller",
+    "desarrollo"
+  ],
+  "homepage": "https://github.com/UCC-TallerDesarrolloWeb/ejercicios2026-Greg-07-svg#readme",
+  "bugs": {
+    "url": "https://github.com/UCC-TallerDesarrolloWeb/ejercicios2026-Greg-07-svg/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UCC-TallerDesarrolloWeb/ejercicios2026-Greg-07-svg.git"
+  },
+  "license": "ISC",
+  "author": "gregorio",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.12.0",
+    "globals": "^17.13.0"
+  }
+}
