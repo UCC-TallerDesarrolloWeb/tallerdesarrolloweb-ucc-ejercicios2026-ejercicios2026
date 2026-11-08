@@ -1,0 +1,23 @@
+.main-style{
+       
+            text-align: center;
+            background: linear-gradient(to right, rgb(255, 248, 149),rgb(255, 192, 235));
+}
+        h3{
+             font-family: "Playfair Display", serif;
+             text-shadow: 3px 2px rgb(199, 190, 196);
+        }
+        div{
+            border: 1px solid rgb(103, 100, 102);
+            margin: 15px 20px;
+            padding: 10px 25px 12px;
+            background-color: rgba(212, 255, 236, 0.817);
+            border-radius: 30px;
+            box-shadow: 10px 8px grey;
+        }
+       #user{
+        width: 10%;
+        float: left;
+        border-radius: 50%;
+        }
+   
