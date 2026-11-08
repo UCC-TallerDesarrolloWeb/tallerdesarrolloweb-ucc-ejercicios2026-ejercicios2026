@@ -9,52 +9,52 @@
 # Checklist de Ejercicios OBLIGATORIOS por unidad
 
 ## Unidad 1: Introducción y Herramientas de Desarrollo
--  [ ] Readme.md
--  [ ] .gitignore
+-  [x ] Readme.md
+-  [ x] .gitignore
 
 ## Unidad 2: Fundamentos de HTML5 y CSS3
 
 ### HTML
--  [ ] Primer HTML
--  [ ] Secciones
--  [ ] Títulos
--  [ ] Listas
--  [ ] Link
--  [ ] Tablas I
--  [ ] Tablas II
--  [ ] Tablas III
--  [ ] Tablas VI
--  [ ] Comentarios
--  [ ] Formulario
--  [ ] Accesibilidad
--  [ ] Multimedia
+-  [ x] Primer HTML
+-  [ x] Secciones
+-  [ x] Títulos
+-  [ x] Listas
+-  [ x] Link
+-  [ x] Tablas I
+-  [ x] Tablas II
+-  [ x] Tablas III
+-  [ x] Tablas VI
+-  [ x] Comentarios
+-  [ x] Formulario
+-  [ x] Accesibilidad
+-  [ x] Multimedia
 
 ### CSS
--  [ ] Propiedades tipográficas
--  [ ] Incrustado
--  [ ] Estilo con Descendientes
--  [ ] Pseudo Clases
--  [ ] CV
--  [ ] Backgrounds
--  [ ] Position
--  [ ] 2 Columnas
--  [ ] Grid
--  [ ] grid-areas
--  [ ] Mejora
--  [ ] Transitions
--  [ ] Viewport
--  [ ] Responsive
+-  [ x] Propiedades tipográficas
+-  [ x] Incrustado
+-  [ x] Estilo con Descendientes
+-  [ x] Pseudo Clases
+-  [ x] CV
+-  [ x] Backgrounds
+-  [ x] Position
+-  [ x] 2 Columnas
+-  [ x] Grid
+-  [ x] grid-areas
+-  [ x] Mejora
+-  [ x] Transitions
+-  [ x] Viewport
+-  [ x] Responsive
 
 ## Unidad 3: JavaScript y ES6+
 
--  [ ] Hola Mundo!
--  [ ] Conversor de Unidades
--  [ ] Documentación
--  [ ] Grados a Radianes
--  [ ] Refactorización
--  [ ] Mostrar/Ocultar div
+-  [x] Hola Mundo!
+-  [x] Conversor de Unidades
+-  [x] Documentación
+-  [x] Grados a Radianes
+-  [x] Refactorización
+-  [x] Mostrar/Ocultar div
 -  [ ] Mostrar/Ocultar Dialog
--  [ ] Operaciones Matemáticas
+-  [x] Operaciones Matemáticas
 -  [ ] Conversor de Unidades II
 -  [ ] Operaciones Matemáticas II
 -  [ ] Renderizado Dinámico
