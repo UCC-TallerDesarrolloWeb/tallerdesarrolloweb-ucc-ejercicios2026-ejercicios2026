@@ -1,4 +1,0 @@
-# prueba
-# practicagit
-# practicagit
-# practicagitfinal
