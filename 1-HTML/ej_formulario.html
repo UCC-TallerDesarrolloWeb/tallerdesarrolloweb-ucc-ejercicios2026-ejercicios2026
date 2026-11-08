@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Ejercicio Formulario</title>
@@ -10,34 +11,97 @@
         }
     </style>
 </head>
-<body>
-<!--Cree un Formulario con los campos que se proponen a continuacion-->
-<!--Agregue el atributo legend-->
 
-<!--Si tienes dudas de como hacer un formulario, puedes consultar:
+<body>
+    <!--Cree un Formulario con los campos que se proponen a continuacion-->
+    <!--Agregue el atributo legend-->
+
+    <!--Si tienes dudas de como hacer un formulario, puedes consultar:
     https://www.w3schools.com/html/tryit.asp?filename=tryhtml_elem_output-->
 
-<h3>Suscribase a Nuestro Portal de Noticias! Crear una cuenta es rápido!</h3>
-Nombre:
-Apellido:
-Sexo: Masculino Femenino
-Edad:
-Email:
-Usuario:
-Password:
-Confirmar Password:
+    <h3>Suscribase a Nuestro Portal de Noticias! Crear una cuenta es rápido!</h3>
 
-Tipo de servicio: Free / Standard / Premium
-Tema:
-Política
-Negocios
-Tecnología
-Salud
+    <form>
+        <fieldset>
+            <legend>Datos Personales</legend>
+            <p>
+                <label for="nombre">Nombre:</label>
+                <input type="name" id="nombre" name="Nombre" maxlength="40" placeholder="Nombre">
+            </p>
+            <p>
+                <label for="apellido">Apellido:</label>
+                <input type="name" id="apellido" name="Apellido" maxlength="40" placeholder="Apellido">
+            </p>
+            <p>
+                Sexo:
+                <label for="masculino">Masculino</label>
+                <input type="radio" id="masculino" name="genero" value="Masculino" checked>
+                <label for="femenino">Femenino</label>
+                <input type="radio" id="femenino" name="genero" value="Femenino">
+            </p>
+            <p>
+                <label for="edad">Edad:</label>
+                <input type="numer" id="edad" min="1" max="120" value="20">
+            </p>
+            <p>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="dominio de email de usuario">
+            </p>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Datos de la cuenta</legend>
+            <p>
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="usuario" name="usuario" placeholder="nombre usuario">
+            </p>
+            <p>
+                <label for="contraseña">Password:</label>
+                <input type="password" id="contraseña" name="password">
+            </p>
+            <p>
+                <label for="confirmar_contraseña">Confirmar Password:</label>
+                <input type="password" id="confirmar_contraseña" name="password" placeholder="confirmar contraseña">
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>Tipo de suscripcion:</legend>
+            <p>
+                <label for="tipo-servicio">Tipo de servicio:</label>
+                <select name="tipo-servicio" id="tipo-servicio">
+                    <option>Free</option>
+                    <option>Standard</option>
+                    <option>Premium</option>
+                </select>
+            </p>
 
-Agregue un comentario:
+            <p>
+                Tema:
+                <label for="politica">Política </label>
+                <input type="checkbox" id="politica" name="tema" value="politica">
+                <label for="negocios">Negocios</label>
+                <input type="checkbox" id="negocios" name="tema" value="Negocios">
+                <label for="tecnologia">Tecnología </label>
+                <input type="checkbox" id="tecnologia" name="tema" value="Tecnología">
+                <label for="salud">Salud </label>
+                <input type="checkbox" id="salud" name="tema" value="Salud">
+            </p>
+        </fieldset>
 
-Boton de Enviar
+        <p>
+            <label for="agregar-comentario">Agregue un comentario:</label>
+            <textarea id="agregar-comentario">
+                Deje su comentario ...
+            </textarea>
+        </p>
+
+        <p>
+            <button type="button">Boton de Enviar</button>
+
+        </p>
+    </form>
 
 
 </body>
+
 </html>

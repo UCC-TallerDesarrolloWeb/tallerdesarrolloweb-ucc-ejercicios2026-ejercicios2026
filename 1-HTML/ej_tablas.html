@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Tablas</title>
 
     <style>
-        table, tr, td, th{
+        table,
+        tr,
+        td,
+        th {
             border: 1px solid #000000;
         }
     </style>
@@ -14,7 +18,60 @@
 <!--Cree una tabla para visualizar la  información de los diferentes congresos (emplee etiquetas semánticas de tablas)-->
 <!--Elimine las siglas CPAR, y 'Campus Party' debe ocupar 2 celdas-->
 <!--Como campus party y Jaiio comparten el mismo lugar, unifique las celdas que contienen 'Buenos Aires'-->
+
 <body>
+ unidad_1
+
+    <table>
+        <caption>Listado de Congresos y eventos de Ingeniería Informática</caption>
+        <thead>
+            <tr>
+                <th>Siglas</th>
+                <th>Congreso o Evento</th>
+                <th>Carrera</th>
+                <th>Web</th>
+                <th>Lugar</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td colspan="2">Campus Party</td> <!--unir dos columnas-->
+                <td>Computación/Sistemas</td>
+                <td><a href="http://argentina.campus-party.org/">link1</a></td>
+                <td rowspan="2">Buenos Aires</td> <!--unir dos filas-->
+                <td>25-abr al 28-abr</td>
+            </tr>
+
+            <tr>
+                <td>JAIIO</td>
+                <td>Jornadas Argentinas de Informática</td>
+                <td>Computación/Sistemas</td>
+                <td><a href="http://47jaiio.sadio.org.ar">link2</a></td>
+                <td>3-sep al 7-sep</td>
+            </tr>
+
+            <tr>
+                <td>WICC</td>
+                <td>Workshop de Investigadores en Ciencias de la Computación</td>
+                <td>Computación/Sistemas</td>
+                <td><a href="http://wicc2018.unne.edu.ar/">link3</a></td>
+                <td>Corrientes</td>
+                <td>18-mar al 27-abr</td>
+            </tr>
+
+        </tbody>
+
+
+    </table>
+
+
+
+
+
+
+
     <table>
         <thead>
         <tr>
@@ -63,5 +120,7 @@
 <td>18-mar al 27-abr</td>
 </tr>
 </table>
+ main
 </body>
+
 </html>
