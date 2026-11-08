@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<!-- saved from url=(0078)https://ucc-tallerdesarrolloweb.github.io/filminas/U5_bootstrap-sass.html#/9/2 -->
+<html lang="en" class="reveal-full-page"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>PreProcesadoresCSS</title>
+    <link rel="shortcut icon" href="https://ucc-tallerdesarrolloweb.github.io/filminas/favicon.ico">
+    <link rel="stylesheet" href="./img1_files/reset.css">
+    <link rel="stylesheet" href="./img1_files/reveal.css">
+    <link rel="stylesheet" href="./img1_files/league.css" id="theme">
+    <link rel="stylesheet" href="./img1_files/zenburn.css">
+
+    <link rel="stylesheet" href="./img1_files/filminas.css">
+  <style type="text/css">.hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}</style><script type="text/javascript" src="./img1_files/MathJax.js.descarga"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888; display: contents}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax:focus, body :focus .MathJax {display: inline-table}
+.MathJax.MathJax_FullWidth {text-align: center; display: table-cell!important; width: 10000em!important}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none; box-sizing: content-box}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_test {font-style: normal; font-weight: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow: hidden; height: 1px}
+.MathJax_test.mjx-test-display {display: table!important}
+.MathJax_test.mjx-test-inline {display: inline!important; margin-right: -1px}
+.MathJax_test.mjx-test-default {display: block!important; clear: both}
+.MathJax_ex_box {display: inline-block!important; position: absolute; overflow: hidden; min-height: 0; max-height: none; padding: 0; border: 0; margin: 0; width: 1px; height: 60ex}
+.MathJax_em_box {display: inline-block!important; position: absolute; overflow: hidden; min-height: 0; max-height: none; padding: 0; border: 0; margin: 0; width: 1px; height: 60em}
+.mjx-test-inline .MathJax_left_box {display: inline-block; width: 0; float: left}
+.mjx-test-inline .MathJax_right_box {display: inline-block; width: 0; float: right}
+.mjx-test-display .MathJax_right_box {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Main; src: url('https://cdn.jsdelivr.net/npm/mathjax@2/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff?V=2.7.9') format('woff'), url('https://cdn.jsdelivr.net/npm/mathjax@2/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf?V=2.7.9') format('opentype')}
+@font-face {font-family: MathJax_Main-bold; src: url('https://cdn.jsdelivr.net/npm/mathjax@2/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff?V=2.7.9') format('woff'), url('https://cdn.jsdelivr.net/npm/mathjax@2/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf?V=2.7.9') format('opentype')}
+@font-face {font-family: MathJax_Main-italic; src: url('https://cdn.jsdelivr.net/npm/mathjax@2/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff?V=2.7.9') format('woff'), url('https://cdn.jsdelivr.net/npm/mathjax@2/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf?V=2.7.9') format('opentype')}
+@font-face {font-family: MathJax_Math-italic; src: url('https://cdn.jsdelivr.net/npm/mathjax@2/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff?V=2.7.9') format('woff'), url('https://cdn.jsdelivr.net/npm/mathjax@2/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf?V=2.7.9') format('opentype')}
+@font-face {font-family: MathJax_Caligraphic; src: url('https://cdn.jsdelivr.net/npm/mathjax@2/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff?V=2.7.9') format('woff'), url('https://cdn.jsdelivr.net/npm/mathjax@2/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf?V=2.7.9') format('opentype')}
+@font-face {font-family: MathJax_Size1; src: url('https://cdn.jsdelivr.net/npm/mathjax@2/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff?V=2.7.9') format('woff'), url('https://cdn.jsdelivr.net/npm/mathjax@2/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf?V=2.7.9') format('opentype')}
+@font-face {font-family: MathJax_Size2; src: url('https://cdn.jsdelivr.net/npm/mathjax@2/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff?V=2.7.9') format('woff'), url('https://cdn.jsdelivr.net/npm/mathjax@2/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf?V=2.7.9') format('opentype')}
+@font-face {font-family: MathJax_Size3; src: url('https://cdn.jsdelivr.net/npm/mathjax@2/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff?V=2.7.9') format('woff'), url('https://cdn.jsdelivr.net/npm/mathjax@2/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf?V=2.7.9') format('opentype')}
+@font-face {font-family: MathJax_Size4; src: url('https://cdn.jsdelivr.net/npm/mathjax@2/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff?V=2.7.9') format('woff'), url('https://cdn.jsdelivr.net/npm/mathjax@2/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf?V=2.7.9') format('opentype')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+  <body class="reveal-viewport" style="transition: transform 0.8s; --slide-width: 960px; --slide-height: 700px; --slide-scale: 0.9627428571428571; --viewport-width: 1536px; --viewport-height: 702px;"><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div>
+    <div class="reveal default center focused has-vertical-slides has-horizontal-slides ready is-vertical-slide" role="application" data-transition-speed="default" data-background-transition="fade" style="">
+      <div class="slides" style="width: 960px; height: 700px; inset: 50% auto auto 50%; transform: translate(-50%, -50%) scale(0.962743);">
+        <section data-markdown="" data-markdown-parsed="true" style="top: 213.5px; display: none;" class="past" hidden="" aria-hidden="true"><h1 id="bootstrap--sass">BootStrap &amp; SASS</h1>
+<p>Created by <i class="fab fa-telegram"></i>
+edme88</p>
+</section><section data-markdown="" data-markdown-parsed="true" style="font-size: 0.6em; top: 225px; display: none;" class="past" hidden="" aria-hidden="true"><!-- -->
+<style>
+.grid-container2 {
+    display: grid;
+    grid-template-columns: auto auto;
+    font-size: 0.8em;
+    text-align: left !important;
+}
+
+.grid-item {
+    border: 3px solid rgba(121, 177, 217, 0.8);
+    padding: 20px;
+    text-align: left !important;
+}
+</style>
+<h2 id="temario">Temario</h2>
+<div class="grid-container2">
+<div class="grid-item">
+
+<ul>
+<li>Ejercicio: BootStrap &amp; Instagram</li>
+<li>Ejercicio: Componente para selección de vuelos</li>
+<li>Ejercicio: Timeline</li>
+<li>Ejercicio: Componente Perfil</li>
+<li>Ejercicio: Youtube</li>
+</ul>
+</div>
+<div class="grid-item">
+
+<ul>
+<li>Instalación SASS</li>
+<li>Ejercicio: Sass básico</li>
+<li>Ejercicio: Diseño de Interiores</li>
+</ul>
+</div>
+</div>
+
+</section><section data-markdown="" data-markdown-parsed="true" style="top: 137px; display: none;" class="past" hidden="" aria-hidden="true"><h3 id="ejercicio-bootstrap--instagram">Ejercicio: BootStrap &amp; Instagram</h3>
+<p>Empleando Ejercicios-CSS el template ej_instagram, el contenido debe visualizarse:</p>
+<ul>
+<li>Se deben mostrar 3 columnas las imagenes si la pantalla es mediana</li>
+<li>Se debe mostrar 1 columna si la pantalla es pequeña</li>
+<li>Las imagenes deben ocupar el 100% de su columna</li>
+</ul>
+</section><section style="top: 0px; display: none;" class="stack past" data-previous-indexv="0" hidden="" aria-hidden="true"><section data-markdown="" data-markdown-parsed="true" style="top: 0px; display: none;" class="" aria-hidden="true"><h3 id="ejercicio-componente-para-selección-de-vuelos">Ejercicio: Componente para selección de vuelos</h3>
+<!--Ejercicio tomado de https://www.youtube.com/watch?v=7sDWDVODy8c-->
+<p>Elaborar el siguiente componente para la selección de vuelos empleando clases de bootstrap.</p>
+<p><img src="./img1_files/selector-vuelos.png" alt="Selector de Vuelos"></p>
+</section><section data-markdown="" data-markdown-parsed="true" class="future" aria-hidden="true" style="top: 139.5px; display: none;" hidden=""><h3 id="ejercicio-componente-para-selección-de-vuelos">Ejercicio: Componente para selección de vuelos</h3>
+<iframe width="560" height="315" src="./img1_files/YeWg5_vBBRE.html" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+</section><section data-markdown="" data-markdown-parsed="true" class="future" aria-hidden="true" style="top: 139.5px; display: none;" hidden=""><h3 id="ejercicio-componente-para-selección-de-vuelos">Ejercicio: Componente para selección de vuelos</h3>
+<iframe width="560" height="315" src="./img1_files/gLcHn837_S4.html" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+</section><section data-markdown="" data-markdown-parsed="true" style="font-size: 0.7em; top: 350px; display: none;" class="future" aria-hidden="true" hidden=""><h3 id="ejercicio-componente-para-selección-de-vuelos">Ejercicio: Componente para selección de vuelos</h3>
+<!-- -->
+<h4 id="componentes-dropdowns-y-botones">Componentes (Dropdowns y Botones)</h4>
+<ul>
+<li><strong>dropdown:</strong> Contenedor que define un menú desplegable.</li>
+<li><strong>dropdown-toggle:</strong> Estilo y comportamiento para el botón que abre/cierra el dropdown.</li>
+<li><strong>dropdown-menu:</strong> Contenedor del menú que se despliega.</li>
+<li><strong>btn:</strong> Clase base para botones.</li>
+<li><strong>btn-primary:</strong> Variante de botón con color primario.</li>
+<li><strong>btn-outline-secondary:</strong> Botón con borde y texto “secondary” (fondo transparente).</li>
+<li><strong>btn-outline-light:</strong> Botón contorneado en tono “light”.</li>
+<li><strong>btn-outline-primary:</strong> Botón contorneado en tono “primary”.</li>
+</ul>
+<h4 id="atributos-bootstrap">Atributos Bootstrap</h4>
+<ul>
+<li><strong>data-bs-toggle="dropdown"</strong> habilita el comportamiento del menú;</li>
+<li><strong>data-bs-auto-close="outside"</strong> evita que se cierre al hacer clic dentro del menú.</li>
+</ul>
+</section><section data-markdown="" data-markdown-parsed="true" style="font-size: 0.7em; top: 350px; display: none;" class="future" aria-hidden="true" hidden=""><h3 id="ejercicio-componente-para-selección-de-vuelos">Ejercicio: Componente para selección de vuelos</h3>
+<!-- -->
+<h4 id="grid--layout">Grid / Layout</h4>
+<ul>
+<li><strong>row:</strong> Fila del sistema de grilla.</li>
+<li><strong>col:</strong> Columna flexible (toma el ancho disponible equitativamente).</li>
+<li><strong>border-end:</strong> Borde en el lado “end” (derecho en LTR) del elemento, útil para separar columnas.</li>
+</ul>
+<h4 id="utilidades-de-espaciado-y-alineación">Utilidades de espaciado y alineación</h4>
+<ul>
+<li><strong>p-4:</strong> Padding en todos los lados (4).</li>
+<li><strong>py-3:</strong> Padding vertical (y) tamaño 3.</li>
+<li><strong>gap-2:</strong> Espacio entre ítems en contenedores flex/grid (gap = 2).</li>
+<li><strong>d-flex:</strong> Convierte el elemento en contenedor flex.</li>
+<li><strong>justify-content-end:</strong> Alinea contenido al final del eje principal (derecha por defecto).</li>
+<li><strong>justify-content-between:</strong> Distribuye los elementos con espacio entre ellos.</li>
+<li><strong>align-items-center:</strong> Centra verticalmente (eje cruzado) los ítems en un contenedor flex.</li>
+</ul>
+</section><section data-markdown="" data-markdown-parsed="true" style="font-size: 0.8em; top: 350px; display: none;" class="future" aria-hidden="true" hidden=""><h3 id="ejercicio-componente-para-selección-de-vuelos">Ejercicio: Componente para selección de vuelos</h3>
+<!-- -->
+<h4 id="tipografía--color--forma">Tipografía / color / forma</h4>
+<ul>
+<li><strong>fw-bold:</strong> Texto en negrita.</li>
+<li><strong>text-center:</strong> Texto centrado.</li>
+<li><strong>text-secondary:</strong> Color de texto con el color “secondary” del tema.</li>
+<li><strong>rounded-circle:</strong> Bordes completamente redondeados (círculo), típico para botones/avatares.</li>
+</ul>
+<h3 id="ejercicio-clases-propias">Ejercicio: Clases propias</h3>
+<ul>
+<li><strong>calendar-container:</strong> Clase propia (la usás en tu CSS para ancho/alto de botones).</li>
+<li><strong>calendar-grid:</strong> Clase propia.</li>
+<li><strong>material-symbols-outlined:</strong> Propia de Google Fonts/Material Symbols.</li>
+</ul>
+</section></section><section style="top: 0px; display: none;" class="stack past" data-previous-indexv="0" hidden="" aria-hidden="true"><section data-markdown="" data-markdown-parsed="true" style="top: 50.5px; display: none;" class="" aria-hidden="true"><h3 id="ejercicio-timeline">Ejercicio: Timeline</h3>
+<!--Ejercicio tomado de https://www.youtube.com/watch?v=7sDWDVODy8c-->
+<p>Elaborar el siguiente timeline (similar a Jira) empleando clases de bootstrap.</p>
+<p><img src="./img1_files/timeline.png" alt="Timeline"></p>
+</section><section data-markdown="" data-markdown-parsed="true" class="future" aria-hidden="true" style="top: 139.5px; display: none;" hidden=""><h3 id="ejercicio-timeline">Ejercicio: Timeline</h3>
+<iframe width="560" height="315" src="./img1_files/7G3kyOIOxGg.html" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+</section><section data-markdown="" data-markdown-parsed="true" style="font-size: 0.8em; top: 11px; display: none;" class="future" aria-hidden="true" hidden=""><h3 id="ejercicio-timeline">Ejercicio: Timeline</h3>
+<!-- -->
+<h4 id="disposición-grid--layout">Disposición (Grid / Layout)</h4>
+<ul>
+<li><strong>container:</strong> contenedor centrado con anchos máximos responsivos; crea el “lienzo” del timeline.</li>
+<li><strong>row:</strong> fila del sistema de grilla. Agrupa columnas y gestiona gutters.</li>
+<li><strong>col / col-X (1-12):</strong> columnas con fracciones fijas.</li>
+</ul>
+<h4 id="espaciado-y-tamaño">Espaciado y tamaño</h4>
+<ul>
+<li><strong>mt-X:</strong> margen superior grande al bloque principal.</li>
+<li><strong>p-X py-X:</strong> padding general y vertical para airear los bloques.</li>
+</ul>
+<h4 id="tipografía">Tipografía</h4>
+<ul>
+<li><strong>fw-bold:</strong> negrita.</li>
+<li><strong>fs-X:</strong> tamaños de fuente semánticos.</li>
+<li><strong>text-center:</strong> centra texto.</li>
+<li><strong>opacity-X:</strong> baja opacidad del texto.</li>
+</ul>
+</section><section data-markdown="" data-markdown-parsed="true" style="font-size: 0.7em; top: 350px; display: none;" class="future" aria-hidden="true" hidden=""><h3 id="ejercicio-timeline">Ejercicio: Timeline</h3>
+<!-- -->
+<h4 id="colores--fondos--estados">Colores / fondos / estados</h4>
+<ul>
+<li><strong>bg-black + text-white:</strong> cabecera con alto contraste.</li>
+<li><strong>bg-secondary + text-white:</strong> “tarjetas” de ítems de timeline.</li>
+<li><strong>text-info, text-warning, text-danger:</strong> estado visual para textos.</li>
+</ul>
+<h4 id="bordes-y-formas">Bordes y formas</h4>
+<ul>
+<li><strong>border:</strong> borde por defecto).</li>
+<li><strong>border-light:</strong> borde claro.</li>
+<li><strong>rounded-X:</strong> radios suaves.</li>
+<li><strong>rounded-circle:</strong> hace los avatares circulares.</li>
+</ul>
+<h4 id="flexbox-y-alineación">Flexbox y alineación</h4>
+<ul>
+<li><strong>d-flex:</strong> activa flexbox.</li>
+<li><strong>align-items-center:</strong> centra verticalmente elementos dentro del contenedor flex.</li>
+<li><strong>gap-X:</strong> separación uniforme entre elementos.</li>
+</ul>
+</section></section><section style="top: 0px; display: none;" class="stack past" data-previous-indexv="0" hidden="" aria-hidden="true"><section data-markdown="" data-markdown-parsed="true" style="top: 5px; display: none;" class="" aria-hidden="true"><h3 id="ejercicio-componente-perfil">Ejercicio: Componente Perfil</h3>
+<!--Ejercicio tomado de https://www.youtube.com/watch?v=7sDWDVODy8c-->
+<p>Elaborar el siguiente Perfil (tipo linkedin) empleando clases de bootstrap.</p>
+<p><img src="./img1_files/perfil2.png" alt="Perfil"></p>
+</section><section data-markdown="" data-markdown-parsed="true" class="future" aria-hidden="true" style="top: 139.5px; display: none;" hidden=""><h3 id="ejercicio-componente-perfil">Ejercicio: Componente Perfil</h3>
+<iframe width="560" height="315" src="./img1_files/cOlcjzI9xHk.html" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+</section><section data-markdown="" data-markdown-parsed="true" style="font-size: 0.8em; top: 73px; display: none;" class="future" aria-hidden="true" hidden=""><h3 id="ejercicio-componente-perfil">Ejercicio: Componente Perfil</h3>
+<h4 id="componentes-de-bootstrap-usados">Componentes de Bootstrap usados</h4>
+<!-- -->
+<ul>
+<li><strong>card / card-img-top / card-body / card-title / card-text:</strong>
+Estructura y estilos del componente Card (imagen arriba, cuerpo con título y texto).</li>
+<li><strong>btn btn-primary:</strong> Botón con la variante de color primario del tema.</li>
+<li><strong>list-group / list-group-flush:</strong>
+Lista estilizada; flush elimina bordes/redondeos externos para que “pegue” con la card.</li>
+<li><strong>list-group-item / list-group-item-action:</strong> Ítems de lista; la variante action da estados hover/active cuando el ítem es clickeable .</li>
+<li><strong>badge + bg-danger:</strong> Insignia pequeña (contador “+99”) con fondo rojo del tema.</li>
+</ul>
+</section><section data-markdown="" data-markdown-parsed="true" style="font-size: 0.5em; top: 350px; display: none;" class="future" aria-hidden="true" hidden=""><h3 id="ejercicio-componente-perfil">Ejercicio: Componente Perfil</h3>
+<h3 id="utilidades-utilities-de-bootstrap">Utilidades (Utilities) de Bootstrap</h3>
+<!-- -->
+<p>Layout y flex</p>
+<ul>
+<li><strong>d-flex</strong> display: flex.</li>
+<li><strong>justify-content-center</strong> centra horizontalmente.</li>
+<li><strong>gap-2</strong> espacio entre hijos en contenedores flex.</li>
+<li><strong>align-items-center</strong> centra verticalmente ítems en flex.</li>
+</ul>
+<p>Espaciado</p>
+<ul>
+<li><strong>my-5</strong> margen vertical grande (arriba y abajo).</li>
+<li><strong>p-X</strong> padding.</li>
+</ul>
+<p>Tipografía y alineación</p>
+<ul>
+<li><strong>text-center</strong> centra el contenido de la card.</li>
+</ul>
+<p>Bordes y forma</p>
+<ul>
+<li><strong>rounded-circle:</strong> hace circular la imagen de perfil (avatar).</li>
+</ul>
+<p>Posicionamiento</p>
+<ul>
+<li><strong>position-relative</strong> convierte el contenedor en contexto de posicionamiento (sirve si luego querés posicionar algo absolute dentro). Acá se usa junto con .profile (custom) para “superponer” el avatar sobre la imagen de portada.</li>
+</ul>
+</section></section><section style="top: 0px; display: none;" class="stack past" data-previous-indexv="0" hidden="" aria-hidden="true"><section data-markdown="" data-markdown-parsed="true" style="top: 0px; display: none;" class="" aria-hidden="true"><h3 id="ejercicio-youtube">Ejercicio: Youtube</h3>
+<!--Ejercicio tomado de https://www.youtube.com/watch?v=7sDWDVODy8c-->
+<p>Elaborar la siguiente pantalla similar a youtube empleando clases de bootstrap.</p>
+<p><img src="./img1_files/youtube.png" alt="Perfil"></p>
+</section><section data-markdown="" data-markdown-parsed="true" class="future" aria-hidden="true" style="top: 91px; display: none;" hidden=""><h3 id="ejercicio-youtube">Ejercicio: Youtube</h3>
+<iframe width="560" height="315" src="./img1_files/4QkRKllU-aM.html" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+
+<p><small>Error: Cambiar <strong>test-light</strong> por <strong>text-light</strong> y cambiar <strong>transition: scale 0.1s ease;</strong> por <strong>transition: transform 0.1s ease;</strong></small></p>
+</section><section data-markdown="" data-markdown-parsed="true" style="font-size: 0.7em; top: 42px; display: none;" class="future" aria-hidden="true" hidden=""><h3 id="ejercicio-youtube">Ejercicio: Youtube</h3>
+<!-- -->
+<h4 id="container-y-layout">Container y layout</h4>
+<ul>
+<li><strong>container:</strong> contenedor centrado con márgenes automáticos y padding horizontal.</li>
+<li><strong>d-flex:</strong> convierte el contenedor en flexbox (hijos en línea).</li>
+<li><strong>gap-1:</strong> agrega un pequeño espacio entre las tarjetas.</li>
+<li><strong>my-5:</strong> margen vertical grande (arriba y abajo).</li>
+</ul>
+<h4 id="componente-card">Componente: Card</h4>
+<ul>
+<li><strong>card:</strong> clase base del componente (aplica borde, padding y sombra ligera).</li>
+<li><strong>card-img-top:</strong> imagen superior de la card (por encima del cuerpo).</li>
+<li><strong>card-body:</strong> contenedor del contenido textual.</li>
+<li><strong>card-title:</strong> estilos para títulos dentro de una card.</li>
+<li><strong>text-bg-dark:</strong> variante que combina texto blanco y fondo oscuro.</li>
+<li><strong>text-white:</strong> asegura color blanco del texto.</li>
+<li><strong>border-0:</strong> elimina el borde visible.</li>
+</ul>
+</section><section data-markdown="" data-markdown-parsed="true" style="font-size: 0.9em; top: 350px; display: none;" class="future" aria-hidden="true" hidden=""><h3 id="ejercicio-youtube">Ejercicio: Youtube</h3>
+<!-- -->
+<h4 id="tipografía-y-color">Tipografía y color</h4>
+<ul>
+<li><strong>text-light:</strong> texto gris claro.</li>
+<li><strong>text-decoration-none:</strong> elimina subrayado de los enlaces.</li>
+<li><strong>opacity-50:</strong> aplica 50 % de opacidad al texto (más tenue).</li>
+<li><strong>fw-bold:</strong> texto en negrita.</li>
+<li><strong>fs-6:</strong> tamaño de fuente base (≈16px).</li>
+</ul>
+<h4 id="grid-system">Grid System</h4>
+<ul>
+<li><strong>row:</strong> fila de la grilla.</li>
+<li><strong>col-2, col-6, col-10:</strong> columnas fijas (dividen la fila en 12 partes).
+Se usan para separar el avatar (2 columnas) y el texto (10 columnas), y para dividir botones.</li>
+</ul>
+</section><section data-markdown="" data-markdown-parsed="true" style="font-size: 0.8em; top: 350px; display: none;" class="future" aria-hidden="true" hidden=""><h3 id="ejercicio-youtube">Ejercicio: Youtube</h3>
+<!-- -->
+<h4 id="flex-y-alineación">Flex y alineación</h4>
+<ul>
+<li><strong>d-block:</strong> convierte el enlace del botón en elemento bloque (ocupa todo el ancho).</li>
+<li><strong>w-100:</strong> ancho completo del contenedor padre.</li>
+</ul>
+<h4 id="botones">Botones</h4>
+<ul>
+<li><strong>btn:</strong> clase base del componente botón.</li>
+<li><strong>text-secondary:</strong> texto gris (sin fondo de color).</li>
+</ul>
+<h4 id="imagen-y-forma">Imagen y forma</h4>
+<ul>
+<li><strong>rounded-circle:</strong> redondea al 100 % (imagen circular, avatar).</li>
+</ul>
+<h4 id="otras-utilidades">Otras utilidades</h4>
+<ul>
+<li><strong>overflow-hidden:</strong> oculta contenido que se salga del contenedor (usado para animar las “action-buttons”).</li>
+<li><strong>p-1, p-2:</strong> padding interno (espaciado dentro de los botones y filas).</li>
+</ul>
+</section><section data-markdown="" data-markdown-parsed="true" style="font-size: 0.8em; top: 350px; display: none;" class="future" aria-hidden="true" hidden=""><h3 id="ejercicio-instalar-nodejs">Ejercicio: Instalar Node.Js</h3>
+<!-- -->
+<ol>
+<li>Ingresar a <a href="https://nodejs.org/en">https://nodejs.org/en</a></li>
+<li>Descargar e instalar Node 22.20.0 o superior (si trabajas en múltiples proyectos que requieren diferentes versiones de Node te recomiendo emplear <a href="https://github.com/coreybutler/nvm-windows/releases">nvm</a>)</li>
+<li>En una terminal verificar que la instalación se realizó correctamente</li>
+</ol>
+<pre class="code-wrapper"><code class="bash hljs language-bash" data-highlighted="yes">node -v
+npm -v
+npx -v</code></pre><p>Si tienen problemas de permisos, asegurarse de usar una terminal con permisos de administrador, y levantar las restricciones:</p>
+<pre class="code-wrapper"><code class="bash hljs language-bash" data-highlighted="yes">Set-ExecutionPolicy Unrestricted</code></pre></section></section><section data-markdown="" data-markdown-parsed="true" style="top: 132px; display: block;" class="past" hidden="" aria-hidden="true"><h3 id="instalación-de-sass">Instalación de SASS</h3>
+<ol>
+<li>Instala sass <code>npm install -g sass</code> y verifica <code>sass --version</code></li>
+<li>En el VSC instala el plugin necesario <strong>Sass</strong>(.sass only)</li>
+</ol>
+<p>Si tienes problemas de permisos en Mac:</p>
+<pre class="code-wrapper"><code class="bash hljs language-bash" data-highlighted="yes">sudo <span class="hljs-built_in">chown</span> -R <span class="hljs-variable">$USER</span> /usr/local/lib/node_modules</code></pre><!--
+
+### Ejercicio: SASS
+1. Crea un html con el siguiente código de base
+```html
+<button class="button primary">Botón Primario</button>
+<button class="button success">Botón de Éxito</button>
+<button class="button danger">Botón de Peligro</button>
+```
+2. Crea un archivo _variables.scss para definir los colores a emplear en cada botón
+3. Crea un archivo styles.scss donde uses esas variables. Debe contar con:
+- Mapa para definición de los estilos de cada botón
+- Estilo generico aplicable a los 3 botones que permita visualizar opacidad al realizar hover
+- Emplear función each para generar por ejemplo:
+```css
+.success {
+  background-color: #27ae60;
+  color: white;
+}
+```
+-->
+
+</section><section style="top: 0px; display: block;" class="stack past" data-previous-indexv="0" hidden="" aria-hidden="true"><section data-markdown="" data-markdown-parsed="true" style="top: 0px; display: block;" class="" aria-hidden="true"><h3 id="ejercicio-sass-básico">Ejercicio: Sass básico</h3>
+<ol>
+<li>Crea un archivo <strong>styles.scss</strong></li>
+<li>Ejecuta <strong>sass --watch styles.scss styles.css</strong> en la consola del proyecto para transpilar el <strong>scss</strong> a <strong>css</strong></li>
+<li>Crea una variable para almacenar colores y usalo en algún elemento</li>
+<li>Agrega estilos por (descendientes) anidación</li>
+<li>Crea un nuevo archivo de <strong>sass</strong> para que los estilos anidados estén separados. Crea otro archivo para las variables.</li>
+<li>Crea un mixin que reciba un color para el fondo y un color para las letras. Reutilizalo en diferentes elementos html.</li>
+</ol>
+</section><section data-markdown="" data-markdown-parsed="true" class="future" style="top: 139.5px; display: block;" hidden="" aria-hidden="true"><h3 id="ejercicio-sass-básico">Ejercicio: Sass básico</h3>
+<iframe width="560" height="315" src="./img1_files/lr5bF2bgXcU.html" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+
+<!--Ejemplo tomado de: https://www.youtube.com/watch?v=BtiiM3jeb_c-->
+
+</section></section><section style="top: 0px; display: block;" class="stack present" data-previous-indexv="3"><section data-markdown="" data-markdown-parsed="true" style="top: 0px; display: block;" class="past" hidden="" aria-hidden="true"><h3 id="ejercicio-diseño-de-interiores">Ejercicio: Diseño de Interiores</h3>
+<p><img src="./img1_files/black.webp" alt="Diseño de Interiores"></p>
+</section><section data-markdown="" data-markdown-parsed="true" class="past" style="top: 67px; display: block;" hidden="" aria-hidden="true"><h3 id="ejercicio-diseño-de-interiores">Ejercicio: Diseño de Interiores</h3>
+<ol>
+<li>Creamos un <strong>index.html</strong> con su header, nav, section, footer</li>
+<li>Creamos una carpeta <strong>scss</strong> con el archivo <strong>styles.scss</strong> dentro</li>
+<li>Ejecutamos <code>sass --watch scss/styles.scss css/styles.css</code></li>
+<li>Agregamos los estilos para desktop</li>
+<li>Creamos un archivo <strong>_mobile.scss</strong> y agregamos los estilos mobile</li>
+</ol>
+</section><section data-markdown="" data-markdown-parsed="true" class="present" style="top: 174.5px; display: block;"><h3 id="ejercicio-diseño-de-interiores">Ejercicio: Diseño de Interiores</h3>
+<p>Recursos:</p>
+<img src="./img1_files/logo.png" width="100">
+<img src="./img1_files/portfolio-1.jpg" width="200">
+<img src="./img1_files/portfolio-2.jpg" width="200">
+<img src="./img1_files/portfolio-3.jpg" width="200">
+<img src="./img1_files/portfolio-4.jpg" width="200">
+</section><section data-markdown="" data-markdown-parsed="true" class="future" style="top: 139.5px; display: block;" hidden="" aria-hidden="true"><h3 id="ejercicio-diseño-de-interiores">Ejercicio: Diseño de Interiores</h3>
+<iframe width="560" height="315" src="./img1_files/xq6UDznaar4.html" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+</section><section data-markdown="" data-markdown-parsed="true" class="future" style="top: 139.5px; display: block;" hidden="" aria-hidden="true"><h3 id="ejercicio-diseño-de-interiores">Ejercicio: Diseño de Interiores</h3>
+<iframe width="560" height="315" src="./img1_files/NrkVUcpD0zc.html" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+</section><section data-markdown="" data-markdown-parsed="true" class="future" style="top: 139.5px; display: none;" hidden="" aria-hidden="true"><h3 id="ejercicio-diseño-de-interiores">Ejercicio: Diseño de Interiores</h3>
+<iframe width="560" height="315" src="./img1_files/Y5qrZwuJmOU.html" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+
+</section></section><section data-markdown="" data-markdown-parsed="true" style="top: 29px; display: block;" class="future" hidden="" aria-hidden="true"><h2 id="¿dudas-preguntas-comentarios">¿Dudas, Preguntas, Comentarios?</h2>
+<p><img src="./img1_files/pregunta.gif" alt="DUDAS"></p>
+</section>
+      </div>
+    <div class="backgrounds"><div class="slide-background past" data-loaded="true" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background past" data-loaded="true" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background past" data-loaded="true" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background stack past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div><div class="slide-background present" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div></div><div class="slide-background stack past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div><div class="slide-background present" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div></div><div class="slide-background stack past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div><div class="slide-background present" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div></div><div class="slide-background stack past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div><div class="slide-background present" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div></div><div class="slide-background past" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background stack past" style="display: block;" data-loaded="true"><div class="slide-background-content"></div><div class="slide-background present" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div></div><div class="slide-background stack present" style="display: block;" data-loaded="true"><div class="slide-background-content"></div><div class="slide-background past" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background present" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div></div><div class="slide-background future" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div></div><div class="slide-number" style="display: block;"><a href="https://ucc-tallerdesarrolloweb.github.io/filminas/U5_bootstrap-sass.html#/9/2">
+					<span class="slide-number-a">10</span>
+					<span class="slide-number-delimiter">.</span>
+					<span class="slide-number-b">3</span>
+					</a></div><aside class="controls" data-controls-layout="bottom-right" data-controls-back-arrows="faded" style="display: block;"><button class="navigate-left enabled" aria-label="previous slide"><div class="controls-arrow"></div></button>
+			<button class="navigate-right enabled" aria-label="next slide"><div class="controls-arrow"></div></button>
+			<button class="navigate-up enabled" aria-label="above slide"><div class="controls-arrow"></div></button>
+			<button class="navigate-down enabled" aria-label="below slide"><div class="controls-arrow"></div></button></aside><div class="progress" style="display: block;"><span style="transform: scaleX(0.875);"></span></div><div class="speaker-notes" data-prevent-swipe="" tabindex="0"></div><div class="pause-overlay"><button class="resume-button">Resume presentation</button></div><div class="aria-status" aria-live="polite" aria-atomic="true" style="position: absolute; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px);">Ejercicio: Diseño de Interiores Recursos: </div></div>
+
+    <script src="./img1_files/reveal.js.descarga"></script>
+
+    <script src="./img1_files/mermaid.min.js.descarga"></script>
+
+    <script src="./img1_files/markdown.js.descarga"></script>
+    <script src="./img1_files/highlight.js.descarga"></script>
+    <script src="./img1_files/zoom.js.descarga"></script>
+    <script src="./img1_files/notes.js.descarga"></script>
+    <script src="./img1_files/math.js.descarga"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        slideNumber: true,
+        highlight: {
+          highlightOnLoad: false
+        },
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"_":["slides"],"static":"public"}, queryOptions);
+    </script>
+
+    <script src="./img1_files/pruebas.js.descarga"></script>
+    <script src="./img1_files/init.js.descarga"></script>
+
+    <script>
+      Reveal.initialize(options);
+      Reveal.addEventListener('ready', function (event) {
+        const blocks = Reveal.getRevealElement().querySelectorAll('pre code:not(.mermaid)');
+        const hlp = Reveal.getPlugin('highlight');
+        blocks.forEach(hlp.highlightBlock);
+      });
+    </script>
+
+    <script>
+      const mermaidOptions = extend({ startOnLoad: false }, {});
+      mermaid.startOnLoad = false;
+      mermaid.initialize(mermaidOptions);
+      const cb = function (event) {
+        mermaid.init(mermaidOptions, '.stack.present > .present pre code.mermaid');
+        mermaid.init(mermaidOptions, '.slides > .present:not(.stack) pre code.mermaid');
+      }
+      Reveal.addEventListener('ready', cb);
+      Reveal.addEventListener('slidetransitionend', cb);
+    </script>
+  
+
+<div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; min-width: 0px; max-width: none; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-size-adjust: none; font-family: MathJax_Size1, monospace;"></div></div></body></html>
